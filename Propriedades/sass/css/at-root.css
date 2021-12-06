@@ -1,0 +1,21 @@
+@charset "UTF-8";
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.wrapper .field { /*Seletor criado graças ao @content*/
+  color: red;
+}
+.wrapper input.field { /*Perceba que o elemento input foi criado como raiz tendo a classe "field" em seu elemento*/
+  padding: 10px;
+  border: 2px solid #999;
+  margin: 10px;
+}
+
+.wrapper select.field { /*Perceba que o elemento select foi criado como raiz tendo a classe "field" em seu elemento*/
+  padding: 10px;
+  border: 2px solid #999;
+  margin: 10px;
+}
+
+/*# sourceMappingURL=at-root.css.map */

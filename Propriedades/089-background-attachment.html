@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>background-attachment</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 1vw;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .container {
+        width: 100%;
+        height: 70%;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .bloco {
+        width: 33%;
+        height: 100%;
+        padding: 2px;
+        margin: 4px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, .2);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .bloco > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 80%;
+        background-image: url("car.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        overflow-y: scroll;
+    }
+
+    #scroll {
+        background-attachment: scroll; /*Perceba que só o primeiro ícone da imagem é exibido*/
+    }
+
+    #fixed {
+        background-attachment: fixed;  /*Perceba que o centro da imagem é pego e ela fixa a imagem á direita*/
+    }
+
+    #local {
+        background-attachment: local;  /*Perceba que só o último ícone é exibido*/
+    }
+
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: background-attachment (Fixamento do Fundo)
+
+
+    Objetivo: Essa propriedade define como uma imagem de fundo deve ficar fixa no background do seu elemento quando a 
+                a página HTML é rolada ou quando o próprio elemento é rolado.
+
+
+    - Valores Aceitáveis:
+
+        - scroll:       Define que a imagem VAI ROLAR junto com a página HTML, mas VAI FICAR FIXA em relação ao seu 
+                            elemento container; 
+        
+        - fixed:        Define que a imagem VAI FICAR FIXA junto com a página HTML e também VAI FICAR FIXA em relação ao 
+                            seu elemento container, além disso, as imagens definidas como fixed vão atribuir os seus 
+                            valores de tamanho e posicionamento sempre em relação á página, nunca em relação ao elemento
+                            container; 
+        
+        - local:        Define que a imagem VAI ROLAR junto com a página HTML, e também VAI ROLAR em relação ao seu 
+                            elemento container; 
+        
+        - unset:        Para desligar a propriedade;
+        
+        - initial:      Volta ao valor inicial;
+        
+        - inherit:      Para herdar o valor do elemento pai;
+
+    - Valor Padrão: scroll;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: ;
+
+-->
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br>Role o scroll da body para ver como os scrolls das divs se comportam...<br><br><br>
+
+    <div class="container">
+
+        <div class="bloco">
+            background-attachment: scroll<br>
+            <scan style="font-weight: normal;">Role o scroll do elemento para ver como ele se comporta dentro do container<br>
+                Perceba que a imagem rola somente em relação á página, mas ela fica fixa
+                dentro do seu container...</scan>
+            <div id="scroll">
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <br><br><br><br><br>Fim do scroll de "scroll"
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-attachment: fixed<br>
+            <scan style="font-weight: normal;">Role o scroll do elemento para ver como ele se comporta dentro do container<br>
+                Perceba que a imagem fica fixa tanto em relação á página quanto em relação ao seu container, e não apenas isso,
+                quando aplicamos "fixed" toda a formatação do elemento é atribuída em relação á página...</scan>
+            <div id="fixed">
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <br><br><br><br><br><span style="color: white">Fim do scroll de "fixed"</span>
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-attachment: local<br>
+            <scan style="font-weight: normal;">Role o scroll do elemento para ver como ele se comporta dentro do container<br>
+                Perceba que a imagem rola tanto em relação á página quanto em relação ao container...</scan>
+            <div id="local">
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <br><br><br><br><br>Fim do scroll de local
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+//Função due define uma escala para uma tag sup...
+@function scale-below($value, $base: 16px, $ratio: 1.618){/*Perceba que a função recebe como parâmetro um valor, possuí
+                                                            um valor base de 16px e um ratio para fazer a divisão do 
+                                                            valor, o objetivo principal dessa função é não permitir que
+                                                            uma tag sup tenha o tamanho maior do que 16px*/
+    @while $value > $base { /*Perceba que usamos um laço while para verificar várias vezes se o tamanho passado na
+                                variável value está menor que a base, enquanto não estiver, a execução de while será
+                                repetida.*/
+        $value: $value / $ratio; /*A execução de while é justamente dividir o valor da variável $value pelo $ratio, 
+                                    até que um valor menor que a $base seja atingido*/
+    }
+    @return $value; //Quando saí da base, o valor é apresentado...
+}
+
+$normal: 30px;
+
+p {
+    font-size: $normal;
+    sup {
+        font-size: scale-below($normal) //Usamos a função na tag sup, passando 30px, veja o resultado no CSS final.
+    }
+}

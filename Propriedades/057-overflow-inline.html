@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>overflow-inline</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 2vw;
+        height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    div {
+        width: 10vw;
+        height: 7vw;
+    }
+
+    #visible {
+        overflow-inline: visible;
+        background-color: gold;
+    }
+    
+    #hidden {
+        overflow-inline: hidden;
+        background-color: gold;
+    }
+    
+    #scroll {
+        overflow-inline: scroll;
+        background-color: gold;
+    }
+    
+    #auto1 {
+        overflow-inline: auto;
+        background-color: gold;
+    }
+    
+    
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: overflow-inline (Transbordar em Linha)
+
+
+    Objetivo: Essa propriedade é específica para o FireFox. Ela é usada quando o conteúdo em linha, como um texto, 
+                estoura as laterais de um elemento transbordando sobre ele tanto horizontalmente quanto verticalmente - 
+                ou seja, sobre os eixos "x" e "y". Resumindo, ela faz a mesma coisa que a propriedade "overflow" para os 
+                demais navegadores.
+
+                Essa propriedade é uma abreviação das propriedades: overflow-x e overflow-y;
+
+                Para tanto ela recebe 2 valores de uma única vez, onde o 1º se refere ao eixo "x" e o 2º valor ao eixo "y",
+                se um único valor for declarado ele irá equivaler para os 2 eixos;
+
+                Essa propriedade pode definir que um conteúdo que transbordou deva ser cortado ou não, se deverá ser
+                adicionada uma barra de rolagem sobre ele, ou se ele deve ser mostrado transbordando mesmo.
+
+                Porém, essa propriedade também é usada para Media Query, quando desejamos implementar um comportamento 
+                responsivo a nossa página, mas com a desvantagem de ser utilizada somente no FireFox. 
+
+
+    - Valores Aceitáveis:
+
+        - visible:  Deixa o conteúdo visível mesmo que ele transborde;
+        - hidden:   Esconde somente a parte do conteúdo que transbordar;
+        - scroll:   Define que se o conteúdo estourar será gerada uma barra de rolagem;
+        - auto:     Define que, se o conteúdo transbordar, será acrescentada uma barra de rolagem automática;
+        - unset:    Para desligar a propriedade;
+        - initial:  Volta ao valor inicial;
+        - inherit:  Para herdar o valor do elemento pai;
+
+    - Valor Padrão: visible;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: Mesmo no FireFox, as propriedades overflow-x, overflow-y e overflow funcionam normalmente, então não há motivos para
+          Continuar usando a propriedade overflow-inline. Se você encontrá-la por ai, pode trocá-la pelos overflow normais;
+
+        Fato Curioso: Essa propriedade só durou até agora porque ela faz parte de um "Sistema legado" para o FireFox, o que é
+        um sistema legado? É quando temos uma tecnologia que iniciou primeiro em um determinado lugar, como as propriedades:
+        overflow-block e overflow-inline são sistemas legados do FireFox, essas propriedades perduram até os dias de hoje, e 
+        só funcionam no FireFox.
+
+
+-->
+    <div> Veja o que pode ser gerado pela combinação de visible e hidden...<br><br>
+    <div id="visible">visiblehiddenvisible<br>visiblehiddenvisible<br>visiblehiddenvisible<br>visiblehiddenvisible<br>
+                        visiblehiddenvisible<br>visiblehiddenvisible<br>visiblehiddenvisible<br></div>
+    </div>
+
+    <div> Veja o que pode ser gerado numa combinação contrária, entre hidden e visible...<br><br>
+    <div id="hidden">hiddenvisiblehidden<br>hiddenvisiblehidden<br>hiddenvisiblehidden<br>hiddenvisiblehidden<br>
+                        hiddenvisiblehidden<br>hiddenvisiblehidden<br>hiddenvisiblehidden<br>hiddenvisiblehidden<br></div>
+    </div>
+
+    <div> Veja o que pode ser gerado pela combinação de scroll e hidden...<br><br>
+    <div id="scroll">scrollhiddenscroll<br>scrollhiddenscroll<br>scrollhiddenscroll<br>scrollhiddenscroll<br>
+                    scrollhiddenscroll<br>scrollhiddenscroll<br>scrollhiddenscroll<br></div>
+    </div>
+
+    <div> Veja como fica quando definimos um único valor<br><br>
+    <div id="auto1">autoautoautoautoauto<br>autoautoautoautoauto<br>autoautoautoautoauto<br>autoautoautoautoauto<br>
+                    autoautoautoautoauto<br>autoautoautoautoauto<br>autoautoautoautoauto<br>autoautoautoautoauto<br>
+                    autoautoautoautoauto<br></div>
+    </div>
+
+</body>
+</html>

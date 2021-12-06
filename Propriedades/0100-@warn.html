@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="sass/css/warn.css" />
+<title>Regra @warn</title>
+</head>
+<body>
+
+<!--            
+    
+            Regras de Estilo @warn
+
+    O que faz a Regra de Estilo @warn?
+
+A regra de estilo @warn (Do inglês “aviso”) tem a função de transmitir um aviso para o usuário da nossa biblioteca 
+Sass caso ele esteja tomando alguma ação errada ou obsoleta, mas que não vai afetar o funcionamento do código em si, 
+pois a função do @warn é apenas alertar o usuário sem interromper o funcionamento do Sass. (Quando desejamos 
+interromper o funcionamento por causa de uma ação errada do usuário temos que usar a regra @error)
+
+A regra @warn é bastante utilizada quando desejamos alertar os usuários quando a passagem de valores que não se 
+aplicam muito bem áquele caso, ou de argumentos legados que agora estão obsoletos, ou quando eles estão chamando uma 
+API de uma forma que não é a ideal, e outras coisas desse tipo.
+
+O @warn será apresentado somente no terminal, mas não vai interromper a execução do Sass. Nesse alerta ele mostrará 
+o alerta que nós escrevemos no @warn e o rastreamento da pilha indicando onde ocorreu o erro, mostrando a linha onde 
+ocorreu e a coluna.
+
+
+    OBS: Para mais detalhes veja "Fundamentos do Sass nº17";
+
+-->
+
+<ul id="chat">
+
+    <li>
+
+        <div class="avatar">
+            <img src="https://i.pravatar.cc/48" alt="Avatar">
+        </div>
+        <div class="message">
+            <strong>John Smith</strong>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea nemo eveniet necessitatibus, deleniti illo 
+                corporis enim in fugiat, modi amet maxime totam est praesentium voluptates maiores aliquid fuga, id 
+                tempore?
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus iusto saepe exercitationem 
+                quibusdam dignissimos assumenda quis, aut beatae vero repellat dolor quaerat incidunt harum amet 
+                ratione enim vitae molestiae accusamus!
+            </p>
+            <time>10 minutos atrás</time>
+        </div>
+        <div class="menu">
+            <button type="button">
+                <img src="more_vert_black_24dp.svg" alt="More">
+            </button>
+        </div>
+
+    </li>
+    
+    <li class="me">
+
+        <div class="avatar">
+            <img src="https://i.pravatar.cc/48?1" alt="Avatar"> <!--Para que as imagens viessem diferentes colocamos 
+                "?1" ao final da URL-->
+        </div>
+        <div class="message">
+            <strong>John Smith</strong>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptas quam enim neque ipsam 
+                fugit.</p>
+            <time>10 minutos atrás</time>
+        </div>
+        <div class="menu">
+            <button type="button">
+                <img src="more_vert_black_24dp.svg" alt="More">
+            </button>
+        </div>
+
+    </li>
+
+</ul>
+
+</body>
+</html>

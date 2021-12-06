@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="sass/css/default.css"/>
+<title>Variáveis !default</title>
+</head>
+<body>
+
+<!--            
+
+            Variáveis com valor !default
+
+        O que são valores !default?
+
+    Normalmente quando atribuímos valores as nossas variáveis, se essa variável já tiver um valor, esse valor antigo será 
+    sobrescrito por um valor novo. Mas se você estiver escrevendo uma biblioteca Sass – ou seja um arquivo externo para que 
+    outras pessoas utilizem - convém permitir que os seus usuários configurem as variáveis de sua biblioteca antes de 
+    usá-las para gerar CSS.
+
+    Para tornar isso possível, o Sass fornece o uso do sinalizador !default. Com ele é possível atribuir um valor padrão 
+    a uma variável caso nenhum valor novo seja definido por um usuário. Caso contrário, o valor padrão será usado.
+
+
+        Como podemos modificar o valor de uma variável padrão depois que um arquivo é importado?
+
+    Geralmente utilizamos variáveis !default por através de um arquivo de módulo – arquivos de módulo são arquivos que 
+    são carregados dentro de outro arquivo, por exemplo, quando chamamos uma biblioteca CSS dentro um arquivo CSS, áquela 
+    biblioteca que foi chamada é um módulo. Para carregar arquivos de módulo no nosso CSS usamos a regra @use, podemos 
+    configurar as nossas variáveis !default no momento em que chamamos o nosso arquivo externo. Da seguinte forma:
+
+        @use <url> with(<variable>: <value>, <variable>: <value>);
+
+    Veja como ficam os arquivos quando usamos variáveis !default:
+
+            Arquivo: _biblioteca.scss
+
+                $black: #000 !default;
+                $border-radius: 0.25rem !default;
+
+                code {
+                    border-radius: $border-radius;
+                    background-color: $black;
+                }
+
+
+            Arquivo: style.scss
+
+                @use '_biblioteca.scss' with(
+                    $black: #222,
+                    $border-radius: 0.1rem
+                )
+            
+
+            Arquivo Final: style.css
+
+                code {
+                    border-radius: 0.1rem;
+                    background-color: rgb(34, 34, 34);
+                }
+
+    Perceba que:
+
+        •	Primeiro foi criada a biblioteca com o arquivo “biblioteca.scss” (Detalhe importante! Por convenção, quando 
+        criamos um arquivo biblioteca ele vem com um underline na frente, assim: “_biblioteca.scss”). Perceba que nesse 
+        arquivo temos 2 variáveis !default;
+
+        •	Depois, quando o arquivo é carregado no arquivo Sass do nosso documento usamos a regra “@use” não apenas para 
+        chamar o arquivo, mas também para converter os valores padrão para o valor que desejarmos, fazemos isso com a 
+        ajuda da função “with()”;
+
+        •	Por fim, nosso arquivo Sass gerará um arquivo CSS com os valores padrão já corrigidos;
+
+
+-->
+
+    <header>
+        <div class="logo">Hcode Café</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About us</a>
+            <a href="#">Contact</a>
+            <a href="#" class="button">Login</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Hello <span>hcoders</span>
+        <small>welcome</small></h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore excepturi fugit expedita accusantium 
+            reprehenderit dignissimos officiis culpa quod et, sint modi impedit nesciunt quis praesentium dolor. Doloribus 
+            cupiditate nisi maiores?
+        </p>
+
+        <a href="https://www.youtube.com/watch?v=ZrJv9M_ZRGE" class="button">Veja o Hcode Café</a>
+    </main>
+
+    <footer>
+        by hcode.com.br
+    </footer>
+
+
+</body>
+</html>

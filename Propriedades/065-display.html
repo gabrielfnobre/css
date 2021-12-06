@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>display</title>
+<style>
+
+* {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 2vh;
+    }
+
+    body {
+        margin: 0;
+        padding: 8px;
+        height: 100vh;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    /*Linhas com 5 Displays*/
+    .container {
+        width: 100%;
+        height: 24vh;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /*Displays*/
+    .container > div {
+        width: 100%;
+        height: 100%;
+        margin: 4px;
+        padding: 2px;
+        border: 1px solid;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        color: white;
+    }
+
+    /*Container interno do display*/
+    .wrap > div {
+        height: 50%;
+        width: 100%;
+        padding: 5px;
+    }
+
+    .block > div {
+        display: block;
+        width: 33%;
+        height: 33%;
+    }
+    
+    .initial > div {
+        display: initial;
+        width: 33%;
+        height: 33%;
+    }
+
+    .contents > div {
+        display: contents;
+        width: 33%;
+        height: 33%;
+    }
+
+    .flex {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .flex > div {
+        width: 33%;
+        height: 33%;
+    }
+
+    .inline > p {
+        display: inline;
+    }
+    
+    .inline-block > div, p {
+        display: inline-block;
+        width: 30%; /*Perceba que estamos criando um redimensionamento até para os textos...*/
+        height: 30%;
+    }
+    
+    .inline-flex {
+        display: inline-flex;
+    }
+    .inline-flex > div {
+        color: black;
+        width: 100%;
+        height: 30%;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
+    }
+    .grid > div {
+        border: 1px black solid;
+        color: black;
+    }
+    
+    .inline-grid {
+        display: inline-grid;
+        grid-template-columns: repeat(2, 50%);
+    }
+    .inline-grid > div {
+        border: 1px black solid;
+        color: black;
+    }
+
+    .list-item > p {
+        display: list-item;
+        margin-left: 20%;
+        list-style: decimal;
+    }
+
+    .table {
+        display: table;
+        background-color: white;
+        border: 1px solid red;
+    }
+
+    .caption {
+        display: table-caption;
+        background-color: white;
+        border: 1px solid red;
+        color: black;
+    }
+    
+    .caption-caption {
+        display: table-caption;
+        background-color: red;
+        border: 1px solid black;
+        color: white;
+    }
+
+    .header-group {
+        display: table-header-group;
+        border: 1px solid black;
+        color: white;
+    }
+
+    .row {
+        display: table-row;
+        color: black
+    }
+    
+    .caption-caption > .row {
+        display: table-row;
+    }
+
+    .cell {
+        display: table-cell;
+        border: 1px solid black;
+        color: black
+    }
+
+    .cell-cell {
+        display: table-cell;
+        border: 1px solid black;
+        color: red
+    }
+
+    .row-group {
+        display: table-row-group;
+        background-color: white;
+        border: 1px solid black;
+        color: black
+    }
+
+    .footer-group {
+        display: table-footer-group;
+        background-color: white;
+        border: 1px solid black;
+        color: black
+    }
+
+    .cell-column {
+        display: table-footer-group;
+        background-color: red;
+        border: 1px solid black;
+        color: white;
+    }
+
+    .footer-footer {
+        display: table-footer-group;
+        background-color: red;
+        border: 1px solid black;
+        color: white;
+    }
+
+    .header-header {
+        display: table-footer-group;
+        background-color: red;
+        border: 1px solid black;
+        color: white;
+    }
+
+    .cell-row {
+        display: table-cell;
+        border: 1px solid red;
+    }
+
+    .table-row {
+        display: table;
+        background-color: white;
+        border: 1px solid black;
+        color: black;
+    }
+
+    .caption-row {
+        display: table-caption;
+        background-color: white;
+        border: 1px solid black;
+        color: black;
+    }
+
+    .inline-table {
+        display: inline-table;
+    }
+    
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: display (Exibição)
+
+
+    Objetivo: Essa propriedade define qual é o comportamento de exibição dos elementos dentro de uma determinada caixa pai.
+
+    
+    - Valores Aceitáveis:
+
+        - block:                Cada elemento ocupa toda a largura do elemento pai, e são montados em pilha;
+        
+        - contents:             Apaga toda a formatação CSS sobre o elemento atribuído e apresenta somente o conteúdo no
+                                formato inline, esse display serve em especial para mecanismos de busca, onde somente o texto
+                                é o que interessa;
+        
+        - flex:                 Torna o nosso display flexível as direções de um flex-direction, onde podemos escolher posições
+                                em linhas ou colunas para direcionar nossos elementos, sejam da esquerda para a direita ou da 
+                                direita para a esquerda;
+        
+        - grid:                 Usando um esquema de colunas e linhas, o grip pode dividir o número de elementos dentro de 
+                                um container para que sejam apresentados em linhas e columas segundo os valores e funções que
+                                nós passarmos sobre o grid; 
+        
+        - inherit:              ;
+        
+        - initial:              ;
+        
+        - inline:               Cada elemento ocupa somente a sua largura e altura em linha (SÓ DEVE SER USADO EM TEXTO!!!);
+        
+        - inline-block:         Serve para qualquer elemento de bloco, sejam div ou texto, permite que os elementos seja 
+                                posicionados em linha, e além disso permite o redimensionamento dos elementos em linha;
+        
+        - inline-flex           Se o nosso elemento tiver elementos containers dentro dele, ele torna os nossos elementos 
+                                container flexíveis e os enfilera em linha, e além disso, torna os flex-items dentro dos 
+                                container flexíveis e enfilerados em linha também;
+        
+        - inline-grid           Faz com que 2 ou mais grids dentro de um elemento wrap consiga fazer com que as grids sejam 
+                                renderizadas em linha, desde que haja largura o suficiente para renderizá-las;
+        
+        - inline-table:         ;
+        
+        - list-item:            Transforma qualquer elemento textual em itens de uma lista;
+        
+        - none:                 ;   
+        
+        - run-in:               Imita o display de suas tags irmãs. (NÃO FUNCIONA MAIS a não ser no IE11 e Opera Mini);
+        
+        - table:                ;
+        
+        - table-caption:        ;
+        
+        - table-cell:           ;
+        
+        - table-column:         ;
+        
+        - table-column-group:   ;
+        
+        - table-footer-group:   ;
+        
+        - table-header-group:   ;      
+        
+        - table-row:            ;
+
+    - Valor Padrão: Depende do elemento;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: DIFERENÇA ENTRE O INLINE E O INLINE-BLOCK: O inline é para ser usado única e exclusivamente com texto, pois o inline
+            não possibilita fazer mudanças de dimensionamento. Já o inline-block sim, ele permite q;
+
+
+-->
+
+    <div class="container">
+
+        <div class="wrap">
+            display: block<br>
+            <span style="font-weight: normal;">Cada elemento ocupa um espaço inteiro de um bloco...</span>
+            <div class="block">
+                <div style="background-color: red;"></div>
+                <div style="background-color: greenyellow;"></div>
+                <div style="background-color: skyblue;"></div>
+            </div>
+        </div>
+
+        <div class="wrap">
+            display: contents<br>
+            <span style="font-weight: normal;">Perceba que o contents prioriza o conteúdo do elemento ao invés da formatação, 
+                ele desliga a formatação e apresenta só o conteúdo em linha, veja que as divs nas cores foram apagadas...</span>
+            <div class="contents">
+                <div style="background-color: red;">vermelho</div>
+                <div style="background-color: greenyellow;">verde</div>
+                <div style="background-color: skyblue;">azul</div>
+            </div>
+        </div>
+        
+        <div class="wrap">
+            display: flex<br>
+            <span style="font-weight: normal;">Criamos um display flexível, onde podemos escolher a direção em que nossos 
+            elementos serão montados, se será em coluna, linha, invertido, por exemplo, nas divs abaixo determinados um 
+            "row-reverse"</span>
+            <div class="flex">
+                <div style="background-color: red;"></div>
+                <div style="background-color: greenyellow;"></div>
+                <div style="background-color: skyblue;"></div>
+            </div>
+        </div>
+
+        <div class="wrap">
+            display: grid<br>
+            <span style="font-weight: normal;">Usando grid divimos 9 divs por 3 e pedimos para elas serem renderizadas em 
+            formato de coluna, e esse foi o resultado.</span>
+            <div class="grid">
+                <div style="background-color: red;">7</div>
+                <div style="background-color: greenyellow;">8</div>
+                <div style="background-color: skyblue;">9</div>
+                <div style="background-color: red;">4</div>
+                <div style="background-color: greenyellow;">5</div>
+                <div style="background-color: skyblue;">6</div>
+                <div style="background-color: red;">1</div>
+                <div style="background-color: greenyellow;">2</div>
+                <div style="background-color: skyblue;">3</div>
+            </div>
+        </div>
+
+        <div class="wrap">
+            display: initial<br>
+            <span style="font-weight: normal;">Imita o valor padrão do display, que no caso é sempre não existe...</span>
+            <div class="initial">
+                <div style="background-color: red;"></div>
+                <div style="background-color: greenyellow;"></div>
+                <div style="background-color: skyblue;"></div>
+            </div>
+        </div>
+
+        <div class="wrap">
+            display: contents<br>
+            <span style="font-weight: normal;">Perceba que o contents prioriza o conteúdo do elemento ao invés da formatação, 
+                ele desliga a formatação e apresenta só o conteúdo em linha, veja que as divs nas cores foram apagadas...</span>
+            <div class="contents">
+                <div style="background-color: red;">vermelho</div>
+                <div style="background-color: greenyellow;">verde</div>
+                <div style="background-color: skyblue;">azul</div>
+            </div>
+        </div>
+        
+
+    </div>
+
+    <div class="container">
+        <div class="wrap">
+            display: inline<br>
+            <span style="font-weight: normal;">Só deve ser usado somente em textos!! Serve para ele ocupar apenas o seu 
+                espaço em linha...</span>
+            <div class="inline">
+                <p style="color: red;">Vermelho</p>
+                <p style="color: greenyellow;">Verde</p>
+                <p style="color: skyblue;">Azul</p>
+            </div>
+        </div>
+        
+        <div class="wrap">
+            display: inline-block<br>
+            <span style="font-weight: normal;">Pode ser usado em qualquer elemento de bloco para deixá-los em linha, e també
+            para redimensionar tamanhos...</span>
+            <div class="inline-block">
+                <div style="background-color: red;"></div>
+                <div style="background-color: greenyellow;"></div>
+                <div style="background-color: skyblue;"></div>
+                <p style="color: red;">Vermelho</p>
+                <p style="color: greenyellow;">Verde</p>
+                <p style="color: skyblue;">Azul</p>
+            </div>
+        </div>
+
+        <div class="wrap">
+            display: inline-flex<br>
+            <span style="font-weight: normal;">Perceba que o inline-flex, torna os containers dentro do nosso elemento 
+                flexíveis e enfileira eles, e faz o mesmo com o flex-items dentro deles...</span>
+            <div class="inline-flex">
+                <div style="background-color: red;">
+                    <p>1</p>
+                    <p>2</p>
+                </div>
+                <div style="background-color: greenyellow;">
+                    <p>1</p>
+                    <p>2</p>
+                </div>
+                <div style="background-color: skyblue;">
+                    <p>1</p>
+                    <p>2</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrap">
+            display: inline-grid<br>
+            <span style="font-weight: normal;">Embora as grids estivessem em bloco, com o inline-grid elas foram renderizadas 
+                em linha.</span>
+            <div class="inline-grid">
+            <div class="grid">
+                <div style="background-color: red;">7</div>
+                <div style="background-color: greenyellow;">8</div>
+                <div style="background-color: skyblue;">9</div>
+                <div style="background-color: red;">4</div>
+                <div style="background-color: greenyellow;">5</div>
+                <div style="background-color: skyblue;">6</div>
+                <div style="background-color: red;">1</div>
+                <div style="background-color: greenyellow;">2</div>
+                <div style="background-color: skyblue;">3</div>
+            </div>
+            <div class="grid">
+                <div style="background-color: red;">7</div>
+                <div style="background-color: greenyellow;">8</div>
+                <div style="background-color: skyblue;">9</div>
+                <div style="background-color: red;">4</div>
+                <div style="background-color: greenyellow;">5</div>
+                <div style="background-color: skyblue;">6</div>
+                <div style="background-color: red;">1</div>
+                <div style="background-color: greenyellow;">2</div>
+                <div style="background-color: skyblue;">3</div>
+            </div>
+            </div>
+        </div>
+    
+
+        <div class="wrap">
+            display: inline-table<br>
+            <span style="font-weight: normal;">Deixa 2 tables na mesma linha...</span>
+
+            <div class="inline-table">
+
+            <div class="table">
+                
+                <div class="row-group">
+                    <div class="row">
+                        <div class="cell">Banana</div>
+                        <div class="cell">5,50</div>
+                    </div>
+                    <div class="row">
+                        <div class="cell">Maçã</div>
+                        <div class="cell">5,00</div>
+                    </div>
+                </div>
+
+                <div class="footer-group">
+                    <div class="row">
+                        <div class="cell">Totais</div>
+                        <div class="cell">10,50</div>
+                    </div>
+                </div>
+            
+            </div>
+        
+
+            <div class="table">
+                
+                <div class="row-group">
+                    <div class="row">
+                        <div class="cell">Banana</div>
+                        <div class="cell">5,50</div>
+                    </div>
+                    <div class="row">
+                        <div class="cell">Maçã</div>
+                        <div class="cell">5,00</div>
+                    </div>
+                </div>
+
+                <div class="footer-group">
+                    <div class="row">
+                        <div class="cell">Totais</div>
+                        <div class="cell">10,50</div>
+                    </div>
+                </div>
+            
+            </div>
+            </div>
+        
+        </div>
+        
+    </div>
+
+    </div>
+
+    <div class="container">
+        
+        <div class="wrap">
+            display: list-item<br>
+            <span style="font-weight: normal;">Transforma qualquer elemento textual em itens de uma lista...</span>
+            <div class="list-item">
+                <p style="color: red;">Vermelho</p>
+                <p style="color: greenyellow;">Verde</p>
+                <p style="color: skyblue;">Azul</p>
+            </div>
+        </div>
+        <div class="wrap">
+            display: run-in<br>
+            <span style="font-weight: normal;">Não funciona mais, mas basicamente o que ele fazia é imitar o mesmo valor de 
+                display que as tags irmãs de um elemento estava usando, ele usava também. Porém ele não pega mais na maioria 
+                os navegadores, pega somente no Internet Explorer 11 e Opera Mini...</span>
+        </div>
+
+        <div class="wrap">
+            display: table<br>
+            <span style="font-weight: normal;">Transforma qualquer elemento de bloco em uma tag table...</span>
+
+            <div class="table">
+                
+                <div class="caption">Frutas</div>
+                
+                <div class="header-group">
+                    <div class="row">
+                        <div class="cell">Fruta</div>
+                        <div class="cell">Preço</div>
+                        <div class="cell">Quantidade</div>
+                    </div>
+                </div>
+
+                <div class="row-group">
+                    <div class="row">
+                        <div class="cell">Banana</div>
+                        <div class="cell">5,50</div>
+                        <div class="cell">450</div>
+                    </div>
+                    <div class="row">
+                        <div class="cell">Maçã</div>
+                        <div class="cell">5,00</div>
+                        <div class="cell">240</div>
+                    </div>
+                </div>
+
+                <div class="footer-group">
+                    <div class="row">
+                        <div class="cell">Totais</div>
+                        <div class="cell">10,50</div>
+                        <div class="cell">660</div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+
+        <div class="wrap">
+            display: table-caption<br>
+            <span style="font-weight: normal;">Transforma elementos de bloco numa tag caption de tabela...</span>
+
+            <div class="table">
+                
+                <div class="caption-caption">Frutas</div>
+                
+                <div class="header-group">
+                    <div class="row">
+                        <div class="cell">Fruta</div>
+                        <div class="cell">Preço</div>
+                        <div class="cell">Quantidade</div>
+                    </div>
+                </div>
+
+                <div class="row-group">
+                    <div class="row">
+                        <div class="cell">Banana</div>
+                        <div class="cell">5,50</div>
+                        <div class="cell">450</div>
+                    </div>
+                    <div class="row">
+                        <div class="cell">Maçã</div>
+                        <div class="cell">5,00</div>
+                        <div class="cell">240</div>
+                    </div>
+                </div>
+
+                <div class="footer-group">
+                    <div class="row">
+                        <div class="cell">Totais</div>
+                        <div class="cell">10,50</div>
+                        <div class="cell">660</div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+
+        <div class="wrap">
+            display: table-cell<br>
+            <span style="font-weight: normal;">Transforma qualquer elemento de bloco em uma tag td...</span>
+
+            <div class="table">
+                
+                <div class="caption">Frutas</div>
+                
+                <div class="header-group">
+                    <div class="row">
+                        <div class="cell-cell">Fruta</div>
+                        <div class="cell-cell">Preço</div>
+                        <div class="cell-cell">Quantidade</div>
+                    </div>
+                </div>
+
+                <div class="row-group">
+                    <div class="row">
+                        <div class="cell-cell">Banana</div>
+                        <div class="cell-cell">5,50</div>
+                        <div class="cell-cell">450</div>
+                    </div>
+                    <div class="row">
+                        <div class="cell-cell">Maçã</div>
+                        <div class="cell-cell">5,00</div>
+                        <div class="cell-cell">240</div>
+                    </div>
+                </div>
+
+                <div class="footer-group">
+                    <div class="row">
+                        <div class="cell-cell">Totais</div>
+                        <div class="cell-cell">10,50</div>
+                        <div class="cell-cell">660</div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <div class="wrap">
+            display: table-column<br>
+            <span style="font-weight: normal;">Transforma qualquer elemento de bloco em uma tag table...</span>
+
+            <div class="table">
+                
+                <div class="caption">Frutas</div>
+                
+                <div class="header-group">
+                    <div class="row">
+                        <div class="cell-column">Fruta</div>
+                        <div class="cell">Preço</div>
+                        <div class="cell">Quantidade</div>
+                    </div>
+                </div>
+
+                <div class="row-group">
+                    <div class="row">
+                        <div class="cell-column">Banana</div>
+                        <div class="cell">5,50</div>
+                        <div class="cell">450</div>
+                    </div>
+                    <div class="row">
+                        <div class="cell-column">Maçã</div>
+                        <div class="cell">5,00</div>
+                        <div class="cell">240</div>
+                    </div>
+                </div>
+
+                <div class="footer-group">
+                    <div class="row">
+                        <div class="cell-column">Totais</div>
+                        <div class="cell">10,50</div>
+                        <div class="cell">660</div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+
+        <div class="table-column-group">display: table-column-group</div>
+        
+        <div class="wrap">
+            display: table-footer-group<br>
+            <span style="font-weight: normal;">Transforma qualquer elemento de bloco em uma tag footer...</span>
+
+            <div class="table">
+                
+                <div class="caption">Frutas</div>
+                
+                <div class="header-group">
+                    <div class="row">
+                        <div class="cell">Fruta</div>
+                        <div class="cell">Preço</div>
+                        <div class="cell">Quantidade</div>
+                    </div>
+                </div>
+
+                <div class="row-group">
+                    <div class="row">
+                        <div class="cell">Banana</div>
+                        <div class="cell">5,50</div>
+                        <div class="cell">450</div>
+                    </div>
+                    <div class="row">
+                        <div class="cell">Maçã</div>
+                        <div class="cell">5,00</div>
+                        <div class="cell">240</div>
+                    </div>
+                </div>
+
+                <div class="footer-footer">
+                    <div class="row">
+                        <div class="cell">Totais</div>
+                        <div class="cell">10,50</div>
+                        <div class="cell">660</div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+
+        <div class="wrap">
+            display: table-header-group<br>
+            <span style="font-weight: normal;">Transforma qualquer elemento de bloco em uma tag table...</span>
+
+            <div class="table">
+                
+                <div class="caption">Frutas</div>
+                
+                <div class="header-header">
+                    <div class="row">
+                        <div class="cell">Fruta</div>
+                        <div class="cell">Preço</div>
+                        <div class="cell">Quantidade</div>
+                    </div>
+                </div>
+
+                <div class="row-group">
+                    <div class="row">
+                        <div class="cell">Banana</div>
+                        <div class="cell">5,50</div>
+                        <div class="cell">450</div>
+                    </div>
+                    <div class="row">
+                        <div class="cell">Maçã</div>
+                        <div class="cell">5,00</div>
+                        <div class="cell">240</div>
+                    </div>
+                </div>
+
+                <div class="footer-group">
+                    <div class="row">
+                        <div class="cell">Totais</div>
+                        <div class="cell">10,50</div>
+                        <div class="cell">660</div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+
+        <div class="wrap">
+            display: table-row<br>
+            <span style="font-weight: normal;">Transforma qualquer elemento de bloco em uma tag table...</span>
+
+            <div class="table-row">
+                
+                <div class="caption-row">Frutas</div>
+                
+                <div class="header-group">
+                    <div class="row">
+                        <div class="cell-row">Fruta</div>
+                        <div class="cell-row">Preço</div>
+                        <div class="cell-row">Quantidade</div>
+                    </div>
+                </div>
+
+                <div class="row-group">
+                    <div class="row">
+                        <div class="cell-row">Banana</div>
+                        <div class="cell-row">5,50</div>
+                        <div class="cell-row">450</div>
+                    </div>
+                    <div class="row">
+                        <div class="cell-row">Maçã</div>
+                        <div class="cell-row">5,00</div>
+                        <div class="cell-row">240</div>
+                    </div>
+                </div>
+
+                <div class="footer-group">
+                    <div class="row">
+                        <div class="cell-row">Totais</div>
+                        <div class="cell-row">10,50</div>
+                        <div class="cell-row">660</div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+    
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>flex-direction</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 2vw;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .container {
+        width: 25%;
+        height: 50vh;
+    }
+
+    #row {
+        width: 90%;
+        height: 50vh;
+        box-shadow: 10px 10px 10px rgba(0,0,0,.2);
+        display: flex;
+        flex-direction: row;
+    }
+
+    #row-reverse {
+        width: 90%;
+        height: 50vh;
+        box-shadow: 10px 10px 10px rgba(0,0,0,.2);
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    #column {
+        width: 90%;
+        height: 50vh;
+        box-shadow: 10px 10px 10px rgba(0,0,0,.2);
+        display: flex;
+        flex-direction: column;
+    }
+
+    #column-reverse {
+        width: 90%;
+        height: 50vh;
+        box-shadow: 10px 10px 10px rgba(0,0,0,.2);
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .div1 {
+        background-color: aqua;
+        padding: 35px;
+        width: 30%;
+        height: 30%;
+        font-size: x-large;
+        text-align: center;
+    }
+    
+    .div2 {
+        background-color: violet;
+        padding: 35px;
+        width: 30%;
+        height: 30%;
+        font-size: x-large;
+        text-align: center;
+    }
+
+    
+    
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: flex-direction (Direção do Flex)
+
+
+    Objetivo: Essa propriedade define a direção dos flex-items de um "display: flex", ela permite alinhar itens, 
+                deixá-los em coluna e inverter a direção deles da forma que nós quisermos. 
+                
+                Essa propriedade sempre é usada sobre um elemento container que contém flex-items dentro dele.
+
+
+    - Valores Aceitáveis:
+
+        - row:              Flex-items em linha da esquerda para a direita;
+        - row-reverse:      Flex-items em linha da direita para a esquerda;
+        - column:           Flex-items em coluna de cima para baixo;
+        - column-reverse:   Flex-items em coluna de baixo para cima;
+        - unset:            Para desligar a propriedade;
+        - initial:          Volta ao valor inicial;
+        - inherit:          Para herdar o valor do elemento pai;
+
+    - Valor Padrão: row;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: A propriedade flex-direction só funciona em elementos containers, NÃO PODEMOS UTILIZÁ-LA em flex-items.
+
+-->
+
+    <div class="container">
+    flex-direction: row
+    <div id="row">
+        <div class="div1">A</div>
+        <div class="div2">B</div>
+        <p>Esquerda para a Direita&rArr;</p>
+    </div>
+    </div>
+
+    <div class="container">
+    flex-direction: row-reverse
+    <div id="row-reverse">
+        <div class="div1">A</div>
+        <div class="div2">B</div>
+        <p style="text-align: right;">Direita para a Esquerda&lArr;</p>
+    </div>
+    </div>
+
+    <div class="container">
+    flex-direction: column
+    <div id="column">
+        <div class="div1">A</div>
+        <div class="div2">B</div>
+        <p style="text-align: start;">De Cima para Baixo&dArr;</p>
+    </div>
+    </div>
+
+    <div class="container">
+    flex-direction: column-reverse
+    <div id="column-reverse">
+        <div class="div1">A</div>
+        <div class="div2">B</div>
+        <p>De Baixo para Cima&uArr;</p>
+    </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>flex-flow</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+
+    body {
+        margin: 0;
+        padding: 2vw;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .container {
+        width: 25%;
+        height: 50vh;
+        margin: 10px;
+    }
+
+    #row {
+        width: 70%;
+        height: 50vh;
+        box-shadow: 10px 10px 10px rgba(0,0,0,.2);
+        display: flex;
+        flex-flow: row;
+    }
+
+    #row-reverse {
+        width: 70%;
+        height: 50vh;
+        box-shadow: 10px 10px 10px rgba(0,0,0,.2);
+        display: flex;
+        flex-flow: row-reverse wrap;
+    }
+
+    #column {
+        width: 70%;
+        height: 50vh;
+        box-shadow: 10px 10px 10px rgba(0,0,0,.2);
+        display: flex;
+        flex-flow: column wrap-reverse;
+    }
+
+    #column-reverse {
+        width: 70%;
+        height: 50vh;
+        box-shadow: 10px 10px 10px rgba(0,0,0,.2);
+        display: flex;
+        flex-flow: column-reverse nowrap;
+    }
+
+    .div1 {
+        background-color: aqua;
+        padding: 35px;
+        width: 30%;
+        height: 30%;
+        font-size: x-large;
+        text-align: center;
+    }
+    
+    .div2 {
+        background-color: violet;
+        padding: 35px;
+        width: 30%;
+        height: 30%;
+        font-size: x-large;
+        text-align: center;
+    }
+
+    .div3 {
+        background-color: rosybrown;
+        padding: 35px;
+        width: 30%;
+        height: 30%;
+        font-size: x-large;
+        text-align: center;
+    }
+    
+    .div4 {
+        background-color: antiquewhite;
+        padding: 35px;
+        width: 30%;
+        height: 30%;
+        font-size: x-large;
+        text-align: center;
+    }
+    
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: flex-flow (Fluxo do Flex)
+
+
+    Objetivo: Essa propriedade é uma abreviação das propriedades:
+                - flex-direction;
+                - flex-wrap;
+
+                Ela serve exatamente para definir tanto o fluxo flex-box do nosso elemento, quanto o wrap que o nosso
+                container terá;
+                
+                Essa propriedade sempre é usada sobre um elemento container que contém flex-items dentro dele.
+
+                
+
+
+    - Valores Aceitáveis:
+
+        - flex-direction:   Pode receber todos os valores do flex-direction;
+        - flex-wrap:        Pode receber todos os valores do flex-wrap;
+        - unset:            Para desligar a propriedade;
+        - initial:          Volta ao valor inicial;
+        - inherit:          Para herdar o valor do elemento pai;
+
+    - Valor Padrão: row nowrap;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: A propriedade flex-flow só funciona em elementos containers, NÃO PODEMOS UTILIZÁ-LA em flex-items.
+
+-->
+
+    <div class="container">
+    <span style="font-weight: bold;">com flex-flow: row</span><br>(para visualizar melhor diminua a área visível da 
+    tela)
+    <div id="row">
+        <div class="div1"><span style="font-weight: bold;">A</span></div>
+        <div class="div2"><span style="font-weight: bold;">B</span></div>
+        <div class="div3"><span style="font-weight: bold;">C</span></div>
+        <p>Esquerda para a Direita&rArr;</p>
+    </div>
+    </div>
+
+    <div class="container">
+    <span style="font-weight: bold;">com flew-flow: row-reverse wrap</span><br>(Como estamos usando um "wrap" normal 
+    num reverse ele vai quebrar no mesmo sentido do reverse)
+    <div id="row-reverse">
+        <div class="div1"><span style="font-weight: bold;">A</span></div>
+        <div class="div2"><span style="font-weight: bold;">B</span></div>
+        <div class="div3"><span style="font-weight: bold;">C</span></div>
+        <div class="div4"><span style="font-weight: bold;">D</span></div>
+        <p style="text-align: right;">Direita para a Esquerda&lArr;</p>
+    </div>
+    </div>
+
+    <div class="container">
+    <span style="font-weight: bold;">com flex-flow: column wrap-reverse</span><br>(Como estamos usando um "wrap-reverse" 
+    num column normal veja que ele muda a direção de quebra do wrap column para começar á partir da esquerda)
+    <div id="column">
+        <div class="div1"><span style="font-weight: bold;">A</div>
+        <div class="div2"><span style="font-weight: bold;">B</span></div>
+        <div class="div3"><span style="font-weight: bold;">C</span></div>
+        <div class="div4"><span style="font-weight: bold;">D</span></div>
+        <p style="text-align: start;">De Cima para Baixo&dArr;</p>
+    </div>
+    </div>
+
+    <div class="container">
+    <div id="column-reverse">
+        <div class="div1"><span style="font-weight: bold;">A</span></div>
+        <div class="div2"><span style="font-weight: bold;">B</span></div>
+        <div class="div3"><span style="font-weight: bold;">C</span></div>
+        <div class="div4"><span style="font-weight: bold;">D</span></div>
+        <p>De Baixo para Cima&uArr;</p>
+    </div>
+    <span style="font-weight: bold;">com flex-flow: column-reverse nowrap</span><br>(Perceba que ele volta ao valor 
+    padrão)
+    </div>
+
+</body>
+</html>

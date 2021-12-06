@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>max-width</title>
+<style>
+    
+    .container {
+        width: 100%;
+        height: 20vh;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    }
+    /*Perceba a diferença entre a div "container" que pega 100% da nossa tela e a div "item", que deveria herdar a 
+    largura do pai, mas por ter uma delimitação max-width, só pegará 700px*/
+
+    .item {
+        max-width: 700px;
+        height: 10vh;
+        background-color: greenyellow;
+    }
+    /*Desligue o max-width e você verá que ele deveria pegar 100% igual ao seu elemento pai, mas isso não acontece.*/
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: max-width (largura-máxima)
+
+
+    Objetivo: definir uma largura máxima a qual um elemento pode chegar, depois de definida, o elemento não poderá ter uma 
+                largura maior do que a largura defida no max-width. Agora, se o elemento tiver um conteúdo menor do 
+                que a largura máxima, a propriedade max-width é ignorada.
+
+                O max-width é melhor aplicado quando mexemos com unidades relativas, onde a largura da nossa tela vai 
+                variar dependendo do dispositivo que a pessoa use.
+
+
+    - Valores Aceitáveis:
+
+        - none: Nenhum valor;
+        - length: Qualquer valor absoluto ou relativo;
+        - max-content: vai definir um tamanho máximo de acordo com o conteúdo do elemento, se o elemento tiver vários 
+                        elementos como conteúdo, o max-content vai fazer o máximo para que todos os elementos sejam 
+                        renderizados dentro do elementoj, mesmo que para isso seja necessário esticar o elemento segundo o 
+                        comportamento da sua propriedade;
+        - min-content: vai definir um tamanho mínimo para o elemento de acordo com o maior conteúdo que estiver dentro do 
+                        elemento em que a propriedade foi declarada. Ou seja, ele vai fazer o máximo para que nenhum 
+                        conteúdo seja cortado ao transbordar o tamanho do elemento;
+        - fit-content: vai definir o tamanho de acordo com o conteúdo do elemento, igual ao max-content, se o 
+                        elemento tiver vários elementos como conteúdo, o fit-content vai fazer o máximo para todos os 
+                        elementos sejam renderizados dentro do espaço do elemento. Sua diferença é que se a quantidade
+                        de conteúdo ultrapassar o tamanho do elemento, o fit-content vai fazer com que todo o conteúdo 
+                        seja renderizado dentro do tamanho máximo da área visivel do documento, até mesmo gerando overflow
+                        se for o caso. Já o max-content não faz isso, o max-content vai esticar o próprio elemento só para
+                        caber todo o conteúdo dentro do espaço do elemento, nem que para isso ele tenha que gerar um scroll;
+        - unset: Para desligar essa propriedade;
+        - initial: Volta ao valor inicial;
+        - inherit: Para herdar o valor do elemento pai;
+
+    - Valor Padrão: auto;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: o max-width estabele um padrão para a LARGURA MÁXIMA! Se o nosso width estiver com uma largura menor do que o 
+            max-width, é lógico que o width será obedecido, mas se a largura do width for maior que a largura do
+            max-width, oque será obedecido será o max-width; 
+
+-->
+
+    <div class="container">
+
+        <div class="item"></div>
+
+    </div>
+
+</body>
+</html>

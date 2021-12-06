@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>border-collapse</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 5vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70vh;
+        text-align: center;
+        flex-direction: column; /*Para determinar que as colunas se alinhem verticalmente*/
+    }
+
+    #tabela1 {
+        border: solid 1px rgb(152,152,152);
+        width: 70vw;
+        border-collapse: collapse; /*Essa tabela ilustra uma tabela usando valor "collapse"*/
+    }
+    
+    #tabela2 {
+        border: solid 1px rgb(152,152,152);
+        width: 70vw;
+        border-collapse: separate; /*Essa tabela ilustra uma tabela usando valor "separate"*/
+    }
+
+    th {
+        border: 1px solid black;
+        background-color: cornflowerblue;
+        color: white;
+    }
+
+    td {
+        border: solid 1px rgb(152,152,152);
+        padding: 5px;
+    }
+
+    .first {
+        border-top-color: black; /*Essa formatação é só para pôr uma cor na borda de cima da primeira linha da célula*/
+    }
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: border-collapse (Borda Collapsa (ou Reduzida))
+
+
+    Objetivo: é uma propriedade que define como deve ser o espaçamento entre as bordas de um elemento. Por padrão, as
+                bordas são todas "separate", ou seja, já são separadas por natureza, mas com essa propriedade
+                conseguimos colar uma borda na outra se nós quisermos.
+
+                Essa propriedade é mais utilizada em tabelas, quando desejamos que as células ficam coladas uma na outra, 
+                e não haja nenhum espaçamento entre elas.
+
+                DETALHE IMPORTANTE!!! Sempre vamos usar essa propriedade sobre um wrap pai, como uma tabela no caso, 
+                onde iríamos colocar o border-collapse sobre a tag table, pois todos os outros elementos deverão ser 
+                abraçados pela largura do elemento pai, que irá forçar o border collapse sobre os elementos filhos. Se 
+                fizermos o contrário essa propriedade é nulificada.
+
+
+    - Valores Aceitáveis:
+
+        - collapse: para tornar as bordas unidas;
+        - separate: para criar uma separação entre as bordas;
+        - unset:    para desligar essa propriedade;
+        - initial:  Volta ao valor inicial;
+        - inherit:  Para herdar o valor do elemento pai;
+
+    - Valor Padrão: separate;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: Quando usamos o valor "separate" podemos definir um espaçamento de borda entre os nossos elementos, para 
+            definir esse espaçamento temos que usar a propriedade "border-spacing";
+
+-->
+
+    <table id="tabela1">
+        <caption>Tabela com "border-collapse: collapse"</caption>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Cor</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="first">Banana</td>
+                <td>5,15</td>
+                <td>Amarelo</td>
+                <td>305</td>
+            </tr>
+            <tr>
+                <td>Maçã</td>
+                <td>4,50</td>
+                <td>Vermelho</td>
+                <td>574</td>
+            </tr>
+            <tr>
+                <td>Laranja</td>
+                <td>6,80</td>
+                <td>Laranja</td>
+                <td>450</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <table id="tabela2">
+        <caption>Tabela com "border-collapse: separate"</caption>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Cor</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="first">Banana</td>
+                <td>5,15</td>
+                <td>Amarelo</td>
+                <td>305</td>
+            </tr>
+            <tr>
+                <td>Maçã</td>
+                <td>4,50</td>
+                <td>Vermelho</td>
+                <td>574</td>
+            </tr>
+            <tr>
+                <td>Laranja</td>
+                <td>6,80</td>
+                <td>Laranja</td>
+                <td>450</td>
+            </tr>
+        </tbody>
+    </table>
+    
+
+</body>
+</html>

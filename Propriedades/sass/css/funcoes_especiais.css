@@ -1,0 +1,22 @@
+@font-face { /*Perceba que a regra está presente tanto no Sass quando no CSS*/
+  font-family: "OpenSans Regular";
+  src: url(../fonts/Open_Sans/OpenSans-Regular.ttf); /*Veja como fica a concatenação feita com template string*/
+  font-weight: 400;
+}
+@font-face {
+  font-family: "OpenSans Light";
+  src: url("../fonts/Open_Sans/OpenSans-Light.ttf"); /*Veja como fica a concatenação feita de forma natural por 
+                                                        meio de função especial*/
+  font-weight: 300;
+}
+#p1 {
+  font-family: "OpenSans Regular";
+  font-size: 80px;
+}
+
+#p2 {
+  font-family: "OpenSans Light";
+  font-size: 80px;
+}
+
+/*# sourceMappingURL=funcoes_especiais.css.map */

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>outline-style</title>
+<style>
+
+* {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    div {
+        border-width: 3px;
+        border-style: dashed;
+        border-color: orangered; /*Colocamos uma borda tracejada de cor laranja dentro de todas as divs para ver que o
+                                    outline fica mesmo por fora das bordas do elemento.*/
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        border-style: unset;
+    }
+
+    .bloco {
+        outline-style: hidden; /*Perceba que a nossa outline foi escondida, mas só aparece quando passamos o mouse, além
+                                disso por não termos definido uma cor para a fonte, ela pega automáticamente a cor preto*/
+        outline-width: 10px;
+        font-size: 2vh;
+        margin: 2vw;
+    }
+
+    .bloco:hover {
+        outline-style: solid; /*Para que a nossa outline hidden apareça quando passarmos o mouse por cima*/
+    }
+
+    .bloco1 {
+        outline-style: dotted; /*Perceba que temos uma outline pontilhada somente encima do elemento*/
+        outline-width: 10px;
+        color: violet;
+        font-size: 2vh;
+        margin: 2vw;
+    }
+
+    .bloco2 {
+        outline-style: dashed; /*Perceba que temos uma outline tracejada somente encima do elemento*/
+        outline-width: 10px;
+        color: goldenrod;
+        font-size: 2vh;
+        margin: 2vw;
+    }
+
+    .bloco3 {
+        outline-style: solid; /*Perceba que temos uma outline sólida somente encima do elemento*/
+        outline-width: 10px;
+        color: red;
+        font-size: 2vh;
+        margin: 2vw;
+    }
+
+    .bloco4 {
+        outline-style: double; /*Perceba que temos uma outline duplicada somente encima do elemento*/
+        outline-width: 10px;
+        color: blue;
+        font-size: 2vh;
+        margin: 2vw;
+    }
+    
+    .bloco5 {
+        outline-style: groove; /*Perceba que temos uma outline entalhada somente encima do elemento*/
+        outline-width: 10px;
+        color: rgb(0, 162, 255);
+        font-size: 2vh;
+        margin: 2vw;
+    }
+
+    .bloco6 {
+        outline-style: ridge; /*Perceba que temos uma outline destacada somente encima do elemento*/
+        outline-width: 10px;
+        color: rgb(248, 213, 12);
+        font-size: 2vh;
+        margin: 2vw;
+    }
+
+    .bloco7 {
+        outline-style: inset; /*Perceba que temos uma outline escurecida somente encima do elemento*/
+        outline-width: 10px;
+        color: springgreen;
+        font-size: 2vh;
+        margin: 2vw;
+    }
+
+    .bloco8 {
+        outline-style: outset; /*Perceba que temos uma outline clareada somente encima do elemento*/
+        outline-width: 10px;
+        color: blueviolet;
+        font-size: 2vh;
+        margin: 2vw;
+    }
+    
+    .bloco9 {
+        outline-style: auto; /*Perceba que temos uma outline com o valor automático, isso significa que ela vai pegar o 
+                                estilo sólido, imitando a largura do texto definido como conteúdo para o elemento.*/
+        outline-width: 10px;
+        color: rgb(211, 43, 226);
+        font-size: 2vh;
+        margin: 2vw;
+    }
+    
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: outline-style (Estilo no Contorno)
+
+
+    Objetivo: Essa propriedade é usada para definir um estilo para a linha de contorno de um elemento. O que seria a linha de
+                contorno? A linha de contorno não faz parte do box-model de um elemento, o outline pode muito bem ser 
+                confundido com a borda de um elemento, mas ele não faz parte da borda, na verdade ele é uma linha que está
+                por cima da borda, e por padrão o seu estilo é "none" ou seja, invisível, por isso poucas pessoas utilizam o 
+                outline.
+
+                Por estar por cima da borda, qualquer alteração feita sobre sobre o "box-sizing" de um elemento não vai afetar
+                o nosso "outline".
+
+                DETALHE IMPORTANTE!!! A margem fica por cima do outline;
+
+    
+    - Valores Aceitáveis:
+
+        - auto:     Terá como valor o automáticamente a largura do texto definido;
+        - dashed:   Tracejado;
+        - dotted:   Pontilhado;
+        - double:   Linha Dupla;
+        - groove:   Linha com sombra superior (groove significa "sulco") como se a borda tivesse sido entralhada;
+        - ridge:    Linha com sombra inferior (ridge significa "pico") como se a borda estivesse em alto relevo;
+        - hidden:   Oculto (escondido);
+        - inset:    A cor do contorno fica com uma sombra superior, como se a luz viesse debaixo (Visível só com os 4 lados);
+        - outset:   A cor do contorno fica com uma sombra inferior, como se a luz viesse de cima (Visível só com os 4 lados);
+        - revert:   É o valor "initial" mas só para o navegador Safari;
+        - solid:    Linha Sólida;
+        - none:     Nenhum estilo;
+        - unset:    Para desligar a propriedade;
+        - initial:  Volta ao valor inicial;
+        - inherit:  Para herdar o valor do elemento pai;
+
+    - Valor Padrão: none;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: A outline imita a cor padrão definida para a fonte do elemento;
+
+        Além disso, ela nunca aparece, mas se definirmos um outline-style, ela aparecerá automáticamente;
+
+
+-->
+    <p>Colocamos uma borda tracejada de cor laranja dentro de todas as divs para ver que o
+        outline fica mesmo por fora das bordas do elemento.</p>
+    
+    <div class="container">
+        <div class="bloco">outline com hidden</div>
+        <div class="bloco1">outline com dotted</div>
+        <div class="bloco2">outline com dashed</div>
+        <div class="bloco3">outline com solid</div>
+        <div class="bloco4">outline com double</div>
+        <div class="bloco5">outline com groove</div>
+        <div class="bloco6">outline com ridge</div>
+        <div class="bloco7">outline com inset</div>
+        <div class="bloco8">outline com outset</div>
+        <div class="bloco9">outline com auto</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>background-repeat</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 1vw;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .container {
+        width: 100%;
+        height: 70%;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .bloco {
+        width: 25%;
+        height: 100%;
+        padding: 2px;
+        margin: 4px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, .2);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .bloco > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 80%;
+        background-image: url("car.jpg");
+        background-size: 50%;
+    }
+
+    #repeat {
+        background-repeat: repeat; /*Perceba que só o primeiro ícone da imagem é exibido*/
+    }
+
+    #repeat-x {
+        background-repeat: repeat-x;  /*Perceba que o centro da imagem é pego e ela fixa a imagem á direita*/
+    }
+
+    #repeat-y {
+        background-repeat: repeat-y;  /*Perceba que só o último ícone é exibido*/
+    }
+
+    #no-repeat {
+        background-repeat: no-repeat;  /*Perceba que o centro da imagem é pego e ela fixa a imagem á esquerda*/
+    }
+
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: background-repeat (Repetição do Fundo)
+
+
+    Objetivo: Essa propriedade define se uma imagem de fundo deve repetir para cobrir o fundo de um elemento container. 
+                Por através dessa propriedade nós conseguimos definir se a imagem se repeta sobre os eixos "x" e "y", que
+                deva se repetir somente no eixo "x" ou no eixo "y", ou então que ela não deva se repetir de jeito nenhum.
+
+
+    - Valores Aceitáveis:
+
+        - repeat:       Define que a imagem deve repetir sobre os eixos "x" e "y";
+
+        - repeat-x:     Define que a imagem deve repetir somente no eixo "x";
+
+        - repeat-y:     Define que a imagem deve repetir somente no eixo "y";
+
+        - no-repeat:    Define que a imagem não deve se repetir;
+        
+        - unset:        Para desligar a propriedade;
+        
+        - initial:      Volta ao valor inicial;
+        
+        - inherit:      Para herdar o valor do elemento pai;
+
+    - Valor Padrão: repeat;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: ;
+
+-->
+
+    <div class="container">
+
+        <div class="bloco">
+            background-repeat: repeat<br>
+            <scan style="font-weight: normal;">Perceba que a imagem se repete tanto sobre o eixo "x" quanto sobre o eixo
+            "y"...</scan>
+            <div id="repeat">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-repeat: repeat-x<br>
+            <scan style="font-weight: normal;">Perceba que a imagem se repete somente sobre o eixo "x"...</scan>
+            <div id="repeat-x">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-repeat: repeat-y<br>
+            <scan style="font-weight: normal;">Perceba que a imagem se repete somente sobre o eixo "y"...</scan>
+            <div id="repeat-y">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-repeat: no-repeat<br>
+            <scan style="font-weight: normal;">Perceba que a imagem não se repete...</scan>
+            <div id="no-repeat">
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

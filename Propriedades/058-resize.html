@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>resize</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .content {
+        width: 50vw;
+    }
+
+    p {
+        overflow: auto;
+        padding-bottom: 20px;
+    }
+
+    p:nth-child(1) {
+        resize: both;
+        color: red;
+    }
+
+    p:nth-child(2) {
+        resize: horizontal;
+        color: orange;
+    }
+
+    p:nth-child(3) {
+        resize: vertical;
+        color: gold;
+    }
+
+    p:nth-child(4) {
+        resize: block;
+        color: green;
+    }
+
+    p:nth-child(5) {
+        resize: inline;
+        color: skyblue;
+    }
+
+    textarea {
+        width: 50vw;
+        resize: none;
+    }
+    
+    
+    
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: resize (Redimensionar)
+
+
+    Objetivo: Essa propriedade define COMO e SE um usuário poderá redimensionar o tamanho de um elemento HTML que possua essa
+                propriedade habilitada para isso, como um text area por exemplo, onde o usuário poderia aumentar o campo de
+                visão de uma área que ele deseje escrever.
+
+                DETALHE IMPORTANTE!! Se um elemento que por natureza não tiver redimensionamento automático, não tiver uma 
+                propriedade overflow definida sobre ele, o redimensionamento não irá funcionar. Mesmo que tenha overflow, ela
+                não poderá ter os valores "visible" e "none" atribuídos sobre ela, caso contrário, o resize não funcionará.
+
+
+    - Valores Aceitáveis:
+
+        - none:         Sem valor nenhum;
+        - both:         "Ambos", permite que o resize aconteça em ambos os eixos do elemento;
+        - horizontal:   Permite que o resize aconteça somente na horizontal;
+        - vertical:     Permite que o resize aconteça somente na vertical;
+        - block:        Permite que o resize redimensione somente em block (verticalmente), e não inline (horizontalmente);
+        - inline:       Permite que o resize redimensione somente inline (horizontalmente), e não em block (verticalmente);
+        - unset:        Para desligar a propriedade;
+        - initial:      Volta ao valor inicial;
+        - inherit:      Para herdar o valor do elemento pai;
+
+    - Valor Padrão: none;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: Até a data de hoje (10/07/2021) os demais navegadores ainda não colocaram os valores "block" e "inline" para 
+            funcionar, com excessão do Mozila FireFox;
+
+
+-->
+    
+    <div class="content">
+        <p>Por padrão um parágrafo vem com o resize "none", mas a este parágrafo nós atribuímos o valor both, veja que ele 
+            pode ser redimensionado de ambos os lados.</p>
+        <p>Já este parágrafo, foi redimensionado com o valor "horizontal", ou seja, só poderá ser redimensionado na 
+            horizontal.</p>
+        <p>Quanto a este parágrafo, foi redimensionado para o valor "vertical", portanto só poderá ser redimensionado para 
+            a vertical.</p>
+        <p>Para o FireFox!!! Esse parágrafo foi redimensionado com o valor "block", portanto só poderia se redimensionar 
+            dentro do valor do seu bloco, nunca na horizonta! Por enquanto isso só funciona no FireFox!</p>
+        <p>Para o FireFox!!! Esse parágrafo foi redimensionado com o valor "inline", portanto só poderia se redimensionar 
+            em linha, nunca na vertical! Por enquanto isso só funciona no FireFox!</p>
+    </div>
+
+    <form>
+
+        <textarea placeholder="Este é um textarea, por padrão ele já vinha com o resize both, mas nós o desligamos"></textarea>
+
+    </form>
+
+</body>
+</html>

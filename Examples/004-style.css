@@ -1,0 +1,49 @@
+/*Posicionamento de Botão*/
+/**/
+
+body {
+    background-color: #17181c;
+    color: #fff;
+    font-family: sans-serif;
+    margin: 0; /*Tiramos as margens para que todos os elementos fiquem encostados*/
+    height: 200vh; /*Dobramos o tamanho do body para que ele ocupe o dobro do tamanho da janela do navegador*/
+    background: url(004-boku.png); /*Imagem para perceber que a página está andando*/
+}
+
+/* Só descomente aqui para ver os valores: absolute e sticky; */
+/* #posicao {
+    position: relative;
+    width: 500px;
+    height: 200px;
+    background-color: #fff;
+    left: 100px;
+    top: 100px;
+} */
+
+.pulse {
+    background: none;
+    color: #ff760c;
+    border: 2px solid;
+    margin: 0; /*Tiramos as margens do nosso botão também para que ele fique completamente encostado para facilitar a visualização das posições*/
+    padding: 15px 40px;
+    transition: 0.25s;
+    top: 100px; 
+    left: 300px; Ex:1 - veja que não teve efeito nenhum, por que, por padrão o elemento é static e não sofre alterações por top, bottom, right ou left;
+    /* position: relative; Ex:2 - Veja que quando colocamos ele retative, ele vai poder deslocar, mas como o próprio nome do atributo diz, só "relativamente" ao elemento pai onde ele está, no caso do botão aqui, ele está deslocando relativamente em relação a body; */
+    /* position: fixed; Ex:3 - Veja que o botão ficou fixo em relação a janela, assim como o relative, os elementos que tiverem position fixed são afetados pelo top, bottom, left e right; */
+    /* position: absolute; Ex:4 - Descomente a formatação do id "posicao"! Percebemos agora que, o botão amarrado a uma div ancestral, vai obedecer o marco 0 da parte superior do elemento ancestral, ficando fixo somente em relação ao ancestral e não em relação aos elementos anteriores ou a página. */
+    /* position: sticky; Ex:5 - Descomente a formatação do id "posicao"! Perceba que o botão fica fixo dentro da sua div, mas a medida que vamos rolando a página ele fica parado na div enquanto a página vai rolando até a div desaparecer. */
+}
+
+.pulse:hover, .pulse:focus {
+    color: #fff;
+    border-color: #ef8f6e;
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+    animation: pulsar 1s;
+}
+
+@keyframes pulsar {
+    0% {
+        box-shadow: 0 0 0 0 #ef8e6e;
+    }
+}

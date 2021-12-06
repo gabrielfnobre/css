@@ -1,0 +1,10 @@
+$raio: 8px;
+
+@mixin arredondado($raio: 10px) { //Perceba que mudamos o valor da variável $raio localmente...
+    @debug "O valor de raio é: " + $raio; //E geramos um debug para ver se a mudança de valor realmente deu certo...
+    border-radius: $raio;
+}
+
+@mixin circulo {
+    border-radius: 50%;
+}

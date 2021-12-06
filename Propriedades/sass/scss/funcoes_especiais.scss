@@ -1,0 +1,28 @@
+$font: "../fonts/Open_Sans/"; //Usamos uma variável apenas para indicar o caminho
+
+//A regra @font-face é uma função especial do Sass que pode ser ramificada para o CSS final
+@font-face {
+    font-family: "OpenSans Regular"; //Nome dado a essa fonte
+    src: url(#{$font}OpenSans-Regular.ttf); /*Perceba que contatemos o caminho contido na variável $font, junto com o 
+                                                nome do arquivo em questão, mas para isso usamos um template string*/
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "OpenSans Light"; //Nome dado a essa fonte
+    src: url($font + "OpenSans-Light.ttf"); /*Perceba que aqui também fizemos uma contatenação, porém, note que o nome
+                                                do arquivo em questão está entre áspas, e mesmo assim, ao juntar o
+                                                caminho da variável que também está entre áspas, com o nome do arquivo,
+                                                a função conseguiu fazer a concatenação correta do caminho.*/
+    font-weight: 300;
+}
+
+#p1 {
+    font-family: "OpenSans Regular";
+    font-size: 80px;
+}
+
+#p2 {
+    font-family: "OpenSans Light";
+    font-size: 80px;
+}

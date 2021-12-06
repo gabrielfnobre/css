@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>overflow-wrap</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin:0;
+        height: 100%;
+        padding: 20vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    div {
+        width: min-content; /*Aqui definimos que a div poderá conter o menor tamanho possível de acordo com o elemento*/
+        max-width: 150px; /*E que poderá ter no máximo 150px de largura*/
+    }
+
+    span {
+        color: red;
+    }
+    
+    #m {
+        font-size: 70pt;
+        color: red;
+    }
+
+    #normal {
+        overflow-wrap: normal; /*Perceba que para o border wrap normal ele só quebra a linha quando encontra espaçamentos*/
+        border: 2px solid;
+    }
+    
+    #br {
+        overflow-wrap: break-word; /*Para o breakword ele só quebra a linha quando chega no limite da largura do elemento*/
+        border: 2px solid;
+    }
+    
+    #anywhere {
+        overflow-wrap: anywhere; /*Já o anywhere trabalha em conjunto com o valor "min-content", o caractere que tiver o maior 
+                                tamanho possível será aquela que vai determinar a largura que o wrap vai pegar.*/
+        border: 2px solid;
+    }
+    
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: overflow-wrap (Transbordar e Enrolar)
+
+
+    Objetivo: Essa propriedade sempre deve ser usada para conteúdo textual. Ela define uma quebra de linha toda vez que um 
+                conteúdo transborda um elemento, fazendo com que o elemento não ultrapasse o tamanho do seu elemento.
+
+
+    - Valores Aceitáveis:
+
+        - normal:       Quando a palavra é quebrada somente durante os espaçamentos;
+        - break-word:   Quando a palavra é dividida ao alcançar o tamanho máximo de um elemento; 
+        - anywhere:     Quando a palavra é dividida ao alcançar o tamanho do maior caractere dentro do elemento;
+        - unset:        Para desligar a propriedade;
+        - initial:      Volta ao valor inicial;
+        - inherit:      Para herdar o valor do elemento pai;
+
+    - Valor Padrão: normal;
+
+    - Possuí valor herdado? - SIM;
+
+    OBS: O valor anywhere deve trabalhar em conjunto com a propriedade "width" com o valor "min-content", onde a largura do
+            elemento vai ser atribuída em relação ao maior conteúdo dentro de um elemento, que no caso de um texto seria o 
+            maior caractere de todos. E o trabalho do valor "anywhere" é dividir todas as palavras para que caibam dentro do 
+            espaço mínimo pré-determinado pela propriedade "width" com o valor "min-content";
+
+-->
+    
+    <div>normal...<br><br>
+    <div id="normal">Lorem ipsum dolor sit amet <span>consecteturconsecteturconsectetur</span> adipisicing elit. Cum modi 
+        accusamus iure velit tempora mollitia atque corporis fugit, ab quod veritatis pariatur odio quos laboriosam. Vitae 
+        quia molestias eum velit!</div>
+    </div>
+
+    <div>break-word...<br><br>
+    <div id="br">Lorem ipsum dolor sit amet <span>consecteturconsecteturconsectetur</span> adipisicing elit. Cum modi 
+        accusamus iure velit tempora mollitia atque corporis fugit, ab quod veritatis pariatur odio quos laboriosam. Vitae 
+        quia molestias eum velit!</div>
+    </div>
+
+    <div>anywhere...<br><br>
+    <div id="anywhere">Lorem ipsum dolor sit amet consecteturconsecteturconsectetur adipisicing elit. Cum modi 
+        accusamus iure velit te<span id="m">m</span>pora mollitia atque corporis fugit, ab quod veritatis pariatur odio quos laboriosam. Vitae 
+        quia molestias eum velit!</div>
+    </div>
+
+</body>
+</html>

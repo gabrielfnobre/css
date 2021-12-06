@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>outline-color</title>
+<style>
+
+* {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    div {
+        border-width: 3px;
+        border-style: dashed;
+        border-color: orangered;
+        padding: 2px;
+        color: black;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        border-style: unset;
+    }
+
+    .bloco {
+        outline-style: hidden;
+        outline-width: 10px;
+        outline-color: red;
+        font-size: 2vh;
+        margin: 2vw;
+    }
+
+    .bloco:hover {
+        outline-style: solid;
+    }
+
+    .bloco1 {
+        outline-style: dotted;
+        outline-width: 10px;
+        outline-color: orangered;
+        font-size: 2vh;
+        margin: 2vw;
+    }
+
+    .bloco2 {
+        outline-style: dashed;
+        outline-width: 10px;
+        outline-color: yellow;
+        font-size: 2vh;
+        margin: 2vw;
+    }
+
+    .bloco3 {
+        outline-style: solid;
+        outline-width: 10px;
+        outline-color: greenyellow;
+        font-size: 2vh;
+        margin: 2vw;
+    }
+
+    .bloco4 {
+        outline-style: double;
+        outline-width: 10px;
+        outline-color: skyblue;
+        font-size: 2vh;
+        margin: 2vw;
+    }
+    
+    .bloco5 {
+        outline-style: groove;
+        outline-width: 10px;
+        outline-color: blue;
+        font-size: 2vh;
+        margin: 2vw;
+    }
+
+    .bloco6 {
+        outline-style: ridge;
+        outline-width: 10px;
+        outline-color: blueviolet;
+        font-size: 2vh;
+        margin: 2vw;
+    }
+
+    .bloco7 {
+        outline-style: inset;
+        outline-width: 10px;
+        outline-color: inherit;
+        font-size: 2vh;
+        margin: 2vw;
+    }
+
+    .bloco8 {
+        outline-style: outset;
+        outline-width: 10px;
+        outline-color: invert;
+        font-size: 2vh;
+        margin: 2vw;
+    }
+    
+    .bloco9 {
+        outline-style: auto;
+        outline-width: 10px;
+        outline-color: wheat;
+        font-size: 2vh;
+        margin: 2vw;
+    }
+    
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: outline-color (Cor do Contorno)
+
+
+    Objetivo: Essa propriedade é usada para definir uma cor para a linha de contorno de um elemento. O que seria a linha de
+                contorno? A linha de contorno não faz parte do box-model de um elemento, o outline pode muito bem ser 
+                confundido com a borda de um elemento, mas ele não faz parte da borda, na verdade ele é uma linha que está
+                por cima da borda, e por padrão o seu estilo é "none" ou seja, invisível, por isso poucas pessoas utilizam o 
+                outline.
+
+                Por estar por cima da borda, qualquer alteração feita sobre sobre o "box-sizing" de um elemento não vai afetar
+                o nosso "outline".
+
+                DETALHE IMPORTANTE!!! A margem fica por cima do outline;
+
+    
+    - Valores Aceitáveis:
+
+        - invert:   Ele inverte a cor padrão do texto, seja lá qual for a cor, ele vai invertê-la (Funciona só no Explorer 8);
+        - color:    Qualquer cor definida;
+        - initial:  Volta ao valor inicial;
+        - inherit:  Para herdar o valor do elemento pai;
+
+    - Valor Padrão: invert(só no Explorer 8) / currentColor (cor definida para o texto);
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: A outline imita a cor padrão definida para a fonte do elemento;
+
+        Além disso, ela nunca aparece, mas se definirmos um outline-style, ela aparecerá automáticamente;
+
+
+-->
+    <p>Colocamos uma borda tracejada de cor laranja dentro de todas as divs para ver que o
+        outline fica mesmo por fora das bordas do elemento.</p>
+
+    <p>Porém, veja agora que usando outline-color podemos definir uma cor para os nossos outlines que não seja a cor do 
+        texto.
+    </p>
+    
+    <div class="container">
+        <div class="bloco">outline com cor vermelha</div>
+        <div class="bloco1">outline com cor laranja</div>
+        <div class="bloco2">outline com cor amarelo</div>
+        <div class="bloco3">outline com cor verde</div>
+        <div class="bloco4">outline com cor azul céu</div>
+        <div class="bloco5">outline com cor azul anil</div>
+        <div class="bloco6">outline com cor violeta</div>
+        <div class="bloco7">outline com cor inherit, perceba que herda a cor do texto</div>
+        <div class="bloco8">outline com cor invert, como só funciona no Explorer 8, ele muda para imitar a cor do texto</div>
+        <div class="bloco9">outline com cor de Pele</div>
+    </div>
+
+</body>
+</html>

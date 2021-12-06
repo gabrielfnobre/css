@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>min-width</title>
+<style>
+    .container {
+        width: 50%;
+        height: 20vh;
+        background-color: #dcdde1;
+    }
+    /*Perceba que a div "container" tem o dobro da altura da div "item", enquanto container não tem uma largura 
+    mínima, item tem, por isso, se diminuirmos a largura da tela no navegador, perceba que o container em cinza sempre
+    vai ter o 50% do viewport, enquando a div item terá no mínimo 500px*/
+
+    .item {
+        min-width: 500px;
+        height: 10vh;
+        background-color: greenyellow;
+    }
+    /*Diminua a largura da tela no navegador e veja que a div "item" vai manter a largura de 500px independente da tela
+    diminuir ou não*/
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: min-width (largura-mínima)
+
+
+    Objetivo: definir uma largura mínima que um elemento pode ter, depois de definida, o elemento não poderá ter uma 
+                largura menor do que a largura defida no min-width. Agora, se o elemento tiver um conteúdo maior do 
+                que a largura mínima, a propriedade min-width é ignorada.
+
+                O min-width é melhor aplicado quando mexemos com unidades relativas, onde a largura da nossa tela vai 
+                variar dependendo do dispositivo que a pessoa use.
+
+
+    - Valores Aceitáveis:
+
+        - none: Nenhum valor;
+        - length: Qualquer valor absoluto ou relativo;
+        - max-content: vai definir a largura de acordo com o conteúdo do elemento, se o elemento tiver vários elementos 
+                        como conteúdo, o max-content vai fazer o máximo para todos os elementos sejam renderizados dentro
+                        do mesmo espaço de largura, ou seja, o elemento vai esticar de acordo com o conteúdo;
+        - min-content: vai definir a largura de acordo com o maior elemento que estiver como conteúdo de um elemento onde a
+                        propriedade min-width foi declarada. Ou seja, ele vai fazer o máximo para não cortar um elemento 
+                        ao meio se ele transbordar a largura de um elemento;
+        - fit-content: vai definir a largura de acordo com o conteúdo do elemento, igual ao max-content, se o 
+                        elemento tiver vários elementos como conteúdo, o fit-content vai fazer o máximo para todos os 
+                        elementos sejam renderizados dentro do mesmo espaço de largura. Sua diferença é que se a quantidade
+                        de conteúdo ultrapassar a largura, o fit content vai fazer com que todo o conteúdo seja repassado
+                        para a largura, até mesmo gerando overflow. Já o max-content vai aumentar o largura do elemento para
+                        caber todo o conteúdo, mesmo se ele tiver que usar scroll para isso;
+        - unset: Para desligar essa propriedade;
+        - initial: Volta ao valor inicial;
+        - inherit: Para herdar o valor do elemento pai;
+
+    - Valor Padrão: auto;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: o min-width estabele um padrão para a LARGURA MÍNIMA! Se o nosso width estiver com uma largura maior do que o 
+            min-width, é lógico que o width será obedecido, mas se a largura do width for menor que a largura do
+            min-width, oque será obedecido será o min-width;
+
+        - Caso estejamos usando a tela de um celular, que tiver uma largura menor que o nosso min-width, ele não vai gerar 
+            um scroll sobre o elemento com min-width, o scroll precisará ser colocado por nós. 
+
+-->
+
+    <div class="container">
+
+        <div class="item">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, sequi nulla repellat incidunt et dolore 
+            quidem consectetur, soluta exercitationem ducimus, sunt dicta asperiores. Dolores obcaecati corrupti 
+            distinctio nam quisquam quam!
+        </div>
+
+    </div>
+
+</body>
+</html>

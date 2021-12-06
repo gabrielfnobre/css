@@ -1,0 +1,27 @@
+/* Exemplo de combinação por descendência */
+/* Ex-1 - veja que os 2 inputs dentro de form vão receber a mesma formatação quando escrevemos dentro deles e nas suas bordas. Nem o input senha, nem telefone, nem confirme senha que são irmãs da tag form, vão receber essa formatação.*/
+/* form input {
+    color : blue;
+    border: 1px solid #f00;
+} */
+
+
+/*Ex-2 - Combinador de Filho Direto. Perceba que só o input diretamente filho de form é quem recebe a formatação nesse caso, que será o input nome. todas as outras não receberão nada*/
+/* form > input {
+    color : blue;
+    border: 1px solid #f00;
+} */
+
+
+/*Ex-3 - Combinador de tags irmã adjacente. Perceba que somente o input senha que é irmão adjascente de form é quem recebe a formatação nesse caso. As tags "telefone" e "confirme senha" não vão receber a mesma formatação, por que "telefone" é uma tag irmã mais velha e "confirme senha" é uma tag irmã caçula que não e a adjacente direta da tag "form".*/
+/* form + input {
+    color : blue;
+    border: 1px solid #f00;
+} */
+
+
+/*Ex-4 - Combinador de irmão geral. Perceba que somente os inputs "senha" e "confirme senha" que são as tags irmãs que vieram depois da tag "form" é quem receberão formatação. A tag "telefone", apesar de ser irmã, é uma tag que vêm antes de form, o que faz com que ela não receba a formatação.*/
+/* form ~ input {
+    color : blue;
+    border: 1px solid #f00;
+} */

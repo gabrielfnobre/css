@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="sass/css/for.css" />
+<title>Regra @for</title>
+</head>
+<body>
+
+<!--            
+    
+           Regras de Estilo @for
+
+        O que faz a Regra de Estilo @for?
+
+A regra de estilo @for gera um laço de repetição por através de uma variável contadora finita. Note que, diferente do 
+laço @each, onde uma expressão é aplicada para cada valor dentro de uma list ou map, no laço @for é nós que 
+determinamos quando um laço deve começar e terminar, ou seja, quantas vezes desejamos que um laço aconteça.
+
+Para isso temos uma variável contadora que podemos definir dentro do laço e depois podemos usar as palavras 
+reservadas: “from”, “through” e “to” para definir de que número até qual número o laço deve se repetir, dessa forma:
+
+        @for $variable from 1 to 4 {expression.... }
+
+No exemplo acima, logo após a declaração da regra @for, nós declaramos a variável contadora, depois usamos a palavra 
+reservada “from” o contador inicial, que no caso é “1”, depois usamos a palavra reservada “to” para dizer que o laço 
+deve se repetir até chegar no “4”, e logo após, entre chaves temos a expressão que vai se repetir 3 vezes.
+
+
+        Detalhe importante!!!
+
+Existe uma grande diferença entre usar “to” e “through”, quando usamos “to” estamos dizendo que a contagem vai 
+acontecer até que chegue no número final, mas o número final não será contado! Mas quando usamos “through” estamos 
+dizendo que a contagem vai acontecer até o número final, e que esse número também vai entrar na contagem do laço.
+Por isso a expressão acima acontece só 3 vezes, por que ela está usando “to”, se ela usasse “through” ela iria 
+acontecer 4 vezes.
+
+
+    OBS: Para mais detalhes veja "Fundamentos do Sass nº22";
+
+-->
+
+    <ul>
+        <li>Lorem</li>
+        <li>Lorem</li>
+    </ul>
+    <ul>
+        <li>Lorem</li>
+        <li>Lorem</li>
+    </ul>
+    <ul>
+        <li>Lorem</li>
+        <li>Lorem</li>
+    </ul>
+    <ul>
+        <li>Lorem</li>
+        <li>Lorem</li>
+    </ul>
+    <ul>
+        <li>Lorem</li>
+        <li>Lorem</li>
+    </ul>
+    <ul>
+        <li>Lorem</li>
+        <li>Lorem</li>
+    </ul>
+    <ul>
+        <li>Lorem</li>
+        <li>Lorem</li>
+    </ul>
+    <ul>
+        <li>Lorem</li>
+        <li>Lorem</li>
+    </ul>
+    <ul>
+        <li>Lorem</li>
+        <li>Lorem</li>
+    </ul>
+    <ul>
+        <li>Lorem</li>
+        <li>Lorem</li>
+    </ul>
+
+</body>
+</html>

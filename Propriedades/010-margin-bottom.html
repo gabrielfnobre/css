@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>margin-bottom</title>
+<style>
+    
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+    /*Perceba que formatamos a nossa body para não ter nenhuma margin, com um display flex, alinhando os elementos para
+    baixo e espaçando eles de uma forma que possamos ver bem as margens formatadas somente na parte debaixo dos elementos
+    */
+
+    .bloco {
+        width: 20vw;
+        height: 50vh;
+        margin-bottom: 10%;
+        background-color: skyblue;
+    }
+    /*Perceba que há uma margem embaixo de 10%, em ambos os elementos*/
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: margin-bottom (margem de baixo)
+
+
+    Objetivo: é uma propriedade que define um valor para a margem de baixo do nosso elemento. Lembrando que, quando falamos
+                de margem, estamos nos referindo ao espaçamento que existe fora da borda dos nossos elementos.
+
+
+    - Valores Aceitáveis:
+
+        - length: Qualquer valor absoluto ou relativo;
+        - auto: Deixamos a propriedade com um valor automático, isso significa que a menos que o elemento tenha algum 
+                conteúdo que gere um espaçamento automático sobre ele, ele vai ficar zerado;
+        - initial: Volta ao valor inicial;
+        - inherit: Para herdar o valor do elemento pai;
+
+    - Valor Padrão: 0;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS:  
+
+-->
+
+    <div class="bloco"></div>
+    <div class="bloco"></div>
+
+</body>
+</html>

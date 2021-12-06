@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>border-image-outset</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 5vw;
+        display: flex;
+        justify-content: space-between; /*Com o valor center os nossos elementos por padrão pegam o centro da tela*/
+        align-items: center; /*Aqui fazemos com que */
+        height: 100vh;
+        text-align: center;
+    }
+
+    #div1 {
+        width: 15vw;
+        height: 15vw;
+        padding-top: 7%;
+        background-color: gold;
+        border: 1px solid gold;
+        border-image-source: url("border-image-source.png");
+        border-image-width: 50;
+        border-image-slice: 100;
+        border-image-outset: 50px; /*Podemos usar pixels... Perceba que a distância é percorrida do centro do elemento
+                                        até a borda a imagem*/
+        border-image-repeat: round;
+    }
+
+    #div2 {
+        width: 15vw;
+        height: 15vw;
+        padding-top: 7%;
+        background-color: gold;
+        border: 1px solid gold;
+        border-image-source: url("border-image-source.png");
+        border-image-width: 50%;
+        border-image-slice: 100%;
+        border-image-outset: 50; /*Podemos usar number (vai imitar os pixels)... Perceba que a distância é percorrida 
+                                        do centro do elemento até a borda a imagem*/
+        border-image-repeat: round;
+    }
+
+    #div3 {
+        width: 15vw;
+        height: 15vw;        
+        padding-top: 7%;
+        background-color: gold;
+        border: 1px solid gold;
+        border-image-source: url("border-image-source.png");
+        border-image-width: auto; 
+        border-image-slice: 40% 67%;
+        border-image-outset: 15vw; /*Podemos usar vw... Perceba que a distância é percorrida do centro do elemento
+                                        até a borda a imagem*/
+        border-image-repeat: round;
+    }
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: border-image-outset (Começo da Imagem da Borda)
+
+
+    Objetivo: é uma propriedade que define uma distância entre a imagem de borda e o centro do conteúdo do nosso elemento. 
+                Sem o border-image-outset a nossa imagem de borda seria atribuída no meio do conteúdo, com essa propriedade
+                conseguimos atribuir um distânciamento entre as imagens de borda e o conteúdo.
+
+
+    - Valores Aceitáveis:
+
+        - length:   Qualquer valor relativo ou absoluto;
+        - initial:  Volta ao valor inicial;
+        - inherit:  Para herdar o valor do elemento pai;
+
+    - Valor Padrão: 0;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: ;
+
+-->
+
+    <div id="div1">outset com 50px</div>
+    <div id="div2">outset com 50</div>
+    <div id="div3">outset com 15vw</div>
+
+</body>
+</html>

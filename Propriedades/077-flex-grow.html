@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>flex-grow</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 1vw;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .container {
+        width: 100%;
+        height: 100%;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .bloco {
+        width: 33%;
+        height: 100%;
+        padding: 2px;
+        margin: 4px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, .2);
+        text-align: center;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+    }
+
+    .bloco > div {
+        background-color: lightpink;
+    }
+
+    .div1 {
+        background-color: aqua;
+        font-size: x-large;
+        text-align: center;
+    }
+    
+    .div2 {
+        background-color: violet;
+        font-size: x-large;
+        text-align: center;
+    }
+
+    .div3 {
+        background-color: rgb(248, 203, 121);
+        font-size: x-large;
+        text-align: center;
+    }
+    
+    .div4 {
+        background-color: turquoise;
+        font-size: x-large;
+        text-align: center;
+    }
+
+    #n0 {
+        display: flex;
+        height: 80%;
+        justify-content: center;
+        align-items: center;
+    }
+    #n0 > .div1 {
+        flex-grow: 0;
+    }
+    #n0 > .div2 {
+        flex-grow: 1;
+    }
+    #n0 > .div3 {
+        flex-grow: 2;
+    }
+    #n0 > .div4 {
+        flex-grow: 3;
+    }
+
+    #n1 {
+        display: flex;
+        flex-direction: column;
+        height: 80%;
+        justify-content: center;
+        align-items: center;
+    }
+    #n1 > .div1 {
+        flex-grow: 0;
+    }
+    #n1 > .div2 {
+        flex-grow: 2;
+    }
+    #n1 > .div3 {
+        flex-grow: 1;
+    }
+    #n1 > .div4 {
+        flex-grow: 3;
+    }
+
+    #n2 {
+        display: flex;
+        height: 80%;
+        justify-content: center;
+        align-items: center;
+    }
+    #n2 > .div1 {
+        flex-grow: 3;
+    }
+    #n2 > .div2 {
+        flex-grow: 2;
+    }
+    #n2 > .div3 {
+        flex-grow: 1;
+    }
+    #n2 > .div4 {
+        flex-grow: 0;
+    }
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: flex-grow (Crescimento do Flex)
+
+
+    Objetivo: Essa propriedade define um crescimento para um flex-item em relação á outros flex-items irmãos dele que 
+                estejam no mesmo container, esse crescimento será afetado pelo responsivo de uma página uma vez que a 
+                página estiver sendo visualizada por dispositivos de tamanho diferentes.
+
+                Esse crescimento sempre será em relação ao eixo principal de um container, isso significa que, se o 
+                container for "flex-direction: row" o crecimento vai acontecer na largura, se for "flex-direction: column"
+                vai afetar a altura.
+
+                DETALHE IMPORTANTE!!! Sempre deve ser usada em flex-items, nunca em display grids, e muito menos nos 
+                containers. Além disso, os flex-items que tiverem largura - ou altura - pré-definidos no seu eixo
+                principal serão afetados de acordo com a altura e largura pré-definidos.  
+                
+
+
+    - Valores Aceitáveis:
+
+        
+        - number:   Um número índice, onde o número de maior valor terá um tamanho proporcionalmente maior aos índices de 
+                    menor tamanho, o índice começa no "0" e pode ir até onde quisermos;
+        
+        - unset:    Para desligar a propriedade;
+        
+        - initial:  Volta ao valor inicial;
+        
+        - inherit:  Para herdar o valor do elemento pai;
+
+    - Valor Padrão: 0;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: O índice de valor "0" vai ocupar o tamanho padrão do flex-item, que é "auto";
+
+-->
+
+    <div class="container">
+
+        <div class="bloco">
+            flex-grow: itens numerados de 0 á 3
+            <span style="font-weight: normal;font-size: 10pt;">Perceba que os flex-items com números maiores vão ter 
+                tamanho maior sobre os flex-items de número menor. Além disso, o crescimento acontece na direção do 
+                flex-direction aplicado... 
+            </span>
+            <div id="n0">
+                <div class="div1">0</div>
+                <div class="div2">1</div>
+                <div class="div3">2</div>
+                <div class="div4">3</div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: Valores aplicados somente em um flex-direction: row;
+            </span>
+        </div>
+
+        <div class="bloco">
+            flex-grow: 2 primeiros 0 e 2 / 2 últimos 1 e 3
+            <span style="font-weight: normal;font-size: 10pt;">Perceba que os flex-items com números maiores vão ter 
+                tamanho maior sobre os flex-items de número menor. Além disso, o crescimento acontece na direção do 
+                flex-direction aplicado... 
+            </span>
+            <div id="n1">
+                <div class="div1">0</div>
+                <div class="div2">2</div>
+                <div class="div3">1</div>
+                <div class="div4">3</div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: Valores aplicados somente em um flex-direction: column;
+            </span>
+        </div>
+
+        <div class="bloco">
+            flex-grow: itens numerados de 3 á 0
+            <span style="font-weight: normal;font-size: 10pt;">Perceba que os flex-items com números maiores vão ter 
+                tamanho maior sobre os flex-items de número menor. Além disso, o crescimento acontece na direção do 
+                flex-direction aplicado... 
+            </span>
+            <div id="n2">
+                <div class="div1">3</div>
+                <div class="div2">2</div>
+                <div class="div3">1</div>
+                <div class="div4">0</div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: Valores aplicados somente em um flex-direction: row;
+            </span>
+        </div>
+    
+    </div>
+
+</body>
+</html>

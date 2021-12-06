@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>border-right-width</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 5vw;
+        width: 100vw;
+        height: 30vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /*Criamos uma body de altura baixa para abraçar as nossas divs e posicioná-las justificadas no espaçamento entre
+        elas*/
+    }
+
+    .bl {
+        border-right-style: solid;
+        border-right-color: blue;
+        border-right-width: 3vw; /*Veja como fica uma espessura length de 3vw*/
+    }
+
+    .bl1 {
+        border-right-style: solid;
+        border-right-color: red;
+        border-right-width: medium; /*Veja como fica uma espessura com medium*/
+    }
+
+    .bl2 {
+        border-right-style: solid;
+        border-right-color: green;
+        border-right-width: thin; /*Veja como fica uma espessura length com thin*/
+    }
+
+    .bl3 {
+        border-right-style: solid;
+        border-right-color: gold;
+        border-right-width: thick; /*Veja como fica uma espessura length com thick*/
+    }
+
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: border-right-width (espessura da borda direita)
+
+
+    Objetivo: é uma propriedade que define uma espessuara na linha direita da borda do nosso elemento.
+
+
+    - Valores Aceitáveis:
+
+        - medium: Significa "Médio", vai criar uma espessura mediana de acordo com o tamanho do elemento;
+        - thin: Significa "Fino", vai criar uma espessura fina de acordo com o tamanho do elemento;
+        - thick: Significa "Grosso", vai criar uma espessura grossa de acordo com o tamanho do elemento;
+        - length: Qualquer valor absoluto ou relativo;
+        - initial: Volta ao valor inicial;
+        - inherit: Para herdar o valor do elemento pai;
+
+    - Valor Padrão: medium;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: ;
+
+-->
+
+    <div class="bl">Borda Length (3vw)</div>
+    <div class="bl1">Borda Medium</div>
+    <div class="bl2">Borda Thin</div>
+    <div class="bl3">Borda Thick</div>
+
+
+</body>
+</html>

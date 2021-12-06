@@ -1,0 +1,14 @@
+@charset "UTF-8";
+ul:nth-child(3n+1) { /*Perceba que partindo do primeiro filho, ela conta 3 + 1 e aplica a formatação de estilo*/
+  background-color: #0059b3;
+}
+
+ul:nth-child(3n+2) { /*Perceba que partindo do primeiro filho, ela conta 3 + 2 e aplica a formatação de estilo*/
+  background-color: #0080ff;
+}
+
+ul:nth-child(3n+3) { /*Perceba que partindo do primeiro filho, ela conta 3 + 3 e aplica a formatação de estilo*/
+  background-color: #4da6ff;
+}
+
+/*# sourceMappingURL=for.css.map */

@@ -1,0 +1,11 @@
+@use "sass:math"; //Chamamos o módulo nativo math para calcular a divisão
+
+$sizes: ("xs":50px, "sm":100px, "md":200px); //Perceba que usamos um map
+
+@each $key, $value in $sizes { //Quando usamos map temos que usar 2 variáveis comparativas
+    .#{$key} { //Perceba que foi necessário o uso de template string para referenciar o nome dos seletores
+        width: $value;
+        height: $value;
+        border-radius: math.div($value, 2);
+    }
+}

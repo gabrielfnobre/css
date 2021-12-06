@@ -1,0 +1,31 @@
+/*Estilização de um Botão com a classe "pulse"...*/
+/*Um botão com as bordas laranjas que quando passamos o mouse por cima, ou focamos, o nome do botão fica branco, o laranja de suas bordas fica mais claro e um sombreamento laranja claro de 1 segundo é mostrado*/
+
+body {
+    background-color: #17181c;
+    color: #fff;
+    font-family: sans-serif;
+}
+
+.pulse {
+    background: none; /*Retiramos a cor de fundo do botão*/
+    color: #ff760c;
+    border: 2px solid;
+    margin: 50px;
+    padding: 15px 40px;
+    transition: 0.25s; /*As cores de borda e letra são mudadas em 0,25 segundos*/
+}
+
+/*Quando o botão é focado ou o mouse passa por cima*/
+.pulse:hover, .pulse:focus { /*Duplo pseudo seletor*/
+    color: #fff;
+    border-color: #ef8f6e;
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+    animation: pulsar 1s; /*Chamada do Keyframe "pulsar" para funcionar por 1 segundo*/
+}
+
+@keyframes pulsar {
+    0% { /*No começo da selecão*/
+        box-shadow: 0 0 0 0 #ef8e6e;
+    }
+}

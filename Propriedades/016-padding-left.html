@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>padding-left</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        /* Usamos a propriedade box-sizing com o valor border-box, para desligar o nosso "content-box" padrão. Isso faz com 
+        que os nossos elementos mantenham o tamanho padrão, independente de nós usarmos padding neles, ou não.*/
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .bloco {
+        width: 50vw;
+        height: 50vh;
+        background-color: blue;
+        padding-left: 50px;
+        /* Perceba que graças ao padding-left, a nossa div "bloco" ganha um espaçamento interno á esquerda. Mas ainda assim, 
+        por estarmos usando "box-sizing" com o valor "border-box" ela não permite que a div "bloco" ultrapasse o tamanho de 
+        50vw na largura.*/
+    }
+
+    .item {
+        width: 100%;
+        height: 100%;
+        background-color: skyblue;
+        /*Perceba que a div "item" não ultrapassará o tamanho de 50% de largura da nossa tela. Isso acontece por que foi isso 
+        que delimitamos para o sua div wrap. Como damos a nossa div wrap um padding, a nossa div "item" foi forçada a 
+        diminuir a largura para caber dentro da div "bloco". Desligue a propriedade "box-sizing" e perceba que a nossa div item
+        vai aumentar a largura.*/
+    }
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: padding-left (espaçamento interno na esquerda)
+
+
+    Objetivo: é uma propriedade que define um valor para o espaçamento interno do lado esquerdo dentro de um elemento. 
+                Lembrando que, quando falamos de padding estamos nos referindo ao espaçamento que existe á partir de 
+                dentro da borda do elemento até o conteúdo do elemento.
+
+                Usamos muito o padding-right e padding-left para não permitir que o conteúdo de uma caixa transborde
+                e possamos colocar algum elemento ao lado do conteúdo. Por exemplo, imagine que o conteúdo é uma div onde 
+                colocaremos uma imagem, e ao lado da imagem desejamos colocar um texto, podemos usar o padding para fazer 
+                esse texto aparecer ao lado da div.
+
+
+    - Valores Aceitáveis:
+
+        - length: Qualquer valor absoluto ou relativo;
+        - initial: Volta ao valor inicial;
+        - inherit: Para herdar o valor do elemento pai;
+
+    - Valor Padrão: 0;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: Cuidado com os "Side Effect" (Efeito Colateral) sobre os padding, os padding por padrão aumentam o tamanho dos nossos
+        elementos. Por isso podemos ter uma quebra de layout indesejada. Para evitar isso temos 2 possibilidades:
+        
+            - Compensar a quebra de layout por compensar o tamanho de conteúdo dos nossos elementos, essa é de longe o método
+                menos utilizado;
+
+            - E temos o método mais utilizado que é usando a propriedade box-sizing, usando o valor "border-box", que vai 
+                fazer o nosso navegador forçar o elemento a manter o tamanho independente do seu padding.
+
+-->
+
+    <div class="bloco">
+        
+        <div class="item"></div>
+    
+    </div>
+
+</body>
+</html>

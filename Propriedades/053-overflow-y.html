@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>overflow-y</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 2vw;
+        height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    div {
+        width: 10vw;
+        height: 7vw;
+    }
+
+    #visible {
+        overflow-y: visible;
+        background-color: gold;
+    }
+    
+    #hidden {
+        overflow-y: hidden;
+        background-color: gold;
+    }
+    
+    #scroll {
+        overflow-y: scroll;
+        background-color: gold;
+    }
+    
+    #auto1 {
+        overflow-y: auto;
+        background-color: gold;
+    }
+    
+    #auto2 {
+        overflow-y: auto;
+        background-color: gold;
+    }
+    
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: overflow-y (Transbordar no Eixo Y)
+
+
+    Objetivo: Essa propriedade especifica como um conteúdo que estourou as laterais de um elemento deve transbordar 
+                sobre ele verticalmente - ou seja, sobre o eixo "y".
+
+                Essa propriedade pode definir que um conteúdo que transbordou deva ser cortado ou não, se deverá ser
+                adicionada uma barra de rolagem sobre ele, ou se ele deve ser mostrado transbordando mesmo.
+
+
+    - Valores Aceitáveis:
+
+        - visible:  Deixa o conteúdo visível mesmo que ele transborde;
+        - hidden:   Esconde somente a parte do conteúdo que transbordar;
+        - scroll:   Define que se o conteúdo estourar será gerada uma barra de rolagem;
+        - auto:     Define que, se o conteúdo transbordar, será acrescentada uma barra de rolagem automática;
+        - unset:    Para desligar a propriedade;
+        - initial:  Volta ao valor inicial;
+        - inherit:  Para herdar o valor do elemento pai;
+
+    - Valor Padrão: visible;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: 
+
+-->
+    <div> Perceba que fica visível mesmo que transborde...<br>
+    <div id="visible">visible<br>visible<br>visible<br>visible<br>visible<br>visible<br>visible<br></div>
+    </div>
+
+    <div> Só fica visível o que não transborda...<br>
+    <div id="hidden">hidden<br>hidden<br>hidden<br>hidden<br>hidden<br>hidden<br>hidden<br>hidden<br></div>
+    </div>
+
+    <div> A barra de rolagem aparece sempre<br>
+    <div id="scroll">scroll<br>scroll<br>scroll<br>scroll<br>scroll<br>scroll<br>scroll<br></div>
+    </div>
+
+    <div> Se não transbordar a borda de rolagem não aparece...<br>
+    <div id="auto1">auto<br>auto<br>auto<br></div>
+    </div>
+
+    <div> Se transbordar a barra de rolagem aparece...<br>
+    <div id="auto2">auto<br>auto<br>auto<br>auto<br>auto<br>auto<br>auto<br>auto<br>auto<br></div>
+    </div>
+
+</body>
+</html>

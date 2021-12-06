@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>place-items</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 1vw;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .container {
+        width: 100%;
+        height: 50%;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .bloco {
+        width: 16%;
+        height: 100%;
+        padding: 2px;
+        margin: 4px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, .2);
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+    }
+
+    .bloco > div {
+        background-color: white;
+    }
+
+    .div1 {
+        background-color: aqua;
+        width: 30%;
+        height: 50%;
+        font-size: x-large;
+        text-align: center;
+    }
+    
+    .div2 {
+        background-color: violet;
+        width: 30%;
+        height: 50%;
+        font-size: x-large;
+        text-align: center;
+    }
+
+    .div3 {
+        background-color: rgb(248, 203, 121);
+        width: 30%;
+        height: 50%;
+        font-size: x-large;
+        text-align: center;
+    }
+    
+    .div4 {
+        background-color: turquoise;
+        width: 30%;
+        height: 50%;
+        font-size: x-large;
+        text-align: center;
+    }
+
+    #stretch {
+        width: 100%;
+        height: 80%;
+        background-color: rgb(252, 248, 213);
+        display: grid;
+        place-items: center stretch;
+    }
+
+    #stretch > div {
+        width: unset;
+    }
+
+    #flex-start {
+        width: 100%;
+        height: 80%;
+        background-color: rgb(252, 248, 213);
+        display: grid;
+        place-items: end flex-start;
+    }
+
+    #flex-end {
+        width: 100%;
+        height: 80%;
+        background-color: rgb(252, 248, 213);
+        display: grid;
+        place-items: start flex-end;
+    }
+    
+    #center {
+        width: 100%;
+        height: 80%;
+        background-color: rgb(252, 248, 213);
+        display: grid;
+        place-items: center;
+    }
+
+    #baseline {
+        width: 100%;
+        height: 80%;
+        background-color: rgb(252, 248, 213);
+        display: grid;
+        place-items: baseline right;
+    }
+    #baseline > div {
+        width: unset;
+    }
+
+    #self-start {
+        width: 100%;
+        height: 80%;
+        background-color: rgb(252, 248, 213);
+        display: grid;
+        place-items: end self-start;
+    }
+
+    #self-end {
+        width: 100%;
+        height: 80%;
+        background-color: rgb(252, 248, 213);
+        display: grid;
+        place-items: start self-end;
+    }
+    
+    #start {
+        width: 100%;
+        height: 80%;
+        background-color: rgb(252, 248, 213);
+        display: grid;
+        place-items: start;
+    }
+
+    #end {
+        width: 100%;
+        height: 80%;
+        background-color: rgb(252, 248, 213);
+        display: grid;
+        place-items: end;
+    }
+
+    #right {
+        width: 100%;
+        height: 80%;
+        background-color: rgb(252, 248, 213);
+        display: grid;
+        place-items: end right;
+    }
+
+    #left {
+        width: 100%;
+        height: 80%;
+        background-color: rgb(252, 248, 213);
+        display: grid;
+        place-items: start left;
+    }
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: place-items (Alocação dos Itens)
+
+
+    Objetivo: Essa propriedade é uma abreviação das propriedades:
+                - align-items;
+                - justify-items;
+                
+                Ou seja, ela é capaz de alinhar os nossos grid-items tanto dentro dos eixos (ou linhas) horizontalmente
+                quanto pode alinhar os nossos eixos (linha) verticalmente dentro de um container grid.
+
+                Essa propriedade pode usar 2 valores ou apenas 1 valor que vai equivaler para as 2 propriedades.
+
+                Essa propriedade deve ser usada sempre dentro de um container grid, não deve ser usada com containers 
+                flex-box!
+
+                DETALHE IMPORTANTE!!! Lembrando que, o 1º valor vai prevalecer para o "align-items" e o 2º valor vai
+                equivaler para "justify-items".
+                
+
+
+    - Valores Aceitáveis:
+
+        - legacy:           Valor ainda não é reconhecido em alguns navegadores;
+
+        - legacy-right:     Valor ainda não é reconhecido em alguns navegadores;  
+        
+        - legacy-left:      Valor ainda não é reconhecido em alguns navegadores;
+
+        - legacy-center:    Valor ainda não é reconhecido em alguns navegadores;  
+
+        - normal:           Segue o fluxo padrão do grid;
+
+        - stretch:          Estica os grid-items se eles não tiverem tamanho pré definido onde o esticamento acontece;
+
+        - flex-start:       Funciona em apenas alguns navegadores que já se adaptaram ao uso do flex como valor para
+                            grids (Já funciona no Chrome)!!! Alinha os grid-items no início de um eixo embutido do grid; 
+        
+        - flex-center:      Funciona em apenas alguns navegadores que já se adaptaram ao uso do flex como valor para 
+                            grids!!! Alinha os grid-items no centro de um eixo embutido do grid;
+
+        - flex-end:         Funciona em apenas alguns navegadores que já se adaptaram ao uso do flex como valor para 
+                            grids (Já funciona no Chrome)!!! Alinha os grid-items á partir de onde termina o eixo embutido do grid;
+        
+        - center:           Alinha os grid-items no centro do eixo do grid;
+
+        - baseline:         Alinha os grid-items ao tamanho da maior letra dentro de um elemento;
+
+        - first-baseline:   Alinha os grid-items ao tamanho da maior letra de um primeiro parágrafo - porém
+                            esse valor ainda é INVÁLIDO em alguns navegadores para esta propriedade;
+
+        - last-baseline:    Alinha os grid-items ao tamanho da menor letra do último parágrafo - porém
+                            esse valor ainda é INVÁLIDO em alguns navegadores para esta propriedade;
+
+        - auto:             Segue automáticamente o valor padrão ou do elemento pai;
+        
+        - self-start:       Posiciona os grid-items no começo de cada linha grid;
+        
+        - self-end:         Posiciona os grid-items no final de cada linha grid;
+
+        - safe center:      Desabilitados para os navegadores;
+
+        - unsafe center:    Desabilitados para os navegadores;
+
+        - start:            Posiciona os grid-items no começo de cada linha grid;
+
+        - end:              Posiciona os grid-items no final de cada linha grid;
+
+        - right:            Ainda não está disponível para todos os navegadores (Já está disponível no Chrome)!!! 
+                            Posiciona os grid-items á direita de cada linha grid;
+        
+        - left:             Ainda não está disponível para todos os navegadores (Já está disponível no Chrome)!!! 
+                            Posiciona os grid-items á esquerda de cada linha grid;
+
+        - unset:            Para desligar a propriedade;
+
+        - initial:          Volta ao valor inicial;
+        
+        - inherit:          Para herdar o valor do elemento pai;
+
+    - Valor Padrão: auto;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: ATENÇÃO!!! Quando usamos o "align-items" nos grids, nós vamos movê-los dentro da altura dos nossos eixos (linhas)
+            e não em relação a altura do nosso container;
+
+-->
+
+    <div class="container">
+
+        <div class="bloco" style="justify-content: center;">
+            Veja exemplos de uso da propriedade:<br>place-items<br>nos nossos grids<br>&rArr;
+        </div>
+        
+        <div class="bloco">
+            place-items: center stretch
+            <span style="font-weight: normal;font-size: 10pt;">Perceba como os grid-items são esticados horizontalmente
+                enquanto são alinhados ao centro...
+            </span>
+            <div id="stretch">
+                <div class="div1"></div>
+                <div class="div2"></div>
+                <div class="div3"></div>
+                <div class="div4"></div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: Valores aplicados sobre um display: grid;</span>
+        </div>
+
+        <div class="bloco">
+            place-items: end flex-start
+            <span style="font-weight: normal;font-size: 10pt;">Perceba como os grid-items são posicionados no início 
+                de cada linha enquanto são posicionados na parte de baixo...
+            </span>
+            <div id="flex-start">
+                <div class="div1"></div>
+                <div class="div2"></div>
+                <div class="div3"></div>
+                <div class="div4"></div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: Valores aplicados sobre um display: grid;</span>
+        </div>
+
+        <div class="bloco">
+            place-items: start flex-end
+            <span style="font-weight: normal;font-size: 10pt;">Perceba como os grid-items são posicionados no final 
+                de cada linha enquanto são posicionados encima...
+            </span>
+            <div id="flex-end">
+                <div class="div1"></div>
+                <div class="div2"></div>
+                <div class="div3"></div>
+                <div class="div4"></div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: Valores aplicados sobre um display: grid;</span>
+        </div>
+
+        <div class="bloco">
+            place-items: center
+            <span style="font-weight: normal;font-size: 10pt;">Perceba como os grid-items são posicionados no centro 
+                de cada linha enquanto ocupam o centro de cada eixo verticalmente...
+            </span>
+            <div id="center">
+                <div class="div1"></div>
+                <div class="div2"></div>
+                <div class="div3"></div>
+                <div class="div4"></div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: Valores aplicados sobre um display: grid;</span>
+        </div>
+
+        <div class="bloco">
+            place-items: baseline right
+            <span style="font-weight: normal;font-size: 10pt;">Perceba como os grid-items são posicionados á direita
+                enquanto são posicionados verticalmente em relação ao tamanho das letras...
+            </span>
+            <div id="baseline">
+                <div class="div1"><span style="font-size: 10pt;">A</span></div>
+                <div class="div2"><span style="font-size: 50pt;">B</span></div>
+                <div class="div3"><span style="font-size: 32pt;">C</span></div>
+                <div class="div4"><span style="font-size: 22pt;">D</span></div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: Valores aplicados sobre um display: grid;</span>
+        </div>
+    
+    </div>
+
+    <div class="container">
+
+        <div class="bloco">
+            place-items: end self-start
+            <span style="font-weight: normal;font-size: 10pt;">Perceba como os grid-items são posicionados no início de
+                cada linha enquanto são posicionados na parte de baixo de cada linha...
+            </span>
+            <div id="self-start">
+                <div class="div1"></div>
+                <div class="div2"></div>
+                <div class="div3"></div>
+                <div class="div4"></div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: Valores aplicados sobre um display: grid;</span>
+        </div>
+        
+        <div class="bloco">
+            place-items: start self-end
+            <span style="font-weight: normal;font-size: 10pt;">Perceba como os grid-items são posicionados no final de
+                cada linha enquanto são posicionados na parte de cima da linha...
+            </span>
+            <div id="self-end">
+                <div class="div1"></div>
+                <div class="div2"></div>
+                <div class="div3"></div>
+                <div class="div4"></div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: Valores aplicados sobre um display: grid;</span>
+        </div>
+
+        <div class="bloco">
+            place-items: start
+            <span style="font-weight: normal;font-size: 10pt;">Perceba como os grid-items são posicionados no início 
+                de cada linha enquanto são posicionados na parte de cima de cada linha...
+            </span>
+            <div id="start">
+                <div class="div1"></div>
+                <div class="div2"></div>
+                <div class="div3"></div>
+                <div class="div4"></div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: Valores aplicados sobre um display: grid;</span>
+        </div>
+
+        <div class="bloco">
+            place-items: end
+            <span style="font-weight: normal;font-size: 10pt;">Perceba como os grid-items são posicionados no final 
+                de cada linha enquanto são posicionados na parte de baixo de cada linha...
+            </span>
+            <div id="end">
+                <div class="div1"></div>
+                <div class="div2"></div>
+                <div class="div3"></div>
+                <div class="div4"></div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: Valores aplicados sobre um display: grid;</span>
+        </div>
+
+        <div class="bloco">
+            place-items: end right
+            <span style="font-weight: normal;font-size: 10pt;">Perceba como os grid-items são posicionados á direita 
+                de cada linha enquanto são posicionados na parte de baixo de cada linha...
+            </span>
+            <div id="right">
+                <div class="div1"></div>
+                <div class="div2"></div>
+                <div class="div3"></div>
+                <div class="div4"></div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: Valores aplicados sobre um display: grid;</span>
+        </div>
+
+        <div class="bloco">
+            place-items: start left
+            <span style="font-weight: normal;font-size: 10pt;">Perceba como os grid-items são posicionados á esquerda 
+                de cada linha enquanto são posicionados na parte de baixo de cada linha...
+            </span>
+            <div id="left">
+                <div class="div1"></div>
+                <div class="div2"></div>
+                <div class="div3"></div>
+                <div class="div4"></div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: Valores aplicados sobre um display: grid;</span>
+        </div>
+    
+    </div>
+
+</body>
+</html>

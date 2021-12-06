@@ -1,0 +1,10 @@
+@use "sass:color";
+
+
+@function invert($color, $amount: 100%){
+    @if $amount < 0% or $amount > 100% { /*Perceba que o amount só pode estar entre 0 e 100%*/
+        @error "Invalid Amount"; /*Essa string será mostrada quando o erro acontecer, veja o erro no terminal*/
+    }
+    $invert: color.change($color, $hue: color.hue($color) + 180);
+    @return color.mix($invert, $color, $amount);
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="sass/css/escopo.css" />
+<title>Escopo de Variáveis</title>
+</head>
+<body>
+
+<!--            
+        Escopo de Variáveis
+
+    O que é o Escopo de Variáveis?
+    Escopo de variáveis é como determinamos até que ponto uma variável declarada poderá ser usada pelos elementos do nosso 
+    código. Para isso temos 2 contextos de escopo de variáveis no Sass: Escopo Global e Escopo Local.
+
+
+        Como uma variável é declarada no Escopo Global?
+
+    Uma variável é declarada no Escopo Global quando ela é declarada no nível superior de uma folha de estilo, da seguinte 
+    forma:
+
+            $variavel-global: 50px;
+
+            .sidebar {
+            margin-top: $variavel-global;
+            }
+
+    Quando uma variável é declarada assim, isso significa que ela pode ser acessada de qualquer lugar da sua folha de 
+    estilo.
+
+        Como uma variável é declarada no Escopo Local?
+
+    Uma variável é declarada no Escopo Local quando ela é declarada dentro de um bloco de execução no Sass, seja dentro das 
+    chaves de um bloco em arquivo “.scss”, seja dentro de um bloco hierárquico dentro de um arquivo “.sass”. Isso vai 
+    significar que ela só poderá ser acessada dentro daquele bloco e dos seus blocos filhos, ao sair do bloco ela se 
+    tornará inacessível. Podemos ver um exemplo disso abaixo:
+            
+            $variavel-global: 50px;
+
+            .content {
+                $variavel-local: 20px;
+                margin-top: $variavel-global;
+                margin-left: $variavel-local;
+            }
+
+            .sidebar {
+            margin-top: $variavel-global;
+            }
+
+    Perceba que dentro do bloco “content” temos uma variável local que é usada na margem esquerda do elemento, e ao mesmo 
+    tempo, nesse mesmo elemento também estamos usando o valor da variável global para a margem de cima. Mas não podemos 
+    dizer o mesmo da variável local sendo usada pelo elemento “sidebar”, por ter sido definida no contexto local do 
+    elemento “content”, ela só poderia ser usada dentro daquele contexto.
+
+
+        Técnica de Shadowing – Sombreamento:
+
+    O que é a técnica de Shadowing? 
+    É quando nós utilizamos o mesmo nome que uma variável global têm numa variável local, isso é totalmente possível. 
+    Quando isso acontece, somente dentro do contexto da variável local que sobrescreveu a variável global o valor que 
+    realmente vai valer será o valor da variável local e não o da global, fazendo com que o valor da variável global não 
+    seja alterado para os demais elementos que a utilizem na folha de estilos.
+
+    A vantagem dessa técnica é garantir que um desenvolvedor sobrescreva o valor de uma variável global que ele não têm 
+    conhecimento só porque desejava fazer uma pequena mudança em um único elemento.
+
+    Podemos usar o shadowing da seguinte maneira:
+
+            $titulo: ‘Roboto’;
+
+            .content {
+                $titulo: ‘Calibri Light’;
+                font-family: $titulo;
+            }
+
+            .sidebar {
+            font-family: $titulo;
+            }
+
+
+    Perceba que somente dentro de “content” o título será na fonte “calibri light”, mas globalmente a fonte será “Roboto”;
+
+-->
+
+    <ul id="chat">
+
+        <li>
+
+            <div class="avatar">
+                <img src="https://i.pravatar.cc/48" alt="Avatar">
+            </div>
+            <div class="message">
+                <strong>John Smith</strong>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea nemo eveniet necessitatibus, deleniti illo 
+                    corporis enim in fugiat, modi amet maxime totam est praesentium voluptates maiores aliquid fuga, id 
+                    tempore?
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus iusto saepe exercitationem 
+                    quibusdam dignissimos assumenda quis, aut beatae vero repellat dolor quaerat incidunt harum amet 
+                    ratione enim vitae molestiae accusamus!
+                </p>
+                <time>10 minutos atrás</time>
+            </div>
+            <div class="menu">
+                <button type="button">
+                    <img src="more_vert_black_24dp.svg" alt="More">
+                </button>
+            </div>
+
+        </li>
+        
+        <li class="me">
+
+            <div class="avatar">
+                <img src="https://i.pravatar.cc/48?1" alt="Avatar"> <!--Para que as imagens viessem diferentes colocamos 
+                    "?1" ao final da URL-->
+            </div>
+            <div class="message">
+                <strong>John Smith</strong>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptas quam enim neque ipsam 
+                    fugit.</p>
+                <time>10 minutos atrás</time>
+            </div>
+            <div class="menu">
+                <button type="button">
+                    <img src="more_vert_black_24dp.svg" alt="More">
+                </button>
+            </div>
+
+        </li>
+
+    </ul>
+
+</body>
+</html>

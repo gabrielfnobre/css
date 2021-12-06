@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>border-image-width</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 5vw;
+        display: flex;
+        justify-content: space-between; /*Com o valor center os nossos elementos por padrão pegam o centro da tela*/
+        align-items: center; /*Aqui fazemos com que */
+        height: 100vh;
+        text-align: center;
+    }
+
+    #div1 {
+        width: 15vw;
+        height: 15vw;
+        padding-top: 7%;
+        background-color: gold;
+        border: 1px solid gold;
+        border-image-source: url("border-image-source.png");
+        border-image-width: 50; /*a largura da imagem de borda é relativa a medida de pixels*/
+        border-image-slice: 30%;
+        border-image-outset: 50px;
+        border-image-repeat: round;
+    }
+
+    #div2 {
+        width: 15vw;
+        height: 15vw;
+        padding-top: 7%;
+        background-color: gold;
+        border: 1px solid gold;
+        border-image-source: url("border-image-source.png");
+        border-image-width: 50%; /*A largura da imagem como borda pega 50% da imagem original*/
+        border-image-slice: 30%;
+        border-image-outset: 50px;
+        border-image-repeat: round;
+    }
+
+    #div3 {
+        width: 15vw;
+        height: 15vw;        
+        padding-top: 7%;
+        background-color: gold;
+        border: 1px solid gold;
+        border-image-source: url("border-image-source.png");
+        border-image-width: auto; /*a largura da imagem de borda vai ser atribuída relativamente ao elemento*/
+        border-image-slice: 30%;
+        border-image-outset: 50px;
+        border-image-repeat: round;
+    }
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: border-image-width (Largura da Imagem da Borda)
+
+
+    Objetivo: é uma propriedade que permite definir a largura da borda para a imagem que servirá como borda de um elemento.
+
+
+    - Valores Aceitáveis:
+
+        - number: Equivalente ao valor em pixels (Não precisamos de colocar o sufixo 'px' se não quisermos);
+        - %: Podemos usar porcentagem equivalente ao tamanho real da própria imagem;
+        - auto: herda uma largura relativa ao elemento pai;
+        - initial: Volta ao valor inicial;
+        - inherit: Para herdar o valor do elemento pai;
+
+    - Valor Padrão: 1;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: ;
+
+-->
+
+    <div id="div1">Com number: 50</div>
+    <div id="div2">Com porcentagem: 50%</div>
+    <div id="div3">Com valor auto</div>
+
+</body>
+</html>

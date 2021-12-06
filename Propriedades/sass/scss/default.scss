@@ -1,0 +1,7 @@
+@use "theme" with(
+    $corPrimaria: #f00, /*Perceba que a cor original não é vermelho é azul*/
+    $cantos: 10px         /*E os cantos por padrão não são arredondados*/
+);
+
+/*OBSERVAÇÃO, DENTRO DO ARQUIVO SCSS QUE VAI COMPORTAR A BIBLIOTECA, NA REGRA @use TEMOS QUE USAR A VÍRGULA COMO 
+SEPARADOR ENTRE UMA PROPRIEDADE E OUTRA*/

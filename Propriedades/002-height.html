@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Height</title>
+    <style>
+        div {
+            background-color: red;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            width: 100px;
+            height: 100px;
+            /*Aqui definimos uma altura por lenght, escolhendo um valor absoluto "pixels", perceba que ele ganha o tamanho expresso em pixels.*/
+            height: 100%;
+            /*Aqui nós também definimos a altura por length, mas agora usando uma unidade de medida relativa, por através da porcentagem, quando usamos porcentagem o nosso elemento vai se adequar percentualmente a alguma coisa. Se o elemento pai tiver um tamanho de altura, ele vai se adequar ao tamanho de altura do pai. Caso o elemento pai não tenha altura definida, se o nosso elemento tiver algum conteúdo dentro dele, ele vai se adequar ao tamanho do conteúdo dentro dele. Se ele não tiver nenhuma referência para que o seu percentual pegue, ele não vai apresentar altura nenhuma.*/
+            height: 100vh;
+            /*Aqui nós declaramos uma altura de 100 por cento da nossa viewport heigth, que a nossa tela suporta. Perceba que ele pega 100% do tamanho da tela, e ainda ganha um scroll. Esse scroll é devido as margens do body, que está atrás dele em camada.*/
+
+        }
+        /* Esse body serve de comparação para quando o nosso height está sendo aplicado relativamente a body como elemento pai */
+        body {
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- 
+
+            Propriedade: height (altura)
+
+        Objetivo: Definir uma altura para o conteúdo do nosso elemento, ou seja, o height NÃO VAI AFETAR a nossa borda, margem e padding. 
+
+        Valores possíveis:
+
+            - auto: pega a altura automáticamente;
+            - length: podemos ter um tamanho por através unidades de medida;
+            - initial: podemos voltar a o valor padrão dessa propriedade;
+            - inherit: Terá como herança o valor do elemento pai;
+
+        Valores Padrão:
+
+            - auto;
+
+        Possuí valor herdado? - NÃO
+
+        OBSERVAÇÕES:
+
+            - O height possuí herança explícita, ou seja, a altura do elemento será herdada sobre os elementos filhos de uma 
+                tag que possuí height;
+            - Se houverem "min-height" ou "max-height" definidos sobre a mesma tag, eles vão ganhar precedência sobre a 
+                propriedade "height";
+            - CUIDADO COM O DOCTYPE! Se o nosso doctype estiver no lugar errado, que não seja o começo das nossas páginas HTML, 
+                o nosso CSS vai se comportar de forma estranha, pois, sem o Doctype o navegador não sabe que HTML aplicar, e vai procurar a forma mais interessante para ele de renderizar a página. Faça esse experimento declarando o doctype dentro da head em vez de declará-lo na primeira linha, e deixe somente a formatação com o valor de "height: 100%", você perceberá que ele vai atingir a altura de 100% do elemento pai, embora não tenhamos declarado o tamanho do body. Esse bug acontece por que o navegador quer mostrar a div de qualquer forma, então ele procura a forma de fazer isso da maneira que for mais agradavél para ele.
+
+     -->
+
+     <div>Oi tudo bem?</div>
+
+</body>
+</html>

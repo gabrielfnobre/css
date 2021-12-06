@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>outline</title>
+<style>
+
+* {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 4px;
+    }
+
+    div {
+        border-width: 3px;
+        border-style: dashed;
+        padding: 2px;
+        color: black;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        border-style: unset;
+    }
+
+    .bloco {
+        font-size: 2vh;
+        margin: 2vw;
+    }
+
+    .bloco:hover {
+        outline: 2px solid red;
+    }
+
+    .bloco1 {
+        font-size: 2vh;
+        margin: 2vw;
+        outline: 4px dotted orange;
+    }
+
+    .bloco2 {
+        font-size: 2vh;
+        margin: 2vw;
+        outline: 6px dashed yellow;
+    }
+
+    .bloco3 {
+        font-size: 2vh;
+        margin: 2vw;
+        outline: 8px solid greenyellow;
+    }
+
+    .bloco4 {
+        font-size: 2vh;
+        margin: 2vw;
+        outline: 10px double skyblue;
+    }
+    
+    .bloco5 {
+        font-size: 2vh;
+        margin: 2vw;
+        outline: 12px groove blue;
+    }
+
+    .bloco6 {
+        font-size: 2vh;
+        margin: 2vw;
+        outline: 14px ridge blueviolet;
+    }
+
+    .bloco7 {
+        font-size: 2vh;
+        margin: 2vw;
+        outline: 16px inset darkmagenta;
+    }
+
+    .bloco8 {
+        font-size: 2vh;
+        margin: 2vw;
+        outline: 18px outset darkred;
+    }
+    
+    .bloco9 {
+        font-size: 2vh;
+        margin: 2vw;
+        outline: 20px auto orangered;
+    }
+    
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: outline (Contorno)
+
+
+    Objetivo: Essa propriedade é uma abreviação das propriedades:
+                - outline-width
+                - outline-style
+                - outline-color
+                
+                Ela pode definir a largura da linha de contorno, seu estilo e cor. O que seria a linha de contorno? A linha de 
+                contorno não faz parte do box-model de um elemento, o outline pode muito bem ser confundido com a borda de um 
+                elemento, mas ele não faz parte da borda, na verdade ele é uma linha que está por cima da borda, e por padrão 
+                o seu estilo é "none" ou seja, invisível, por isso poucas pessoas utilizam o outline.
+
+                Por estar por cima da borda, qualquer alteração feita sobre sobre o "box-sizing" de um elemento não vai afetar
+                o nosso "outline".
+
+                DETALHE IMPORTANTE!!! A margem fica por cima do outline;
+
+    
+    - Valores Aceitáveis:
+
+        - width style color:    Define largura da linha, estilo e cor numa única linha de código;
+        - unset:                Para desligar a propriedade;
+        - initial:              Volta ao valor inicial;
+        - inherit:              Para herdar o valor do elemento pai;
+
+    - Valor Padrão: medium auto invert;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: outline-offset NÃO PODE SER DEFINIDA dentro da propriedade outline;
+
+
+-->
+    <p>Colocamos uma borda tracejada de cor laranja dentro de todas as divs para ver que o
+        outline fica mesmo por fora das bordas do elemento. Enquanto todos os outlines estão na cor azul</p>
+
+    <div class="container">
+        <div class="bloco">outline: 2px hidden red;</div>
+        <div class="bloco1">outline: 4px dotted orange;</div>
+        <div class="bloco2">outline: 6px dashed yellow;</div>
+        <div class="bloco3">outline: 8px solid greenyellow</div>
+        <div class="bloco4">outline: 10px double skyblue</div>
+        <div class="bloco5">outline: 12px groove blue</div>
+        <div class="bloco6">outline: 14px ridge blueviolet</div>
+        <div class="bloco7">outline: 16px inset darkmagenta</div>
+        <div class="bloco8">outline: 18px outset darkred</div>
+        <div class="bloco9">outline: 20px auto orangered</div>
+    </div>
+
+</body>
+</html>

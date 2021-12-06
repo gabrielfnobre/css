@@ -1,0 +1,34 @@
+<!-- Veja como acontece a precedencia CSS analizando os comentários numerados ordinariamente -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precedência CSS</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 3º CSS externo, quando o CSS vêm de um arquivo externo, ele sempre terá a última ordem de precedência na formatação -->
+    <!-- 5º CSS externo, caso ele esteja competindo com: inline, id, class e incorporado -->
+    <style>
+        body {
+            background-color: green;
+            background-color: blue;
+            /*Perceba que o CSS respeita a última formatação escrita, ele pega a formatação da linha debaixo, só pegará a formatação de cima se a linha debaixo for apagada*/
+        }
+        p {
+            color: blue;
+        }
+    </style>
+    <!-- 2º CSS incorporado, onde temos uma tag style e colocamos dentro dela todo o css que desejamos aplicar -->
+    <!-- 4º CSS incoporado, caso ele esteja competindo com in-line, id e class -->
+</head>
+<body style="background-color: red;">
+    <!-- 1º CSS colocado in-line, têm prioridade!!! Não é muito utilizado, voltou a força agora para ser usado em conjunto com o Angular e Vue.Js-->
+
+    <p id="paragraph" class="par" style="color: green;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi neque dolor omnis facilis vero natus odit repudiandae dicta velit. Tempora, alias reiciendis. Quisquam nostrum totam corporis rerum quidem ad deserunt.</p>
+    <!-- 1º CSS é o in-line, ele é formatado primeiro até que ids e classes -->
+    <!-- 2º CSS é o id, é formatado antes das classes -->
+    <!-- 3º CSS é a class, ela sai na frente do CSS incorporado -->
+</body>
+</html>

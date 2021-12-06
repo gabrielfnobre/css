@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="sass/css/variaveis.css"/>
+<title>Usando Variáveis no Sass</title>
+</head>
+<body>
+
+<!--            
+
+            Variáveis
+
+        O que são variáveis?
+
+    Sempre que for necessário utilizar um valor em vários lugares nós usamos um espaço na memória chamado de variável. As 
+    variáveis são simples: você atribui um valor a um nome que começa com “$” e, em seguida, pode se referir a esse nome 
+    em vez de se referir ao valor em si.
+
+    Apesar da sua simplicidade, as variáveis são uma ferramenta muito utilizada dentro do Sass, pois, por através delas 
+    tornamos possível a redução de repetições no código, podemos usar lógicas mais complexas, configurar bibliotecas e 
+    muitas outras funcionalidades.
+
+
+            Sass Variables VS CSS Variables
+
+    O CSS também possuí variáveis nativas, mas a usabilidade das variáveis no contexto do CSS é bem diferente da 
+    usabilidade das variáveis no contexto do Sass. As diferenças são as seguintes:
+
+            •	Variáveis escritas em Sass são totalmente compiladas, gerando um código final estático. Enquanto as 
+            variáveis em CSS serão mantidas no arquivo final “.css”.
+
+            •	Variáveis CSS podem ter valores diferentes para diferentes tipos de elementos e diferentes escopos destes 
+            elementos, mas as variáveis no Sass sempre terão o mesmo tipo de valor para todos os elementos e contextos em 
+            que eles se encontrarem.
+
+            •	Variáveis no Sass são imperativas, o que significa que se você usar uma variável e depois alterar o seu 
+            valor, o uso anterior permanecerá o mesmo. Por exemplo, se usamos o valor de uma variável na linha 10 e depois 
+            lá na frente no nosso código utilizamos um valor diferente na linha 104, o valor da linha 10 para áquela 
+            variável não será alterado. Enquanto as variáveis em CSS são declarativas, o que significa que se você alterar 
+            o valor, isso afetará tanto o uso anterior da variável quanto o uso futuro dela;
+
+
+
+            Utilização de Variáveis em Sass VS utilização em CSS
+
+            •	Sass:
+            
+                            $nomeVar: 10px;
+                        .class {
+                            value: $nomeVar;
+                        }
+                    
+                            ...Perceba que a variável sempre deve estar precedida do “$”.
+
+
+            •	CSS:
+            
+                            -- cor-interessante: red;
+
+                            .class {
+                                value: var(cor_interessante);
+                            }
+
+                            ...A criação da variável aconteceu quando declaramos usando o “--*” que determina que uma 
+                            variável está sendo criada, depois utilizamos o valor dessa variável já referenciando o nome 
+                            dela, dentro a classe.
+
+
+            Dica importante! Uso do hífen e do underscore
+
+    Variáveis no Sass assim como em todos os identificadores, tratam hífen e underscore de maneira idêntica, isso 
+    significa que:
+
+            $font-size e $font_size se referem a mesma variável.
+
+
+-->
+
+    <header>
+
+        <h1>Hcode</h1>
+
+    </header>
+
+    <section></section>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <link rel="stylesheet" href="005-style.css">
+</head>
+<body>
+
+    <!-- 
+            Flexbox
+        
+        Falando de maneira simples, imagine que as caixas dos nossos elementos HTML agora fossem flexíveis, que pudéssemos posicioná-las em qualquer lado da nossa página, em sentido de linha, de coluna, que pudéssemos expandí-las ou reduzí-las. Tudo isso é possível usando o conceito de flexbox.
+
+        Para que consigamos fazer isso, primeiro temos que ter um elemento que vá usar um "display: flex", o valor flex irá fazer com que um elemento possa atribuir os comportamentos de flexbox aos elementos amarrados dentro dele. Lembre-se sempre que todos os elementos que recebem flexbox se transformam em container dos elementos que vão ser flexionados, e os elementos recebem o nome de "flex-items", pois eles serão os itens que sofrerão com a flexibilidade. Caso os flex-items não possuam formatação específica, eles vão sofrer flexibilidade de acordo o seu elemento pai ou com a formatação dos seus elementos internos.
+
+        Em seguida vamos usar a propriedade "flex-direction", essa propriedade pode definir um eixo central, ou principal da nossa página, trabalhando em duas dimensões "x" (principal) e "y" (eixo secundário). O nosso eixo principal pode mudar de direção dependendo do valor que escolhermos para a nossa propriedade "flex-direction".
+
+        Temos os seguintes valores:
+            - row: O eixo principal (x) será em linha vertical indo da esquerda para a direita e o secundário (y) será transversal de cima para baixo; (Por exemplo um menu de um site em desktop pode usar o flex-direction: row);
+
+            - columm: o eixo principal (x) será uma linha transversal de cima para baixo e o secundário (y) será uma linha vertical indo da esquerda para a direita; (Por exemplo um menu de um smart-phone em desktop pode usar o flex-direction: row);
+            
+            - row-reverse: O eixo principal (x) será em linha vertical indo da direita para a esquerda e o secundário (y) será transversal de cima para baixo; (Por exemplo um menu de um site em desktop pode usar o flex-direction: row);
+            
+            - columm-reverse: o eixo principal (x) será uma linha transversal de baixo para cima e o secundário (y) será uma linha vertical indo da direita para a esquerda; (Por exemplo um menu de um site em desktop pode usar o flex-direction: row);
+            
+-->
+    <div id="posicao">
+    
+        <button type="button" class="pulse">Home</button>
+        <button type="button" class="pulse">Contatos</button>
+        <button type="button" class="pulse">Loja</button>
+        <button type="button" class="pulse">Sobre</button>
+        <button type="button" class="pulse">Produtos</button>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>border-bottom-style</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .bloco {
+        border-bottom-style: hidden; /*Perceba que a nossa borda foi escondida, mas só aparece quando passamos o mouse*/
+        border-bottom-width: 5px;
+        color: black;
+        font-size: 2vh;
+        margin: 2vw;
+    }
+
+    .bloco:hover {
+        border-bottom-style: solid; /*Para que a nossa borda hidden apareça quando passarmos o mouse por cima*/
+    }
+
+    .bloco1 {
+        border-bottom-style: dotted; /*Perceba que temos uma borda pontilhada somente encima do elemento*/
+        border-bottom-width: 5px;
+        border-bottom-color: violet;
+        color: violet;
+        font-size: 2vh;
+        margin: 2vw;
+    }
+
+    .bloco2 {
+        border-bottom-style: dashed; /*Perceba que temos uma borda tracejada somente encima do elemento*/
+        border-bottom-width: 5px;
+        border-bottom-color: goldenrod;
+        color: goldenrod;
+        font-size: 2vh;
+        margin: 2vw;
+    }
+
+    .bloco3 {
+        border-bottom-style: solid; /*Perceba que temos uma borda sólida somente encima do elemento*/
+        border-bottom-width: 5px;
+        border-bottom-color: red;
+        color: red;
+        font-size: 2vh;
+        margin: 2vw;
+    }
+
+    .bloco4 {
+        border-bottom-style: double; /*Perceba que temos uma borda duplicada somente encima do elemento*/
+        border-bottom-width: 5px;
+        border-bottom-color: green;
+        color: green;
+        font-size: 2vh;
+        margin: 2vw;
+    }
+    
+    .bloco5 {
+        border-bottom-style: groove; /*Perceba que temos uma borda entalhada somente encima do elemento*/
+        border-bottom-width: 5px;
+        border-bottom-color: blue;
+        color: blue;
+        font-size: 2vh;
+        margin: 2vw;
+    }
+
+    .bloco6 {
+        border-bottom-style: ridge; /*Perceba que temos uma borda destacada somente encima do elemento*/
+        border-bottom-width: 5px;
+        border-bottom-color: rgb(248, 213, 12);
+        color: rgb(248, 213, 12);
+        font-size: 2vh;
+        margin: 2vw;
+    }
+
+    .bloco7 {
+        border-bottom-style: inset; /*Perceba que temos uma borda escurecida somente encima do elemento*/
+        border-bottom-width: 5px;
+        border-bottom-color: springgreen;
+        color: springgreen;
+        font-size: 2vh;
+        margin: 2vw;
+    }
+
+    .bloco8 {
+        border-bottom-style: outset; /*Perceba que temos uma borda clareada somente encima do elemento*/
+        border-bottom-width: 5px;
+        border-bottom-color: blueviolet; 
+        color: blueviolet;
+        font-size: 2vh;
+        margin: 2vw;
+    }
+
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: border-bottom-style (estilo da borda inferior)
+
+
+    Objetivo: é uma propriedade que define um estilo de linha somente para a borda inferior de um elemento.
+
+
+    - Valores Aceitáveis:
+
+        - none: nenhum;
+        - hidden: oculto (escondido);
+        - dotted: pontilhado;
+        - dashed: tracejado;
+        - solid: sólido;
+        - double: linha dupla;
+        - groove: linha com sombra superior (groove significa "sulco") como se a borda tivesse sido entralhada;
+        - ridge: linha com sombra inferior (ridge significa "pico") como se a borda estivesse em alto relevo;
+        - inset: a cor original da linha dica mais escura como se tivesse uma sombra na borda;
+        - outset: a cor original da linha fica levemente mais clara, como se estivesse sendo iluminada;
+        - initial: Volta ao valor inicial;
+        - inherit: Para herdar o valor do elemento pai;
+
+    - Valor Padrão: none;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: Podemos usar o hidden quando queremos que a borda suma por algum motivo;
+
+-->
+
+    <div class="bloco">Com borda hidden</div>
+    <div class="bloco1">Com borda dotted</div>
+    <div class="bloco2">Com borda dashed</div>
+    <div class="bloco3">Com borda solid</div>
+    <div class="bloco4">Com borda double</div>
+    <div class="bloco5">Com borda groove</div>
+    <div class="bloco6">Com borda ridge</div>
+    <div class="bloco7">Com borda inset</div>
+    <div class="bloco8">Com borda outset</div>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+$color: #7f808c; /*Variável Global*/
+$primary: #0176ff; /*Variável Global*/
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    // $color: #000; /*Variável Local*/
+    margin: 0;
+    font-family: sans-serif;
+    color: $color; /*Se a $color local for ativado ele vai dar prioridade e ele*/
+}
+
+#chat {
+    // border: $color 2px solid; /*Vai retirar do escopo global*/
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 0;
+    list-style: none;
+    li {
+        $background-color: #f5f6fa; /*Válida localmente para todos os blocos dentro de li*/
+        display: flex;
+        margin-bottom: 32px;
+        .avatar {
+            padding: 0 16px;
+            display: flex;
+            align-items: flex-end;
+            img{
+                border-radius: 50%;
+                width: 48px;
+            }
+        }
+        .message {
+            flex: 1;
+            background-color: $background-color;
+            padding: 16px;
+            border-radius: 8px;
+            border-bottom-left-radius: 0;
+            strong {
+                color: #242939;
+            }
+            p {
+                font-size: 14px;
+            }
+            time {
+                font-size: 12px;
+                letter-spacing: 1px;
+                opacity: .65;
+            }
+        }
+        .menu {
+            display: flex;
+            align-items: center;
+            button {
+                border: none;
+                background: none;
+                outline: none;
+                img {
+                    width: 16px;
+                    opacity: .5;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    & .me {
+        $background-color: $primary; /*Mudamos o escopo da background de novo localmente*/
+        flex-direction: row-reverse; /*Inversão da mensagem para ficar do nosso lado*/
+        color: #fff;
+        .message {
+            background-color: $background-color; /*Perceba que a cor que o message pega é azul agora*/
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 0;
+            ::selection { /*Toda vez que usar o pseudoseletor "::selection" temos definir background e cor do texto
+                            caso contrário ele não é aplicado!!*/
+                background: white;
+                color: $primary;
+            }
+        }
+        strong {
+            display: none; /*Removido o meu nome do meu lado da mensagem*/
+        }
+    }
+}

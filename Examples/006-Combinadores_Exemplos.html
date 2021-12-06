@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinadores Exemplos</title>
+    <link rel="stylesheet" href="006-style.css">
+</head>
+<body>
+
+    <!-- 
+
+            Combinadores
+
+        Combinadores são quando nós juntamos 2 seletores para criar variados tipos de formatação aos nossos elementos.
+
+
+            Combinador Descendente
+            
+        É quando atribuímos uma formatação a todas as tags dentro de um wrap, no exemplo abaixo estamos dizendo que todos os inputs dentro de uma tag form deverão ter a cor azul. O que identifica um combinador descescente é o "espaço" entre a tag wrap e a tag filha. Quando usamos uma combinação por descesdência estamos dizendo que todas as tags descendentes dentro de um wrap vão receber a mesma formatação, independentes se elas são filhas diretas de uma tag ou não.
+
+        form input {
+            color : blue;
+        }
+        
+            
+            Combinador Filho Direto
+
+        É quando nós atribuímos uma formatação diretamente sobre a tag que é filho direto de uma tag wrap, para isso usamos o sinal de "maior", o ">", para mostrar que a formatação deve ser aplicada somente para a tag filho direto, ignorando demais tags identicas que sejam descendentes.
+
+        form > input {
+            color : blue;
+        }
+
+
+            Combinador Irmão Adjacente
+
+        É quando nós atribuímos a formatação diretamente sobre a tag irmã casçula (a adjacente - áquela que vêm depois) de outra tag. Detalhe, uma tag é irmã de outra tag quando ambas as tags são filhas da mesma tag pai. 
+        Nessa questão devemos tomar cuidado quando falamos de combinação por irmão adjacente, pois a formatação só será aplicada a próxima tag irmã depois de outra tag, E APENAS 1 VEZ! Ou seja, a formatação não será aplicada sobre tags irmãs mais velhas que foram declaradas antes da primeira tag, e nem sobre as tags caçulas que vierem depois da 1ª tag caçula, VAI SER APLICADA SOMENTE SOBRE A 1ª TAG CAÇULA E PONTO!. Podemos ver isso no exemplo abaixo, onde a formatação é aplicada somente a tag div que for a próxima irmã caçula de uma tag form, e sobre nenhuma outra tag. Para isso, utilizamos o sinal de "mais", o "+", para mostrar que a formatação deve ser aplicada sobre as duas tags irmãs;
+
+        form + div {
+            color : blue;
+        }
+
+
+            Combinador Irmão Geral
+
+        É quando nós atribuímos uma formatação a uma tag irmã de outra tag, ou seja, que estejam amarradas a mesma tag pai, mas nesse caso só se aplica se a primeira tag preceder a segunda tag. Para isso usamos o sinal de "circunflexo", o "~". 
+
+        form ~ div {
+            color : blue;
+        }
+
+            
+-->
+
+    <input type="text" placeholder="telefone">
+
+    <form>
+
+        <input type="text" placeholder="nome">
+
+        <label for="email">
+        <input type="text" placeholder="email" id="email">
+        </label>
+
+    </form>
+
+    <input type="text" placeholder="senha">
+    <input type="text" placeholder="Confirme a senha">
+
+</body>
+</html>

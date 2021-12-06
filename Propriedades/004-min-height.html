@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>min-height</title>
+<style>
+    div {
+        width: 100px;
+        height: auto;
+        /*Colocamos o height no automático, porém ele está sem conteúdo, o que significa que ele não terá altura nenhuma*/
+        height: 200px;
+        /*Perceba que se a altura for maior que o min-height, o min-height é totalmente ignorado.*/
+        height: 1px;
+        /*Perceba que definimos uma altura menor que o min-height, perceba que nesse caso o min-height é quem é obedecido*/
+        background-color: rgb(154, 221, 241);
+        min-height: 30px;
+        /*Perceba que, embora o height não tenha altura nenhuma ele sobrecreveu a altura para ter uma altura mínima de 
+        30px.*/
+    }
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: min-height (altura-mínima)
+
+
+    Objetivo: definir uma altura mínima que um elemento pode ter, depois de definida, o elemento não poderá ter uma altura
+                menor do que a altura defida no min-height. Agora, se o elemento tiver um conteúdo maior do que a altura 
+                mínima, a propriedade min-height é ignorada.
+
+                O min-height é melhor aplicado quando mexemos com unidades relativas, onde a altura da nossa tela vai 
+                variar dependendo do dispositivo que a pessoa use.
+
+
+    - Valores Aceitáveis:
+
+        - none: Nenhum valor;
+        - length: Qualquer valor absoluto ou relativo;
+        - max-content: vai definir a altura de acordo com o conteúdo do elemento, se o elemento tiver vários elementos 
+                        como conteúdo, o max-content vai fazer o máximo para todos os elementos sejam renderizados dentro
+                        do mesmo espaço de altura, ou seja, o elemento vai esticar de acordo com o conteúdo;
+        - min-content: vai definir a altura de acordo com o maior elemento que estiver como conteúdo de um elemento onde a
+                        propriedade min-content foi declarada. Ou seja, ele vai fazer o máximo para não cortar um elemento 
+                        ao meio se ele transbordar a altura de um elemento;
+        - fit-content(length): vai definir a altura de acordo com o conteúdo do elemento, igual ao max-content, se o 
+                        elemento tiver vários elementos como conteúdo, o fit-content vai fazer o máximo para todos os 
+                        elementos sejam renderizados dentro do mesmo espaço de altura, ou seja, o elemento vai esticar 
+                        de acordo com o conteúdo;
+        - unset: Para desligar essa propriedade;
+        - initial: Volta ao valor inicial;
+        - inherit: Para herdar o valor do elemento pai;
+
+    - Valor Padrão: auto;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: o min-height estabele um padrão para a ALTURA MÍNIMA! Se o nosso height estiver com uma altura maior do que o 
+            min-height, é lógico que o height será obedecido, mas se a altura do height for menor que a altura do
+            min-height, oque será obedecido será o min-height;
+
+-->
+
+    <div>
+    </div>
+
+</body>
+</html>

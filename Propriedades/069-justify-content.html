@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>justify-content</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 1vw;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .container {
+        width: 100%;
+        height: 25%;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, .2);
+    }
+
+    .bloco {
+        width: 16%;
+        height: 100%;
+        padding: 2px;
+        box-shadow: 20px 10px 10px rgba(0, 0, 0, .2);
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+    }
+
+    .bloco > div {
+        background-color: white;
+    }
+
+    .div1 {
+        background-color: aqua;
+        width: 30%;
+        height: 30%;
+        font-size: x-large;
+        text-align: center;
+    }
+    
+    .div2 {
+        background-color: violet;
+        width: 30%;
+        height: 30%;
+        font-size: x-large;
+        text-align: center;
+    }
+
+    #row-flex-start {
+        width: 100%;
+        height: 80%;
+        padding: 2px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    
+    #row-flex-end {
+        width: 100%;
+        height: 80%;
+        padding: 2px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    #row-center {
+        width: 100%;
+        height: 80%;
+        padding: 2px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #row-space-between {
+        width: 100%;
+        height: 80%;
+        padding: 2px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #row-space-around {
+        width: 100%;
+        height: 80%;
+        padding: 2px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #row-space-evenly {
+        width: 100%;
+        height: 80%;
+        padding: 2px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    #column-flex-start {
+        width: 100%;
+        height: 80%;
+        padding: 2px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
+    #column-flex-end {
+        width: 100%;
+        height: 80%;
+        padding: 2px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    #column-center {
+        width: 100%;
+        height: 80%;
+        padding: 2px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #column-space-between {
+        width: 100%;
+        height: 80%;
+        padding: 2px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #column-space-around {
+        width: 100%;
+        height: 80%;
+        padding: 2px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    #column-space-evenly {
+        width: 100%;
+        height: 80%;
+        padding: 2px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    #row-reverse-flex-start {
+        width: 100%;
+        height: 80%;
+        padding: 2px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+    }
+    
+    #row-reverse-flex-end {
+        width: 100%;
+        height: 80%;
+        padding: 2px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
+
+    #row-reverse-center {
+        width: 100%;
+        height: 80%;
+        padding: 2px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+    }
+
+    #row-reverse-space-between {
+        width: 100%;
+        height: 80%;
+        padding: 2px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+    #row-reverse-space-around {
+        width: 100%;
+        height: 80%;
+        padding: 2px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+    }
+
+    #row-reverse-space-evenly {
+        width: 100%;
+        height: 80%;
+        padding: 2px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+    }
+
+    #column-reverse-flex-start {
+        width: 100%;
+        height: 80%;
+        padding: 2px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+    }
+    
+    #column-reverse-flex-end {
+        width: 100%;
+        height: 80%;
+        padding: 2px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+    }
+
+    #column-reverse-center {
+        width: 100%;
+        height: 80%;
+        padding: 2px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    #column-reverse-space-between {
+        width: 100%;
+        height: 80%;
+        padding: 2px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+    }
+
+    #column-reverse-space-around {
+        width: 100%;
+        height: 80%;
+        padding: 2px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+    }
+
+    #column-reverse-space-evenly {
+        width: 100%;
+        height: 80%;
+        padding: 2px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-evenly;
+    }
+    
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: justify-content (Justificação de Conteúdo)
+
+
+    Objetivo: Essa propriedade define como vai ficar o alinhado dos flex-itens de um container no seu eixo principal. 
+                Ou seja, essa propriedade vai ter comportamentos diferentes dependendo do nosso flex-direction.
+
+                DETALHER IMPORTANTE!! A propriedade "justify-content" só deve ser utilizada em elementos containers, 
+                NUNCA DEVERÁ SER UTILIZADA em flex-items;
+                
+
+
+    - Valores Aceitáveis:
+
+        - flex-start:       Alinha os flex-items á partir de onde começa o eixo principal do container;
+
+        - flex-end:         Alinha os flex-items á partir de onde termina o eixo principal do container;
+        
+        - center:           Alinha os flex-items no centro do container;
+
+        - space-between:    Alinha os flex-items nas laterais do container distribuíndo o espaço em vazio no meio deles;
+        
+        - space-around:     Alinha os flex-items distribuíndo o espaço em vazio entre eles por igual, mas o espaço entre 
+                            os flex-items e as laterais tem espaçamento menor;
+        
+        - space-evenly:     Distribuí o espaço em vazio por igual, tanto entre os flex-items, quanto entre eles e as 
+                            laterais;
+
+        - unset:            Para desligar a propriedade;
+
+        - initial:          Volta ao valor inicial;
+        
+        - inherit:          Para herdar o valor do elemento pai;
+
+    - Valor Padrão: flex-start;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: Lembre-se que, sempre que falamos de "justify-content" estamos nos referindo ao eixo principal de um elemento
+            que esteja utilizando flex-box. Quando falamos de eixo secundário, vamos usar sempre a propriedade 
+            "align-items";
+
+        Valores como: space-between, space-around e space-evenly só podem ser usados pela propriedade "justify-content",
+            NÃO TENTE UTILIZÁLOS NA PROPRIEDADE "align-items", não vai dar certo;
+
+        A propriedade "justify-content" só deve ser utilizada em elementos containers, NUNCA DEVERÁ SER UTILIZADA em 
+            flex-items;
+
+-->
+
+    <div class="container" style="background-color: tomato;">
+
+        <div class="bloco">
+            row com flex-start
+            <div id="row-flex-start">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+            </div>
+        </div>
+    
+        <div class="bloco">
+            row com flex-end
+            <div id="row-flex-end">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+            </div>
+        </div>
+    
+        <div class="bloco">
+            row com center
+            <div id="row-center">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+            </div>
+        </div>
+    
+        <div class="bloco">
+            row com space-between
+            <div id="row-space-between">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+            </div>
+        </div>
+    
+        <div class="bloco">
+            row com space-around
+            <div id="row-space-around">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+            </div>
+        </div>
+    
+        <div class="bloco">
+            row com space-evenly
+            <div id="row-space-evenly">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+            </div>
+        </div>
+    
+    </div>
+    
+    <div class="container" style="background-color: wheat;">
+
+        <div class="bloco">
+            column com flex-start
+            <div id="column-flex-start">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+            </div>
+        </div>
+    
+        <div class="bloco">
+            column com flex-end
+            <div id="column-flex-end">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+            </div>
+        </div>
+    
+        <div class="bloco">
+            column com center
+            <div id="column-center">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+            </div>
+        </div>
+    
+        <div class="bloco">
+            column com space-between
+            <div id="column-space-between">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+            </div>
+        </div>
+    
+        <div class="bloco">
+            column com space-around
+            <div id="column-space-around">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+            </div>
+        </div>
+    
+        <div class="bloco">
+            column com space-evenly
+            <div id="column-space-evenly">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+            </div>
+        </div>
+    
+    </div>
+
+    <div class="container" style="background-color: palegreen;">
+
+        <div class="bloco">
+            row-reverse com flex-start
+            <div id="row-reverse-flex-start">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+            </div>
+        </div>
+    
+        <div class="bloco">
+            row-reverse com flex-end
+            <div id="row-reverse-flex-end">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+            </div>
+        </div>
+    
+        <div class="bloco">
+            row-reverse com center
+            <div id="row-reverse-center">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+            </div>
+        </div>
+    
+        <div class="bloco">
+            row-reverse com space-between
+            <div id="row-reverse-space-between">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+            </div>
+        </div>
+    
+        <div class="bloco">
+            row-reverse com space-around
+            <div id="row-reverse-space-around">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+            </div>
+        </div>
+    
+        <div class="bloco">
+            row-reverse com space-evenly
+            <div id="row-reverse-space-evenly">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+            </div>
+        </div>
+    
+    </div>
+
+    <div class="container" style="background-color: paleturquoise;">
+
+        <div class="bloco">
+            column-reverse com flex-start
+            <div id="column-reverse-flex-start">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+            </div>
+        </div>
+    
+        <div class="bloco">
+            column-reverse com flex-end
+            <div id="column-reverse-flex-end">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+            </div>
+        </div>
+    
+        <div class="bloco">
+            column-reverse com center
+            <div id="column-reverse-center">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+            </div>
+        </div>
+    
+        <div class="bloco">
+            column-reverse com space-between
+            <div id="column-reverse-space-between">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+            </div>
+        </div>
+    
+        <div class="bloco">
+            column-reverse com space-around
+            <div id="column-reverse-space-around">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+            </div>
+        </div>
+    
+        <div class="bloco">
+            column-reverse com space-evenly
+            <div id="column-reverse-space-evenly">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+            </div>
+        </div>
+    
+    </div>
+
+</body>
+</html>

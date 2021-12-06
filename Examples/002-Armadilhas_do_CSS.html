@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armadilhas do CSS</title>
+</head>
+<body>
+    <h1>Armadilhas do CSS:</h1>
+
+    <!-- 
+        1º - Nome correto do arquivo, se colocarmos o nome mínimamente errado, o nosso arquivo HTML não consegue achar o CSS;
+            (Algumas pistas para encontrar esse problema é abrirmos o console do nosso google chrome, ele vai apresentar um erro 404 de arquivo não encontrado.)
+        2º - Atributos do link estão incorretos, isso acontece muito quando trocamos o nome "href" por "hrfe" por exemplo, 
+            podemos perder um bom tempo tentando encontrar o erro, quando na verdade é apenas um erro de sintáxe de atributo; 
+            (Algumas pistas podem ser encontradas no próprio google chrome, quando inspecionamos o documento, vamos perceber que o nosso CSS não foi carregado.)
+        3º - Caminho errado do arquivo, isso acontece muito quando nós salvamos um arquivo CSS encima de um arquivo já aberto e
+            esquecemos de mudar no nosso HTML o caminho correto para o CSS desejado.
+        4º - O case sensitive do CSS, tome cuidado com os nomes que foram atribuídos, as vezes o erro é somente uma mudança de 
+            sintáxe, um simples maíusculo para minúsculo e etc. (Por padrão, coloque nos tudo em minúsculo, esse é o mais usado.Tome cuidado, o HTML não é case sensitive, muitas vezes isso pode confundir);
+        5º - Erro de especificidade CSS, as vezes colocamos um elemento como filho de outro no CSS e nos esquecemos disso, o 
+            que pode ocasionar um erro dentro do nosso CSS por falta de especificidade nas nossas declarações, ou seja, um elemento filho que não foi devidamente colocado como filho, ou um descendente que não foi devidamente colocado como descendente;
+        6º - Falta de parâmetros de box model, quando atribuímos uma formatação de estilo a um elemento, mas ele não possuí 
+            parâmetros box-model que tornem possível a visualização do seu estilo. (Uma dica seria ver na inspeção do navegador se o elemento realmente existe e se ele capturou as formatações de estilo, e ver que dimensões faltam nele para que ele torne o seu estilo visível);
+        7º - Precedência de Especificação, mesmo que tenhamos uma atribuição direta sobre um elemento por através de id ou 
+            class, e mas tenhamos uma declaração mais específica de elemento pai e filho, a formatação que vai gerar precedência será a formatação específica, ela vai passar por cima de um id ou class; (Podemos resolver isso usando "!important" essa cláusula determina que a formatação de um elemento é mais importante que qualquer especificação CSS, porém isso é um risco, pois na verdade não mudamos a cor do elemento, nós sobescrevemos a cor o que faz o navegador trabalhar 2 vezes mais!);
+     -->
+     <p>1º - Nome correto do arquivo, se colocarmos o nome mínimamente errado, o nosso arquivo HTML não consegue achar o CSS;
+        (Algumas pistas para encontrar esse problema é abrirmos o console do nosso google chrome, ele vai apresentar um erro 404 de arquivo não encontrado.)<br><br>
+    2º - Atributos do link estão incorretos, isso acontece muito quando trocamos o nome "href" por "hrfe" por exemplo, 
+        podemos perder um bom tempo tentando encontrar o erro, quando na verdade é apenas um erro de sintáxe de atributo; 
+        (Algumas pistas podem ser encontradas no próprio google chrome, quando inspecionamos o documento, vamos perceber que o nosso CSS não foi carregado.)<br><br>
+    3º - Caminho errado do arquivo, isso acontece muito quando nós salvamos um arquivo CSS encima de um arquivo já aberto e
+        esquecemos de mudar no nosso HTML o caminho correto para o CSS desejado.<br><br>
+    4º - O case sensitive do CSS, tome cuidado com os nomes que foram atribuídos, as vezes o erro é somente uma mudança de 
+        sintáxe, um simples maíusculo para minúsculo e etc. (Por padrão, coloque nos tudo em minúsculo, esse é o mais usado.Tome cuidado, o HTML não é case sensitive, muitas vezes isso pode confundir);<br><br>
+    5º - Erro de especificidade CSS, as vezes colocamos um elemento como filho de outro no CSS e nos esquecemos disso, o 
+        que pode ocasionar um erro dentro do nosso CSS por falta de especificidade nas nossas declarações, ou seja, um elemento filho que não foi devidamente colocado como filho, ou um descendente que não foi devidamente colocado como descendente;<br><br>
+    6º - Falta de parâmetros de box model, quando atribuímos uma formatação de estilo a um elemento, mas ele não possuí 
+        parâmetros box-model que tornem possível a visualização do seu estilo. (Uma dica seria ver na inspeção do navegador se o elemento realmente existe e se ele capturou as formatações de estilo, e ver que dimensões faltam nele para que ele torne o seu estilo visível);<br><br>
+    7º - Precedência de Especificação, mesmo que tenhamos uma atribuição direta sobre um elemento por através de id ou 
+        class, e mas tenhamos uma declaração mais específica de elemento pai e filho, a formatação que vai gerar precedência será a formatação específica, ela vai passar por cima de um id ou class; (Podemos resolver isso usando "!important" essa cláusula determina que a formatação de um elemento é mais importante que qualquer especificação CSS, porém isso é um risco, pois na verdade não mudamos a cor do elemento, nós sobescrevemos a cor o que faz o navegador trabalhar 2 vezes mais!);</p>
+</body>
+</html>

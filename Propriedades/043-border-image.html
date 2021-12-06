@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>border-image</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 5vw;
+        display: flex;
+        justify-content: space-between; /*Com o valor center os nossos elementos por padrão pegam o centro da tela*/
+        align-items: center; /*Aqui fazemos com que */
+        height: 100vh;
+        text-align: center;
+    }
+
+    #div1 {
+        width: 15vw;
+        height: 15vw;
+        padding-top: 6%;
+        background-color: gold;
+        border: 1px solid gold;
+        border-image: url("border-image-source.png") 100 / 50 / 50px stretch;
+    }
+
+    #div2 {
+        width: 15vw;
+        height: 15vw;
+        padding-top: 6%;
+        background-color: gold;
+        border: 1px solid gold;
+        border-image: url("border-image-source.png") 100 / 50 / 50px repeat;
+    }
+
+    #div3 {
+        width: 15vw;
+        height: 15vw;        
+        padding-top: 6%;
+        background-color: gold;
+        border: 1px solid gold;
+        border-image: url("border-image-source.png") 100 / 50 / 50 round;
+    }
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: border-image (Imagem da Borda)
+
+
+    Objetivo: é uma propriedade abreviada para todas as propriedades border-image, que são:
+                1º border-image-source
+                2º border-image-slice
+                3º border-image-width
+                4º border-image-outset
+                5º border-image-repeat
+
+                DETALHE IMPORTANTE!!! a ordem acima deve ser seguida para que essa propriedade dê certo, mas não apenas 
+                isso, depois dos slice, como todos os valores são numéricos, deverão haver barras separando eles, dessa
+                forma:
+
+                        border-image: source slice / width / outset repeat
+
+
+    - Valores Aceitáveis:
+
+        - source:   Trazendo a URL da imagem;
+        - slice:    Fará um corte na imagem
+        - width:    Define uma largura para a imagem de borda;
+        - outset:   Define um espaçamento entre o elemento e a imagem de borda;
+        - repeat:   Define o quanto uma imagem pode repetir nas bordas ou não;
+        - initial:  Volta ao valor inicial;
+        - inherit:  Para herdar o valor do elemento pai;
+
+    - Valor Padrão: none 100% 1 0 stretch;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: ;
+
+-->
+
+    <div id="div1">Valor para: border-image: url("border-image-source.png") 100 / 50 / 50px stretch;</div>
+    <div id="div2">Valor para: border-image: url("border-image-source.png") 100 / 50 / 50px repeat;</div>
+    <div id="div3">Valor para: border-image: url("border-image-source.png") 100 / 50 / 50px round</div>
+
+</body>
+</html>

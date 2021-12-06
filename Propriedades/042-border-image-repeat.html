@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>border-image-repeat</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 5vw;
+        display: flex;
+        justify-content: space-between; /*Com o valor center os nossos elementos por padrão pegam o centro da tela*/
+        align-items: center; /*Aqui fazemos com que */
+        height: 100vh;
+        text-align: center;
+    }
+
+    #div1 {
+        width: 15vw;
+        height: 15vw;
+        padding-top: 7%;
+        background-color: gold;
+        border: 1px solid gold;
+        border-image-source: url("border-image-source.png");
+        border-image-width: 50;
+        border-image-slice: 100;
+        border-image-outset: 50px;
+        border-image-repeat: stretch; /*Perceba que a imagem é esticada para dar conta do elemento e os cantos 
+                                        permanecem intactos*/
+    }
+
+    #div2 {
+        width: 15vw;
+        height: 15vw;
+        padding-top: 7%;
+        background-color: gold;
+        border: 1px solid gold;
+        border-image-source: url("border-image-source.png");
+        border-image-width: 50;
+        border-image-slice: 100;
+        border-image-outset: 50px;
+        border-image-repeat: repeat; /*Perceba que a imagem é repetida nos lados para dar conta do elemento e os cantos 
+                                        permanecem intactos*/
+    }
+
+    #div3 {
+        width: 15vw;
+        height: 15vw;        
+        padding-top: 7%;
+        background-color: gold;
+        border: 1px solid gold;
+        border-image-source: url("border-image-source.png");
+        border-image-width: 50;
+        border-image-slice: 100;
+        border-image-outset: 50px;
+        border-image-repeat: round; /*Perceba que a imagem é circundada em volta do elemento trazendo certa coerência 
+                                        ao entorno, ainda assim, os cantos permanecem intactos*/
+    }
+
+    #div4 {
+        width: 15vw;
+        height: 15vw;        
+        padding-top: 7%;
+        background-color: gold;
+        border: 1px solid gold;
+        border-image-source: url("border-image-source.png");
+        border-image-width: 50;
+        border-image-slice: 100;
+        border-image-outset: 50px;
+        border-image-repeat: space; /*Perceba que no space a preocupação é que haja um espaçamento igual entre os 
+                                    elementos da imagem mesmo que isso signifique esticar alguns elementos na imagem, ainda 
+                                    assim, os cantos permanecem intactos*/
+    }
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: border-image-repeat (Repetição da Imagem da Borda)
+
+
+    Objetivo: é uma propriedade que define como uma imagem será repetida sobre as bordas de um elemento.
+
+
+    - Valores Aceitáveis:
+
+        - stretch:  "Esticar", ele estica a imagem nos lados para que ela acompanhe a largura e altura do elemento;
+        - repeat:   Repetirá a imagem nos lados, e manterá os cantos da imagem intactos;
+        - round:    "Arredondar", ele faz com que a imagem fiquem bem circundada envolta do elemento;
+        - space:    "Espaço", vai priorizar um espaçamento igualitário entre os elementos da imagem, mesmo que isso 
+                        signifique esticar alguns elementos dos lados só para os elementos terem o mesmo espaçamento entre
+                        eles;
+        - initial:  Volta ao valor inicial;
+        - inherit:  Para herdar o valor do elemento pai;
+
+    - Valor Padrão: stretch;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: ;
+
+-->
+
+    <div id="div1">Com stretch</div>
+    <div id="div2">Com repeat</div>
+    <div id="div3">Com round</div>
+    <div id="div4">Com space</div>
+
+</body>
+</html>

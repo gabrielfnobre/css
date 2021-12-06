@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>border-image-source</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center; /*Com o valor center os nossos elementos por padrão pegam o centro da tela*/
+        align-items: center; /*Aqui fazemos com que */
+        height: 100vh;
+    }
+
+    div {
+        width: 500px;
+        height: 500px;
+        background-color: gold;
+        border: 1px solid gold; /*A borda deve ser definida sempre antes do border-image-source, do contrário, ela iria
+                                    sobrescrever a nossa imagem de borda*/
+        border-image-source: url("border-image-source.png"); /*Aqui chamamos pela imagem*/
+        border-image-width: 50px; /*Define uma largura para a borda*/
+        border-image-slice: 30%; /*Define como a imagem vai enlaçar a borda*/
+        border-image-outset: 50px; /*Define um distanciamento da imagem de borda á partir da borda do elemento*/
+        border-image-repeat: round; /*Define como a imagem será renderizada, se ela vai repetir ou não na borda*/
+    }
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: border-image-source (Origem da Imagem da Borda)
+
+
+    Objetivo: é uma propriedade que permite definir a origem de uma imagem que servirá como borda de um elemento.
+
+                ATENÇÃO!!! border-image-source define apenas a origem da imagem, precisamos de outras propriedades para
+                identificar a largura, enlace, posicionamento e repetição da imagem utilizada como borda.
+
+    - Valores Aceitáveis:
+
+        - none: Nenhum valor;
+        - image: Caminho para a imagem (Por através de url);
+        - initial: Volta ao valor inicial;
+        - inherit: Para herdar o valor do elemento pai;
+
+    - Valor Padrão: none;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: O segredo na aplicação de uma imagem como borda está no formato da imagem, que deve ter o mesmo formato que que 
+            o elemento que desejamos entornar com a nossa imagem - se for um quadrado a imagem deve ser quadrada, se for
+            retangular a imagem também deve ser retangular e assim por diante - para isso podemos usar aplicativos como
+            o Adobe XD (gratuíto) - usado para criação de imagens para dispositivos - ou o Figma (https://www.figma.com/) 
+            - um site online usado para a criação de imagens também.
+            Procure arrumar a imagem simétricamente para que ela possa ser bem renderizada como borda do nosso elemento,
+            como se fosse um jogo da velha tendo os cantos e meio bem delimitados;
+
+        - DETALHE IMPORTANTE!!! Uma borda deve ser definida antes da border-image, do contrário a border-image nem 
+            aparecerá. Pois a propriedade border-image usa a borda como parâmetro para ser renderizada;
+
+-->
+
+    <div></div>
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>flex-wrap</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+
+    body {
+        margin: 0;
+        padding: 2vw;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .container {
+        width: 25%;
+        height: 50vh;
+        margin: 10px;
+    }
+
+    #row {
+        width: 70%;
+        height: 50vh;
+        box-shadow: 10px 10px 10px rgba(0,0,0,.2);
+        display: flex;
+        flex-direction: row;
+    }
+
+    #row-reverse {
+        width: 70%;
+        height: 50vh;
+        box-shadow: 10px 10px 10px rgba(0,0,0,.2);
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: wrap; /*Aqui aplicamos o flex-wrap*/
+    }
+
+    #column {
+        width: 70%;
+        height: 50vh;
+        box-shadow: 10px 10px 10px rgba(0,0,0,.2);
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap-reverse; /*Aqui aplicamos o flex-wrap*/
+    }
+
+    #column-reverse {
+        width: 70%;
+        height: 50vh;
+        box-shadow: 10px 10px 10px rgba(0,0,0,.2);
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: nowrap; /*Aqui aplicamos o flex-wrap*/
+    }
+
+    .div1 {
+        background-color: aqua;
+        padding: 35px;
+        width: 30%;
+        height: 30%;
+        font-size: x-large;
+        text-align: center;
+    }
+    
+    .div2 {
+        background-color: violet;
+        padding: 35px;
+        width: 30%;
+        height: 30%;
+        font-size: x-large;
+        text-align: center;
+    }
+
+    .div3 {
+        background-color: rosybrown;
+        padding: 35px;
+        width: 30%;
+        height: 30%;
+        font-size: x-large;
+        text-align: center;
+    }
+    
+    .div4 {
+        background-color: antiquewhite;
+        padding: 35px;
+        width: 30%;
+        height: 30%;
+        font-size: x-large;
+        text-align: center;
+    }
+    
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: flex-wrap (Amarração do Flex)
+
+
+    Objetivo: Essa propriedade define se os flex-items devem transbordar, ou não, um container flex quando ultrapassamos 
+                as dimensões do nosso container. 
+                
+                Essa propriedade sempre é usada sobre um elemento container que contém flex-items dentro dele.
+
+                DETALHE IMPORTANTE!!! Todo container flex têm precedência sobre a propriedade width, por isso, 
+                mesmo que nós definamos que os flex-items dentro de um container tenham tamanho o suficiente para 
+                transbordar um container, o flex por padrão vai espremer os elementos dentro do container para que eles não 
+                transbordem o elemento container. Isso acontece por que o flex tem precedência sobre essa propriedade e
+                o valor padrão dele é "nowrap".
+
+
+    - Valores Aceitáveis:
+
+        - nowrap:       Os flex-items serão espremidos para caber dentro do container sem quebrar a linha;
+        
+        - wrap:         Se os flex-items ultrapassarem a largura do container, eles irão ser quebrados em 2 linhas;
+        
+        - wrap-reverse: Se os flex-items ultrapassarem a largura do container, eles serão quebrados em 2 linhas, mas no
+                        sentido reverso;
+        
+        - unset:        Para desligar a propriedade;
+        
+        - initial:      Volta ao valor inicial;
+        
+        - inherit:      Para herdar o valor do elemento pai;
+
+    - Valor Padrão: nowrap;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: A propriedade flex-wrap só funciona em elementos containers, NÃO PODEMOS UTILIZÁ-LA em flex-items.
+
+        Quando um wrap está funcionando, ele não vai quebrar a linha dentro do conteúdo disponível por igual, isso 
+        significa que, se tiver muito espaço sobrando ele vai criar um grande espaçamentos entre alinha quebrada, se 
+        tiver pouco espaço, o espaçamento será menor.
+
+-->
+
+    <div class="container">
+    <span style="font-weight: bold;">com flex-wrap: padrão</span><br>(para visualizar melhor diminua a área visível da 
+    tela)
+    <div id="row">
+        <div class="div1"><span style="font-weight: bold;">A</span></div>
+        <div class="div2"><span style="font-weight: bold;">B</span></div>
+        <div class="div3"><span style="font-weight: bold;">C</span></div>
+        <p>Esquerda para a Direita&rArr;</p>
+    </div>
+    </div>
+
+    <div class="container">
+    <span style="font-weight: bold;">row-reverse com flex-wrap: wrap</span><br>(Como estamos usando um "wrap" normal 
+    num reverse ele vai quebrar no mesmo sentido do reverse)
+    <div id="row-reverse">
+        <div class="div1"><span style="font-weight: bold;">A</span></div>
+        <div class="div2"><span style="font-weight: bold;">B</span></div>
+        <div class="div3"><span style="font-weight: bold;">C</span></div>
+        <div class="div4"><span style="font-weight: bold;">D</span></div>
+        <p style="text-align: right;">Direita para a Esquerda&lArr;</p>
+    </div>
+    </div>
+
+    <div class="container">
+    <span style="font-weight: bold;">column com flex-wrap: wrap-reverse</span><br>(Como estamos usando um "wrap-reverse" 
+    num column normal veja que ele muda a direção de quebra do wrap column para começar á partir da esquerda)
+    <div id="column">
+        <div class="div1"><span style="font-weight: bold;">A</div>
+        <div class="div2"><span style="font-weight: bold;">B</span></div>
+        <div class="div3"><span style="font-weight: bold;">C</span></div>
+        <div class="div4"><span style="font-weight: bold;">D</span></div>
+        <p style="text-align: start;">De Cima para Baixo&dArr;</p>
+    </div>
+    </div>
+
+    <div class="container">
+    <div id="column-reverse">
+        <div class="div1"><span style="font-weight: bold;">A</span></div>
+        <div class="div2"><span style="font-weight: bold;">B</span></div>
+        <div class="div3"><span style="font-weight: bold;">C</span></div>
+        <div class="div4"><span style="font-weight: bold;">D</span></div>
+        <p>De Baixo para Cima&uArr;</p>
+    </div>
+    <span style="font-weight: bold;">column-reverse com flex-wrap: nowrap</span><br>(Perceba que ele volta ao valor 
+    padrão)
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+@mixin avatar($size, $circle: false) { /*Criamos um mixin que compara se a variável circulo vem com valor true ou 
+                                            false*/
+    width: $size;
+    height: $size;
+
+    @if $circle == true { /*Se circle vier true a borda será arredondada*/
+        border-radius: $size / 2;
+    } @else { /*Caso circle venha false a borda será iluminada com amarelo*/
+        border: 3px solid yellow;
+    }
+}
+
+.photo-normal {
+    @include avatar(150px); /*Aqui delimitamos que a borda será quadrada e iluminada*/
+}
+
+.photo-message {
+    @include avatar(150px, true); /*Aqui já delimitamos que a borda será circular*/
+}

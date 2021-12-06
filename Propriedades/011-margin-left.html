@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>margin-left</title>
+<style>
+    
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+    }
+    /*Perceba que formatamos a nossa body para não ter nenhuma margin, com um display flex, alinhando os elementos para
+    baixo e espaçando eles de uma forma que possamos ver bem as margens formatadas somente na parte debaixo dos elementos
+    */
+
+    .bloco {
+        width: 20vw;
+        height: 20vw; /*Veja que interessante, usamos a unidade de medida "vw" no nosso height, embora pareça estranho 
+                        fazer isso é totalmente plausível, pois o vw é uma unidade de medida relativa ao viewport, ou seja
+                        a toda a área visível da nossa tela, se atribuímos esse valor a nossa altura, o mesmo se daria se 
+                        fizéssemos o contrário.*/
+        background-color: skyblue;
+    /*Perceba que em todos os elementos uma margem esquerda ganhou de 2vh de espaçamento em relação as outras divs*/
+    }
+    
+    .bloco + .bloco {
+        margin-left: 2vh;
+    }
+    /* Perceba aqui que nós dizemos ao CSS que somente os elementos de classe ".bloco" que tiverem um irmão que tiver a 
+    mesma classe ".bloco" é que vão aplicar a margem esquerda de 2vh */
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: margin-left (margem esquerda)
+
+
+    Objetivo: é uma propriedade que define um valor para a margem esquerda do nosso elemento. Lembrando que, quando falamos
+                de margem, estamos nos referindo ao espaçamento que existe fora da borda dos nossos elementos.
+
+
+    - Valores Aceitáveis:
+
+        - length: Qualquer valor absoluto ou relativo;
+        - auto: Deixamos a propriedade com um valor automático, isso significa que a menos que o elemento tenha algum 
+                conteúdo que gere um espaçamento automático sobre ele, ele vai ficar zerado;
+        - initial: Volta ao valor inicial;
+        - inherit: Para herdar o valor do elemento pai;
+
+    - Valor Padrão: 0;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS:  
+
+-->
+
+    <div class="bloco"></div>
+    <div class="bloco"></div>
+    <div class="bloco"></div>
+
+</body>
+</html>

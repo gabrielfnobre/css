@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="sass/css/debug.css" />
+<title>Regra @debug</title>
+</head>
+<body>
+
+<!--            
+    
+            Regras de Estilo @debug
+
+    O que faz a Regra de Estilo @debug?
+
+A regra de estilo @debug nos permite debugar um código – “debugar” ou “depurar”, é quando nós colocamos um código 
+em ação afim de fazer um teste, por através da depuração conseguimos ver os resultados de uma execução no terminal 
+antes de colocar o código para funcionar de fato – para ver os resultados de uma função, mixin ou o valor de uma 
+variável que foi mudada.
+
+O @debug devolve para nós a expressão que colocarmos no debug – geralmente uma string – e mostra o rastreamento do 
+debug no código, na linha onde o debug aconteceu.
+
+    OBS: Para mais detalhes veja "Fundamentos do Sass nº18";
+
+-->
+
+<ul id="chat">
+
+    <li>
+
+        <div class="avatar">
+            <img src="https://i.pravatar.cc/48" alt="Avatar">
+        </div>
+        <div class="message">
+            <strong>John Smith</strong>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea nemo eveniet necessitatibus, deleniti illo 
+                corporis enim in fugiat, modi amet maxime totam est praesentium voluptates maiores aliquid fuga, id 
+                tempore?
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus iusto saepe exercitationem 
+                quibusdam dignissimos assumenda quis, aut beatae vero repellat dolor quaerat incidunt harum amet 
+                ratione enim vitae molestiae accusamus!
+            </p>
+            <time>10 minutos atrás</time>
+        </div>
+        <div class="menu">
+            <button type="button">
+                <img src="more_vert_black_24dp.svg" alt="More">
+            </button>
+        </div>
+
+    </li>
+    
+    <li class="me">
+
+        <div class="avatar">
+            <img src="https://i.pravatar.cc/48?1" alt="Avatar"> <!--Para que as imagens viessem diferentes colocamos 
+                "?1" ao final da URL-->
+        </div>
+        <div class="message">
+            <strong>John Smith</strong>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptas quam enim neque ipsam 
+                fugit.</p>
+            <time>10 minutos atrás</time>
+        </div>
+        <div class="menu">
+            <button type="button">
+                <img src="more_vert_black_24dp.svg" alt="More">
+            </button>
+        </div>
+
+    </li>
+
+</ul>
+
+</body>
+</html>

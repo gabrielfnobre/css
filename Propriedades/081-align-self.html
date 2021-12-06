@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>align-self</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 1vw;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .container {
+        width: 100%;
+        height: 50%;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .bloco {
+        width: 16%;
+        height: 100%;
+        padding: 2px;
+        margin: 4px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, .2);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .bloco > div {
+        background-color: lightpink;
+    }
+
+    .div1 {
+        background-color: aqua;
+        font-size: x-large;
+        text-align: center;
+    }
+    
+    .div2 {
+        background-color: violet;
+        font-size: x-large;
+        text-align: center;
+    }
+
+    .div3 {
+        background-color: rgb(248, 203, 121);
+        font-size: x-large;
+        text-align: center;
+    }
+    
+    .div4 {
+        background-color: turquoise;
+        font-size: x-large;
+        text-align: center;
+    }
+
+    #auto {
+        display: flex;
+        height: 80%;
+        justify-content: center;
+        align-items: start;
+    }
+    #auto > div {
+        width: 25%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #auto > .div2 {
+        height: unset;
+        align-self: auto;
+
+    }
+
+    #stretch {
+        display: flex;
+        height: 80%;
+        justify-content: center;
+        align-items: start;
+    }
+    #stretch > div {
+        width: 25%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #stretch > .div2 {
+        height: unset;
+        align-self: stretch;
+
+    }
+
+    #center {
+        display: flex;
+        height: 80%;
+        justify-content: center;
+        align-items: start;
+    }
+    #center > div {
+        width: 25%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #center > .div2 {
+        align-self: center;
+
+    }
+
+    #flex-start {
+        display: flex;
+        height: 80%;
+        justify-content: center;
+        align-items: center;
+    }
+    #flex-start > div {
+        width: 25%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #flex-start > .div2 {
+        align-self: flex-start;
+
+    }
+
+    #flex-end {
+        display: flex;
+        height: 80%;
+        justify-content: center;
+        align-items: start;
+    }
+    #flex-end > div {
+        width: 25%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #flex-end > .div2 {
+        align-self: flex-end;
+
+    }
+
+    #baseline {
+        display: flex;
+        height: 80%;
+        justify-content: center;
+        align-items: start;
+    }
+    #baseline > div {
+        width: 25%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #baseline > .div2 {
+        height: unset;
+        align-self: baseline;
+
+    }
+
+    #auto-grid {
+        display: grid;
+        height: 80%;
+    }
+    #auto-grid > div {
+        width: 25%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #auto-grid > .div2 {
+        height: unset;
+        align-self: auto;
+
+    }
+
+    #stretch-grid {
+        display: grid;
+        height: 80%;
+    }
+    #stretch-grid > div {
+        width: 25%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #stretch-grid > .div2 {
+        height: unset;
+        align-self: stretch;
+
+    }
+
+    #center-grid {
+        display: grid;
+        height: 80%;
+    }
+    #center-grid > div {
+        width: 25%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #center-grid > .div2 {
+        height: unset;
+        align-self: center;
+
+    }
+
+    #flex-start-grid {
+        display: grid;
+        height: 80%;
+    }
+    #flex-start-grid > div {
+        width: 25%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #flex-start-grid > .div2 {
+        height: unset;
+        align-self: flex-start;
+
+    }
+
+    #flex-end-grid {
+        display: grid;
+        height: 80%;
+    }
+    #flex-end-grid > div {
+        width: 25%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #flex-end-grid > .div2 {
+        height: unset;
+        align-self: flex-end;
+
+    }
+
+    #baseline-grid {
+        display: grid;
+        height: 80%;
+    }
+    #baseline-grid > div {
+        width: 25%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #baseline-grid > .div2 {
+        height: unset;
+        align-self: baseline;
+
+    }
+    
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: align-self (Alinhamento de Si Mesmo)
+
+
+    Objetivo: Essa propriedade define o alinhamento de um único item sobre o eixo secundário de um container
+                que esteja usando display flexbox, ou de um único grid-item dentro do eixo grid (linha) de um container.
+
+                Isso significa que o alinhamento vai depender de onde está o nosso eixo secundário, ou seja, se o 
+                "flex-direction" for "row" o alinhamento cai acontecer na vertical, mas se ele for "column" vai acontecer
+                na horizontal. Dentro de eixos grid o alinhamento vai acontecer na vertical.
+
+                DETALHE IMPORTANTE!!! Sempre deve ser usada em flex-items ou grid-items, nunca deve ser utilizada sobre
+                um elemento container.
+
+
+    - Valores Aceitáveis:
+
+        
+        - auto:         Vai pegar o valor automático do conteúdo;
+
+        - stretch:      O item vai ser esticado;
+
+        - center:       O item vai ser centralizado;
+
+        - flex-start:   O item vai ser posicionado no início do eixo secundário;
+
+        - flex-end:     O item vai ser posicionado no final do eixo secundário;
+
+        - baseline:     O item vai se alinhar ao tamanho do conteúdo textual;
+        
+        - unset:        Para desligar a propriedade;
+        
+        - initial:      Volta ao valor inicial;
+        
+        - inherit:      Para herdar o valor do elemento pai;
+
+    - Valor Padrão: auto;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: ;
+
+-->
+
+    <div class="container">
+
+        <div class="bloco">
+            align-self: auto<br>
+            <span style="font-weight: normal;font-size: 10pt;">Perceba que somente a div "B" pega o tamanho automático 
+                do seu conteúdo...
+            </span>
+            <div id="auto">
+                <div class="div1">A</div>
+                <div class="div2"><span style="font-size: 10pt">B</span></div>
+                <div class="div3">C</div>
+                <div class="div4">D</div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: aplicada sobre um flexbox;
+            </span>
+        </div>
+    
+        <div class="bloco">
+            align-self: stretch<br>
+            <span style="font-weight: normal;font-size: 10pt;">Perceba que somente a div "B" estica sobre todo o eixo 
+                secundário...
+            </span>
+            <div id="stretch">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+                <div class="div3">C</div>
+                <div class="div4">D</div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: aplicada sobre um flexbox;
+            </span>
+        </div>
+
+        <div class="bloco">
+            align-self: center<br>
+            <span style="font-weight: normal;font-size: 10pt;">Perceba que somente a div "B" se alinha ao centro...
+            </span>
+            <div id="center">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+                <div class="div3">C</div>
+                <div class="div4">D</div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: aplicada sobre um flexbox;
+            </span>
+        </div>
+
+        <div class="bloco">
+            align-self: flex-start<br>
+            <span style="font-weight: normal;font-size: 10pt;">Perceba que somente a div "B" se alinha á parte de cima...
+            </span>
+            <div id="flex-start">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+                <div class="div3">C</div>
+                <div class="div4">D</div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: aplicada sobre um flexbox;
+            </span>
+        </div>
+
+        <div class="bloco">
+            align-self: flex-end<br>
+            <span style="font-weight: normal;font-size: 10pt;">Perceba que somente a div "B" se alinha á parte de baixo...
+            </span>
+            <div id="flex-end">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+                <div class="div3">C</div>
+                <div class="div4">D</div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: aplicada sobre um flexbox;
+            </span>
+        </div>
+
+        <div class="bloco">
+            align-self: baseline<br>
+            <span style="font-weight: normal;font-size: 10pt;">Perceba que somente a div "B" acompanha o tamanho do texto...
+            </span>
+            <div id="baseline">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+                <div class="div3">C</div>
+                <div class="div4">D</div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: aplicada sobre um flexbox;
+            </span>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="bloco">
+            Para grid, align-self: auto<br>
+            <span style="font-weight: normal;font-size: 10pt;">Perceba que somente a div "B" pega o tamanho automático 
+                do grid, que é preencher todo o eixo verticalmente...
+            </span>
+            <div id="auto-grid">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+                <div class="div3">C</div>
+                <div class="div4">D</div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: aplicado sobre um display-grid;
+            </span>
+        </div>
+
+        <div class="bloco">
+            Para grid, align-self: stretch<br>
+            <span style="font-weight: normal;font-size: 10pt;">Perceba que somente a div "B" estica até ter o tamanho  
+                vertical completo no eixo do grid...
+            </span>
+            <div id="stretch-grid">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+                <div class="div3">C</div>
+                <div class="div4">D</div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: aplicado sobre um display-grid;
+            </span>
+        </div>
+
+        <div class="bloco">
+            Para grid, align-self: center<br>
+            <span style="font-weight: normal;font-size: 10pt;">Perceba que somente a div "B" pega o centro vertical no eixo 
+                do grid...
+            </span>
+            <div id="center-grid">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+                <div class="div3">C</div>
+                <div class="div4">D</div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: aplicado sobre um display-grid;
+            </span>
+        </div>
+
+        <div class="bloco">
+            Para grid, align-self: flex-start<br>
+            <span style="font-weight: normal;font-size: 10pt;">Perceba que somente a div "B" pega a parte de cima na
+                vertical do eixo do grid...
+            </span>
+            <div id="flex-start-grid">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+                <div class="div3">C</div>
+                <div class="div4">D</div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: aplicado sobre um display-grid;
+            </span>
+        </div>
+
+        <div class="bloco">
+            Para grid, align-self: flex-end<br>
+            <span style="font-weight: normal;font-size: 10pt;">Perceba que somente a div "B" pega a parte de baixo na
+                vertical do eixo do grid...
+            </span>
+            <div id="flex-end-grid">
+                <div class="div1">A</div>
+                <div class="div2">B</div>
+                <div class="div3">C</div>
+                <div class="div4">D</div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: aplicado sobre um display-grid;
+            </span>
+        </div>
+
+        <div class="bloco">
+            Para grid, align-self: baseline<br>
+            <span style="font-weight: normal;font-size: 10pt;">Perceba que somente a div "B" pega o tamanho do texto 
+                menor verticamente...
+            </span>
+            <div id="baseline-grid">
+                <div class="div1">A</div>
+                <div class="div2"><span style="font-size: 10pt">B</span></div>
+                <div class="div3">C</div>
+                <div class="div4">D</div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: aplicado sobre um display-grid;
+            </span>
+        </div>
+
+    </div>
+
+</body>
+</html>

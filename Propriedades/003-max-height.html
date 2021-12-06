@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>max-height</title>
+<style>
+    div {
+        width: 100px;
+        height: auto;
+        background-color: rgb(154, 221, 241);
+        max-height: 100px;
+        /* Perceba que colocamos a altura da div no automático, ou seja, ela vai aumentar enquanto o conteúdo dela for 
+            aumentando, mas definimos uma altura máxima para o elemento de apenas 100px. Isso significa que vamor ter 
+            um overflow, ou seja, o conteúdo da div irá transbordar do elemento. Para tratar isso, deveriamos usar a 
+            propriedade overflow. */
+        /* max-height: fit-content; */
+        /* max-height: max-content; */
+        /* max-height: min-content; */
+        /* Você vai perceber que qualquer um dos "contents" vai apresentar o mesmo resultado, devido ao conteúdo da div ser 
+        9 linhas de palavras com break row */
+    }
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: max-height (altura-máxima)
+
+
+    Objetivo: é uma propriedade que determina a altura máxima a qual um elemento deve chegar. Quando temos um elemento que 
+                ultrapassa a altura máxima irá gerar um overflow no elemento. Um overflow (transbordar) é quando o conteúdo
+                ultrapassa o tamanhho definido para o seu elemento.
+
+
+    - Valores Aceitáveis:
+
+        - none: Nenhum valor;
+        - length: Qualquer valor absoluto ou relativo;
+        - max-content: vai definir a altura de acordo com o conteúdo do elemento, se o elemento tiver vários elementos 
+                        como conteúdo, o max-content vai fazer o máximo para todos os elementos sejam renderizados dentro
+                        do mesmo espaço de altura, ou seja, o elemento vai esticar de acordo com o conteúdo;
+        - min-content: vai definir a altura de acordo com o maior elemento que estiver como conteúdo de um elemento onde a
+                        propriedade min-content foi declarada. Ou seja, ele vai fazer o máximo para não cortar um elemento 
+                        ao meio se ele transbordar a altura de um elemento;
+        - fit-content(length): vai definir a altura de acordo com o conteúdo do elemento, igual ao max-content, se o 
+                        elemento tiver vários elementos como conteúdo, o fit-content vai fazer o máximo para todos os 
+                        elementos sejam renderizados dentro do mesmo espaço de altura, ou seja, o elemento vai esticar 
+                        de acordo com o conteúdo;
+        - unset: Para desligar essa propriedade;
+        - initial: Volta ao valor inicial;
+        - inherit: Para herdar o valor do elemento pai;
+
+    - Valor Padrão: none;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: alguma informação importante;
+
+-->
+
+    <div>
+        Espaço<br>
+        Espaço<br>
+        Espaço<br>
+        Espaço<br>
+        Espaço<br>
+        Espaço<br>
+        Espaço<br>
+        Espaço<br>
+        Espaço<br>
+    </div>
+
+</body>
+</html>

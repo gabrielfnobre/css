@@ -1,0 +1,95 @@
+@charset "UTF-8";
+/*Veja que importamos os módulos e na importação já demos apelidos á eles*/
+/*Neste caso, já que temos um arquivo bootstrap com módulos identificados com prefixos
+ vale a pena usar o * como apelido, já que não teremos conflito, do contrário, teríamos
+ que colocar o nome do arquivo bootstrap - ou apelido - em todas as entradas.*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  color: #7f808c;
+  /*Perceba que quando colocamos o prefixo, ele deve vir depois o $*/
+}
+
+#chat {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 0;
+  list-style: none;
+}
+#chat li {
+  display: flex;
+  margin-bottom: 32px;
+}
+#chat li .avatar {
+  padding: 0 16px;
+  display: flex;
+  align-items: flex-end;
+}
+#chat li .avatar img {
+  border-radius: 50%;
+  /*Perceba que não precisamos de colocar o nome do bootstrap por que já 
+     definimos que todos os arquivos não precisam de apelido por causa do
+     * declarado no início*/
+  width: 48px;
+}
+#chat li .message {
+  flex: 1;
+  background-color: #f5f6fa;
+  padding: 16px;
+  border-radius: 10px;
+  /*Perceba que não precisamos de colocar o nome do bootstrap por que já 
+  definimos que todos os arquivos não precisam de apelido por causa do
+  * declarado no início*/
+  border-bottom-left-radius: 0;
+}
+#chat li .message strong {
+  color: #242939;
+}
+#chat li .message p {
+  font-size: 14px;
+}
+#chat li .message time {
+  font-size: 12px;
+  letter-spacing: 1px;
+  opacity: 0.65;
+}
+#chat li .menu {
+  display: flex;
+  align-items: center;
+}
+#chat li .menu button {
+  border: none;
+  background: none;
+  outline: none;
+}
+#chat li .menu button img {
+  width: 16px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+#chat .me {
+  /*Perceba que quando colocamos o prefixo, ele deve vir depois o $*/
+  flex-direction: row-reverse;
+  color: #fff;
+}
+#chat .me .message {
+  background-color: #0176ff;
+  border-bottom-left-radius: 8px;
+  /*Perceba que quando colocamos o prefixo, ele deve vir depois o $*/
+  border-bottom-right-radius: 0;
+}
+#chat .me .message ::selection {
+  background: white;
+  color: #0176ff;
+  /*Perceba que quando colocamos o prefixo, ele deve vir depois o $*/
+}
+#chat .me strong {
+  display: none;
+}
+
+/*# sourceMappingURL=forward.css.map */

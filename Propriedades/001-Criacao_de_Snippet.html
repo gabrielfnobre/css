@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criacao de Snippet</title>
+</head>
+<body>
+    <!-- 
+
+            Criação de Snippet
+
+        Snippets são atalhos dentro do VSCode, bem como dentro de outras IDE's, que tem o papel de facilitar a escrita do nosso código, geralmente nós deixamos a início do nosso código pré-montado para facilitar a criação. Esse código pré montado é o que chamamos de snippet.
+
+            Como criar um snippet no VSCode?
+
+        Vamos em:
+                File >> Preferences >> User Snippets
+                
+        Isso vai abrir para nós uma janela de opções para a criação dos nossos snippets dentro de um determinado escopo, por exemplo entre essas opções de escopo temos:
+
+            New Global Snippets file - Esse é usado para criarmos um snippet a nível global, que poderá ser chamado á partir de qualquer
+                                        linguagem de programação que estivermos trabalhando dentro do VSCode;
+
+            New Snippets file for 'nome do arquivo' - Esse é usado para criarmos um snippet dentro do contexto do arquivo aberto no
+                                                        momento;
+
+            *Opções por linguagem - Nas opções por linguagem que aparecem quando rolamos a barra de rolagem para baixo, vamos encontrar 
+                                    várias opções de linguagens, onde poderemos criar arquivos somente dentro do contexto de cada 
+                                    linguagem de programação; 
+
+        Basta escolhermos um escopo para podermos trabalhar dentro dele.
+
+        Depois de escolhido aparecerá uma janela para que possamos determinar um nome para o nosso snippet.
+
+        Depois de escolhido o nome, aparecerá para nós o nosso documento snippet como um arquivo JSON em forma de comentários, esses comentários são para explicar como podemos utilizar o snippet e traz um snippet de exemplo.
+
+        Em seguida podemos apagar todos os comentários acima da linha "Print to console" e depois descomentar todo o documento snippet. (DICA IMPORTANTE! Para descomentar todos os "//" de uma única vez, selecione um único "//" em seguida pressione Crtl + D, isso vai fazer com que todos os "//" que estiverem no arquivo seja selecionados, em seguida basta só apagá-los)
+
+        Ao descomentar, já vamos perceber que o snippet já mudou de cor e já estará funcionando, basta á partir daí criar o nosso arquivo snippet usando as regras de escrita do JSON
+
+        Dentro do nosso arquivo JSON vamos ter uma linha assim:
+            "scope": "javascript,typescript","
+        Essa linha significa que o nosso arquivo JSON está restrito a ser um arquivo somente para javascript e typescript, a menos que você queira restringir o arquivo a aceitar somente esse tipo de escopo essa linha é desnecessária.
+
+        Explicando agora o nosso arquivo snippet, vamos ter a seguinte estrutura:
+            {
+                "Print to console": {
+                    "prefix": "log",
+                    "body": [
+                        "console.log('$1');",
+                        "$2"
+                    ],
+                    "description": "Log output to console"
+                }
+            }
+
+            - Print to console: Não é um comando, ele é simplesmente o nome do nosso arquivo snippet;
+            - prefix: É um comando JSON, para determinarmos um prefixo á ser escrito para que a IDE complete a palavra que irá chamar o
+                        nosso arquivo snippet ;
+            - body: Dentro do nosso body vai o nosso arquivo da forma que desejamos que ele apareça na tela. Lembrando que temos que 
+                    escrevê-lo seguindo a formatação da linguagem que desejamos que ele assuma. Geralmente escrevemos o arquivo original por fora e depois copiamos ele dentro da body do nosso snippet;
+                    Depois de passado o arquivo para dentro do body é preciso formatá-lo no estilo JSON, no JSON cada linha deve estar entre áspas e com uma vírgula ao final para que o JSON saiba que depois da virgula temos outra linha. Caracteres especiais, deverão ser escritos com a ajuda o escape ("\") para que eles sejam renderizados na página quando o arquivo for chamado.
+                    ATENÇÃO!! Para facilitar a escrita dos arquivos em JSON faça o seguinte:
+                        Depois de colar o arquivo dentro da body, selecione com o cursor o canto superior esquerdo do arquivo, depois disso, pressione o alt e segure á medida que vai selecionando todos os cantos superiores, isso vai fazer com que você possa colocar uma áspa inicial em cada linha depois. Para colocar a áspa final, com os cantos ainda selecionados, aperte a tecla "end" todos os cursores vão para o final das linhas, então basta escrever a áspa final e depois a vírgula uma única vez, e serão copiados para o final de cada linha. Ao fazer isso você notará que o arquivo já mudará de cor, mostrando que o JSON está quase pronto.
+                        Depois basta só arrumar os lugares onde houverem caracteres especiais, usando o escape ou outra tecla de atalho, e por fim vamos colocar os cursores nos lugares onde desejamos começar nossas escritas. Os cursores poderão ser colocados com o atalho "$", podemos colocar mais de cursor numerando os cursores, dessa forma: $1, $2 e $3, lembrando que quando os numeramos isso vai gerar uma ordem de tabulação nos cursores.
+
+     -->
+</body>
+</html>

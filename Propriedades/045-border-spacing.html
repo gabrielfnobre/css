@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>border-spacing</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 5vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70vh;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    #tabela1 {
+        border: solid 1px rgb(152,152,152);
+        width: 70vw;
+        border-spacing: 0; /*Com border-spacing "0"... */
+    }
+    
+    #tabela2 {
+        border: solid 1px rgb(152,152,152);
+        width: 70vw;
+        border-spacing: 5px; /*Com border-spacing de "5px"... */
+    }
+
+    th {
+        border: 1px solid black;
+        background-color: cornflowerblue;
+        color: white;
+    }
+
+    td {
+        border: solid 1px rgb(152,152,152);
+        padding: 5px;
+    }
+
+    .first {
+        border-top-color: black;
+    }
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: border-spacing (Espaçamento de Borda)
+
+
+    Objetivo: é uma propriedade que define um espaçamento entre as bordas dos elementos, para que os elementos não 
+                fiquem colados uns nos outros. Essa propriedade é especialmente usada em tabelas quando queremos gerar
+                um espaçamento entre as células.
+
+                DETALHE IMPORTANTE!!! Essa propriedade só pode ser usada se o elemento estiver com uma border-collapse
+                no valor "separate".
+
+
+    - Valores Aceitáveis:
+
+        - length:   Qualquer valor absoluto ou relativo;
+        - unset:    para desligar essa propriedade;
+        - initial:  Volta ao valor inicial;
+        - inherit:  Para herdar o valor do elemento pai;
+
+    - Valor Padrão: 2px;
+
+    - Possuí valor herdado? - SIM;
+
+    OBS: Se deixarmos um border-spacing no valor "0", ainda assim, ele não vai colapsar as bordas, ele vai deixar uma
+            borda duplicada nas extremidades dos elementos;
+
+-->
+
+    <table id="tabela1">
+        <caption>Tabela com "border-spacing: 0px" (Perceba que parece que a borda duplicou de tamanho</caption>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Cor</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="first">Banana</td>
+                <td>5,15</td>
+                <td>Amarelo</td>
+                <td>305</td>
+            </tr>
+            <tr>
+                <td>Maçã</td>
+                <td>4,50</td>
+                <td>Vermelho</td>
+                <td>574</td>
+            </tr>
+            <tr>
+                <td>Laranja</td>
+                <td>6,80</td>
+                <td>Laranja</td>
+                <td>450</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <table id="tabela2">
+        <caption>Tabela com "border-spacing: 5px"</caption>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Cor</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="first">Banana</td>
+                <td>5,15</td>
+                <td>Amarelo</td>
+                <td>305</td>
+            </tr>
+            <tr>
+                <td>Maçã</td>
+                <td>4,50</td>
+                <td>Vermelho</td>
+                <td>574</td>
+            </tr>
+            <tr>
+                <td>Laranja</td>
+                <td>6,80</td>
+                <td>Laranja</td>
+                <td>450</td>
+            </tr>
+        </tbody>
+    </table>
+    
+
+</body>
+</html>

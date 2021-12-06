@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cursor</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 1vw;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .container {
+        width: 100%;
+        height: 20%;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .bloco {
+        width: 8%;
+        height: 100%;
+        padding: 2px;
+        margin: 4px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, .2);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .bloco > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #alias {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: alias;
+    }
+    
+    #all-scroll {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: all-scroll;
+    }
+    
+    #auto {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: auto;
+    }
+    
+    #cell {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: cell;
+    }
+
+    #col-resize {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: col-resize;
+    }
+    
+    #context-menu {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: context-menu;
+    }
+    
+    #copy {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: copy;
+    }
+    
+    #crosshair {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: crosshair;
+    }
+    
+
+    #default {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: default;
+    }
+    
+    #e-resize {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: e-resize;
+    }
+    
+    #ew-resize {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: ew-resize;
+    }
+    
+    #grab {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: grab;
+    }
+
+    #grabbing {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: grabbing;
+    }
+    
+    #help {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: help;
+    }
+    
+    #move {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: move;
+    }
+    
+    #n-resize {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: n-resize;
+    }
+
+
+    #ne-resize {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: ne-resize;
+    }
+    
+    #nesw-resize {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: nesw-resize;
+    }
+    
+    #ns-resize {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: ns-resize;
+    }
+    
+    #nw-resize {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: nw-resize;
+    }
+
+    #nwse-resize {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: nwse-resize;
+    }
+    
+    #no-drop {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: no-drop;
+    }
+    
+    #none {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: none;
+    }
+    
+    #not-allowed {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: not-allowed;
+    }
+
+
+    #pointer {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: pointer;
+    }
+    
+    #progress {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: progress;
+    }
+    
+    #row-resize {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: row-resize;
+    }
+    
+    #s-resize {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: s-resize;
+    }
+
+    #se-resize {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: se-resize;
+    }
+    
+    #sw-resize {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: sw-resize;
+    }
+    
+    #text {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: text;
+    }
+    
+    #url {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: url(hcode-cafe.svg) 10 40, pointer;
+    }
+
+    #vertical-text {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: vertical-text;
+    }
+    
+    #w-resize {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: w-resize;
+    }
+    
+    #wait {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: wait;
+    }
+    
+    #zoom-in {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: zoom-in;
+    }
+
+    #zoom-out {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: zoom-out;
+    }
+    
+    #sw-resize {
+        width: 100%;
+        height: 80%;
+        background-color: thistle;
+        cursor: sw-resize;
+    }
+
+    .compensadora {
+        width: 35%;
+        height: 100%;
+    }
+    
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: cursor (Cursor)
+
+
+    Objetivo: Essa propriedade define uma aparência para o cursor do mouse quando ele passa por um determinado elemento.
+
+                DETALHE IMPORTANTE!!! Não precisamos de colocar "hover", com essa propriedade o mouse se transforma 
+                automáticamente ao passar pelo elemento que tiver a propriedade.
+
+
+    - Valores Aceitáveis:
+
+        
+        - auto:         Vai pegar o desenho automático do conteúdo;
+
+        - cursor-type:  Define um tipo de cursor pré-defino segundo os valores possíveis, que são: 
+                            
+                            - alias:            Aparece a seta com uma setinha ao lado;
+
+                            - all-scroll:       Uma seta que aponta para todas as regiões;
+
+                            - auto;             Tem aparência de seta, mas quando passa no texto tem formato de cursor text;
+
+                            - cell:             Fica com a aparência de cruz das planilhas;
+
+                            - col-resize:       Cursor mostra que é possível arrastar uma coluna para os lados;
+
+                            - content-menu:     Não tem aparência diferente da seta do windows;
+
+                            - copy:             Aparece um operador de adição ao lado da seta;
+
+                            - crosshair:        Aparece uma símbolo de adição em linha, usado para redimensionamento de área;
+
+                            - default:          Seta padrão dos navegadores;
+
+                            - e-resize:         Seta Horizontal "puxar para a direita" (East);
+
+                            - ew-resize:        Seta Horizontal "puxar para direita ou esquerda" (East-West);
+
+                            - grab:             Mãozinha;
+
+                            - grabbing:         Mãozinha Agarrando;
+
+                            - help:             Seta com sinal de pergunta ao lado;
+
+                            - move:             Uma seta que aponta para todas as regiões;
+
+                            - n-resize:         Seta Vertical "puxar par cima" (North);
+
+                            - ne-resize:        Seta Diagonal "puxar para nordeste";
+
+                            - nesw-resize:      Seta Diagonal "puxar para nordeste ou para sudoeste";
+
+                            - ns-resize:        Seta Vertical "puxar para norte ou sul";
+
+                            - nw-resize:        Seta Diagonal "puxar noroeste";
+
+                            - nwse-resize:      Seta Diagonal "puxar para noroeste ou sudeste";
+
+                            - no-drop:          Símbolo de Proibição;
+
+                            - none:             Cursor desaparece;
+
+                            - not-allowed:      Símbolo de Proibição;
+
+                            - pointer:          Mãozinho Apontando;
+
+                            - progress:         Seta com símbolo de progresso ao lado;
+
+                            - row-resize:       Cursor mostra que é possível arrastar uma coluna para cima e para baixo;
+
+                            - s-resize:         Seta Vertical "puxar para sul";
+
+                            - se-resize:        Seta Diagonal "puxar para sudeste";
+
+                            - sw-resize:        Seta Diagonal "puxar para sudoeste";
+
+                            - text:             Cursor de tipo texto para seleção de texto;
+
+                            - url:              Define uma imagem para cursor e um cursor-type caso a imagem não seja 
+                                                renderizada. DETALHE IMPORTANTE! Imagens acima de 128px serão ignoradas
+                                                por padrão colocamos imagens de 32px x 32px. Podemos também colocar mais
+                                                de uma imagem colocando uma url() para cada imagem e separando-as por 
+                                                vírgulas, esse recurso é muito bom, pois caso uma determinada imagem de um
+                                                formato não der certo, podemos colocar imagens de formatados diferentes.
+                                                Além disso, podemos colocar um deslocamento de cursor, para que assim que 
+                                                um cursor adentrar uma área ele seja deslocado para dentro da área segundo 
+                                                um valor que passarmos para os eixos x e y, em pixels;
+
+                            - vertical-text:    Cursor de tipo texto mas para textos na vertical;
+
+                            - w-resize:         Seta Horizontal "puxar para oeste";
+
+                            - wait:             Símbolo de carregamento, fica diferente dependendo do sistema operacional;
+
+                            - zoom-in:          Símbolo da Lupa com o sinal de adição;
+
+                            - zoom-out:         Símbolo de Lupa com o sinal de subtração;
+
+
+        - unset:        Para desligar a propriedade;
+        
+        - initial:      Volta ao valor inicial;
+        
+        - inherit:      Para herdar o valor do elemento pai;
+
+    - Valor Padrão: auto;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: Caso você procure por logotipos, vá ao site "https://www.worldvectorlogo.com" lá  você vai encontrar diversos 
+            logotipos que poderá baixar para utilizar nos seus arquivos;
+
+-->
+
+    <div class="container">
+
+        <div class="bloco">
+            alias
+            <div id="alias">
+            </div><span style="font-size: 8pt">seta com setinha ao lado</span>
+        </div>
+
+        <div class="bloco">
+            all-scroll
+            <div id="all-scroll">
+            </div><span style="font-size: 8pt">multi-setas para redimensionamento</span>
+        </div>
+
+        <div class="bloco">
+            auto
+            <div id="auto">text<br>
+            </div><span style="font-size: 8pt">seta normal e seta text nos textos</span>
+        </div>
+
+        <div class="bloco">
+            cell
+            <div id="cell">
+            </div><span style="font-size: 8pt">seta em cruz para planilhas</span>
+        </div>
+
+        <div class="bloco">
+            col-resize
+            <div id="col-resize">
+            </div><span style="font-size: 8pt">cursor de deslocamento horizontal</span>
+        </div>
+
+        <div class="bloco">
+            context-menu
+            <div id="context-menu">
+            </div><span style="font-size: 8pt">seta para menus de contexto</span>
+        </div>
+
+        <div class="bloco">
+            copy
+            <div id="copy">
+            </div><span style="font-size: 8pt">seta com sinal de adição ao lado</span>
+        </div>
+
+        <div class="bloco">
+            crosshair
+            <div id="crosshair">
+            </div><span style="font-size: 8pt">seta para redimensionamento de imagem</span>
+        </div>
+    
+    </div>
+    
+
+    <div class="container">
+
+        <div class="bloco">
+            default
+            <div id="default">
+            </div><span style="font-size: 8pt">seta padrão do navegador</span>
+        </div>
+
+        <div class="bloco">
+            e-resize
+            <div id="e-resize">
+            </div><span style="font-size: 8pt">seta de puxar para á direita</span>
+        </div>
+
+        <div class="bloco">
+            ew-resize
+            <div id="ew-resize">
+            </div><span style="font-size: 8pt">seta de puxar para á direita ou esquerda</span>
+        </div>
+
+        <div class="bloco">
+            grab
+            <div id="grab">
+            </div><span style="font-size: 8pt">mãozinha aberta</span>
+        </div>
+
+        <div class="bloco">
+            grabbing
+            <div id="grabbing">
+            </div><span style="font-size: 8pt">mãozinha agarrando</span>
+        </div>
+
+        <div class="bloco">
+            help
+            <div id="help">
+            </div><span style="font-size: 8pt">seta ponto de interrogação ao lado</span>
+        </div>
+
+        <div class="bloco">
+            move
+            <div id="move">
+            </div><span style="font-size: 8pt">setas de redimensionamento</span>
+        </div>
+
+        <div class="bloco">
+            n-resize
+            <div id="n-resize">
+            </div><span style="font-size: 8pt">seta para puxar para cima</span>
+        </div>
+    
+    </div>
+
+
+    <div class="container">
+
+        <div class="bloco">
+            ne-resize
+            <div id="ne-resize">
+            </div><span style="font-size: 8pt">puxar na diagonal para á direita e cima</span>
+        </div>
+
+        <div class="bloco">
+            nesw-resize
+            <div id="nesw-resize">
+            </div><span style="font-size: 8pt">puxar na diagonal para á direita e cima ou esquerda e baixo</span>
+        </div>
+
+        <div class="bloco">
+            ns-resize
+            <div id="ns-resize">
+            </div><span style="font-size: 8pt">puxar para cima ou para baixo</span>
+        </div>
+
+        <div class="bloco">
+            nw-resize
+            <div id="nw-resize">
+            </div><span style="font-size: 8pt">puxar na diagonal para á esquerda e cima</span>
+        </div>
+
+        <div class="bloco">
+            nwse-resize
+            <div id="nwse-resize">
+            </div><span style="font-size: 8pt">puxar na diagonal para á esquerda e cima ou direita e baixo</span>
+        </div>
+
+        <div class="bloco">
+            no-drop
+            <div id="no-drop">
+            </div><span style="font-size: 8pt">Proibido arrastar</span>
+        </div>
+
+        <div class="bloco">
+            none
+            <div id="none">
+            </div><span style="font-size: 8pt">Some com a seta</span>
+        </div>
+
+        <div class="bloco">
+            not-allowed
+            <div id="not-allowed">
+            </div><span style="font-size: 8pt">Proibido</span>
+        </div>
+    
+    </div>
+
+
+    <div class="container">
+
+        <div class="bloco">
+            pointer
+            <div id="pointer">
+            </div><span style="font-size: 8pt">mãozinha cliclando</span>
+        </div>
+
+        <div class="bloco">
+            progress
+            <div id="progress">
+            </div><span style="font-size: 8pt">seta com o sinal de carregando ao lado</span>
+        </div>
+
+        <div class="bloco">
+            row-resize
+            <div id="row-resize">
+            </div><span style="font-size: 8pt">redimensionar na vertical</span>
+        </div>
+
+        <div class="bloco">
+            s-resize
+            <div id="s-resize">
+            </div><span style="font-size: 8pt">puxar para baixo</span>
+        </div>
+
+        <div class="bloco">
+            se-resize
+            <div id="se-resize">
+            </div><span style="font-size: 8pt">puxar na diagonal á direita para baixo</span>
+        </div>
+
+        <div class="bloco">
+            sw-resize
+            <div id="sw-resize">
+            </div><span style="font-size: 8pt">puxar na diagonal á esquerda para baixo</span>
+        </div>
+
+        <div class="bloco">
+            text
+            <div id="text">
+            </div><span style="font-size: 8pt">cursor de seleção de texto</span>
+        </div>
+
+        <div class="bloco">
+            url
+            <div id="url">
+            </div><span style="font-size: 8pt">qualquer imagem á nossa escolha</span>
+        </div>
+    
+    </div>
+
+    <div class="container">
+
+        <div class="bloco">
+            vertical-text
+            <div id="vertical-text">
+            </div><span style="font-size: 8pt">seleção de texto vertical</span>
+        </div>
+
+        <div class="bloco">
+            w-resize
+            <div id="w-resize">
+            </div><span style="font-size: 8pt">puxar para a esquerda</span>
+        </div>
+
+        <div class="bloco">
+            wait
+            <div id="wait">
+            </div><span style="font-size: 8pt">carregando</span>
+        </div>
+
+        <div class="bloco">
+            zoom-in
+            <div id="zoom-in">
+            </div><span style="font-size: 8pt">Lupa para zoom com sinal de adição</span>
+        </div>
+
+        <div class="bloco">
+            zoom-out
+            <div id="zoom-out">
+            </div><span style="font-size: 8pt">Lopa para zoom com sinal de subtração</span>
+        </div>
+
+        <div class="compensadora">
+        </div>
+    
+    </div>
+
+</body>
+</html>

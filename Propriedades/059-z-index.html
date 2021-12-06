@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>z-index</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+    }
+
+    div {
+        width: 250px;
+        height: 250px;
+        padding: 20px;
+    }
+
+    .fundo-nozindex {
+        background-color: skyblue;
+    }
+
+    .destaque-nozindex {
+        background-color: slategray;
+        color: white;
+        position: absolute; /*tiramos o position static para as propriedades de posicionamento darem certo*/
+        left: 100px;
+        top: 60px;
+        z-index: 0;
+    }
+    
+    .fundo {
+        background-color: skyblue;
+        left: 500px;
+        position: absolute; /*tiramos o position static para as propriedades de posicionamento darem certo*/
+        z-index: 1;
+    }
+
+    .destaque {
+        background-color: slategray;
+        padding: 50px 10px 0 80px;
+        color: white;
+        position: absolute; /*tiramos o position static para as propriedades de posicionamento darem certo*/
+        left: 700px;
+        top: 60px;
+        z-index: 0; /*Perceba que apesar de termos outros elementos na tela se atribuímos um z-index, mesmo que seja "0" 
+                        esse elemento ganha precedência de camada.*/
+    }
+    
+    
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: z-index (Índice Z)
+
+
+    Objetivo: Essa propriedade é usada para designar um número índice a um elemento dentro da pilha de elementos. Quando 
+                falamos de "pilha de elementos" estamos nos referindo ao posicionamento em camadas do nosso documento, onde
+                um elemento poderá ficar por cima de outro, aparecendo na frente, ou poderá ficar por trás, sendo encoberto
+                por um elemento frontal.
+
+                Geralmento os elementos vão ganhando números de ordem na pilha a medida que vão sendo escritos, isso faz 
+                com que elementos que foram escritos primeiro recebam números menores, ficando posicionados atrás, e 
+                elementos que foram escritos posteriormente recebam numerações maiores, ficando posicionados na frente dos 
+                elementos escritos anteriormente.
+                O "z-index" faz com que possamos dar a um elemento qualquer posicionamento, não importa em que ordem ele 
+                tenha sido escrito no documento.
+
+    
+    - Valores Aceitáveis:
+
+        - auto:         Faz com que o z-index siga a numeração padrão, ou seja, elementos escritos depois vão ficar na frente;
+        - number:       Um número comum, o número que for passado será usado como numeração índice do elemento;
+        - unset:        Para desligar a propriedade;
+        - initial:      Volta ao valor inicial;
+        - inherit:      Para herdar o valor do elemento pai;
+
+    - Valor Padrão: auto;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: O "z-index" NÃO TERÁ EFEITO se o position do elemento for "static";
+
+        CUIDADO AO NUMERAR Z-INDEX DE DOCUMENTOS RETRABALHADOS!! As vezes quando alguém está perdido no CSS pode querer 
+        numerar um z-index com um número muito grande por não saber o número exato de elementos na página, isso poderá gerar
+        um problema no futuro quando alguém tentar numerar um elemento e não conseguir por que você atribuíu um número grande 
+        demais ao z-index. Afinal, mesmo que tenhamos outros elementos na tela, só o fato de um elemento ter z-index de valor
+        "0" já faz com que ele ganhe precedência sobre os demais que não usam a propriedade z-index.
+
+
+-->
+    
+    <div class="fundo-nozindex">Fundo na ordem normal das camadas</div>
+    <div class="destaque-nozindex">Destaque na ordem normal das camadas</div>
+    <div class="fundo">Fundo com z-index "1"</div>
+    <div class="destaque">Destaque com z-index "0"</div>
+
+</body>
+</html>

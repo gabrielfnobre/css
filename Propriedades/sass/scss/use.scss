@@ -1,0 +1,86 @@
+@use "cantos" as c; /*Perceba que importamos um módulo sem precisar de referenciar todo o load path e demos a ele um
+                        apelido de "c" */
+
+$color: #7f808c;
+$primary: #0176ff;
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: $color;
+}
+
+#chat {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 0;
+    list-style: none;
+    li {
+        $background-color: #f5f6fa;
+        display: flex;
+        margin-bottom: 32px;
+        .avatar {
+            padding: 0 16px;
+            display: flex;
+            align-items: flex-end;
+            img{
+                @include c.circulo; /*Aqui fizemos um include para o valor de círculo do módulo c*/
+                width: 48px;
+            }
+        }
+        .message {
+            flex: 1;
+            background-color: $background-color;
+            padding: 16px;
+            @include c.arredondado; /*Um include para o valor da borda arredondada da biblioteca c*/
+            border-bottom-left-radius: 0;
+            strong {
+                color: #242939;
+            }
+            p {
+                font-size: 14px;
+            }
+            time {
+                font-size: 12px;
+                letter-spacing: 1px;
+                opacity: .65;
+            }
+        }
+        .menu {
+            display: flex;
+            align-items: center;
+            button {
+                border: none;
+                background: none;
+                outline: none;
+                img {
+                    width: 16px;
+                    opacity: .5;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    & .me {
+        $background-color: $primary;
+        flex-direction: row-reverse;
+        color: #fff;
+        .message {
+            background-color: $background-color;
+            border-bottom-left-radius: c.$raio; /*E somente puxamos o valor da variável de c*/
+            border-bottom-right-radius: 0;
+            ::selection {
+                background: white;
+                color: $primary;
+            }
+        }
+        strong {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>border-radius</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+        text-align: center;
+        font-size: 12pt;
+    }
+
+    body {
+        margin: 0;
+        padding: 2vw;
+        color: white;
+        /*Criamos uma body de altura baixa para abraçar as nossas divs e posicioná-las justificadas no espaçamento entre
+        elas*/
+    }
+
+    #card{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4px;
+    }
+
+    #card1 {
+        width: 20vw;
+        height: 20vw;
+        padding-top: 4%;
+        background-color: goldenrod;
+        border-color: rgb(153, 87, 24);
+        border-width: 20px;
+        border-style: dashed;
+        border-radius: 50%; /*Perceba que todas as bordas tem a mesma angulação mediana*/
+    }
+
+    #card2 {
+        width: 20vw;
+        height: 20vw;
+        padding-top: 4%;
+        background-color: rgb(238, 138, 233);
+        border-color: rgb(106, 32, 155);
+        border-width: 20px;
+        border-style: dashed;
+        border-radius: 20% 50%;  /*Perceba que as ângulações pegam respectivamente os valores: top-left e bottom-right,
+                                            top-right e bottom-left*/
+    }
+
+    #card3 {
+        width: 20vw;
+        height: 20vw;
+        padding-top: 4%;
+        background-color: rgb(137, 218, 32);
+        border-color: rgb(41, 173, 63);
+        border-width: 20px;
+        border-style: dashed;
+        border-radius: 50% 20% 50%;  /*Perceba que as ângulações pegam respectivamente os valores: top-left,
+                                            top-right e bottom-left, bottom-right */
+    }
+    
+    #card4 {
+        width: 20vw;
+        height: 20vw;
+        padding-top: 4%;
+        background-color: rgb(218, 69, 32);
+        border-color: rgb(107, 26, 26);
+        border-width: 20px;
+        border-style: dashed;
+        border-radius: 50% 20% 50% 20%; /*Perceba que as ângulações pegam respectivamente os valores: top-left,
+                                            top-right, bottom-right e bottom-left*/
+    }
+
+    #cartoes{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4px;
+    }
+
+    #cartoes1 {
+        width: 20vw;
+        height: 20vw;
+        padding-top: 4%;
+        background-color: goldenrod;
+        border-color: rgb(153, 87, 24);
+        border-width: 20px;
+        border-style: dashed;
+        border-radius: 50% / 10% 40%;  /*com 3 valores, perceba que as ângulações funcionam encima
+                                                            de ângulações já existentes.*/
+    }
+
+    #cartoes2 {
+        width: 20vw;
+        height: 20vw;
+        padding-top: 4%;
+        background-color: rgb(238, 138, 233);
+        border-color: rgb(106, 32, 155);
+        border-width: 20px;
+        border-style: dashed;
+        border-radius: 50% 10% / 30% 15% 70%;  /*com 5 valores, perceba que as ângulações funcionam encima
+                                                            de ângulações já existentes.*/
+    }
+
+    #cartoes3 {
+        width: 20vw;
+        height: 20vw;
+        padding-top: 4%;
+        background-color: rgb(137, 218, 32);
+        border-color: rgb(41, 173, 63);
+        border-width: 20px;
+        border-style: dashed;
+        border-radius: 15% / 30% 45% 50% 15%; /*com 5 valores, perceba que as ângulações funcionam encima
+                                                            de ângulações já existentes.*/
+    }
+
+    #cartoes4 {
+        width: 20vw;
+        height: 20vw;
+        padding-top: 4%;
+        background-color: rgb(218, 69, 32);
+        border-color: rgb(107, 26, 26);
+        border-width: 20px;
+        border-style: dashed;
+        border-radius: 10% 20% 30% 40% / 48% 30% 25% 15%; /*com 8 valores, perceba que as ângulações funcionam encima
+                                                            de ângulações já existentes.*/
+    }
+
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: border-radius (raio da borda)
+
+
+    Objetivo: é uma propriedade que permite arredondar os cantos das bordas do nosso elemento de uma única vez.
+
+                O border-radius pode trabalhar desde 1 valor até 8 valores. Isso acontece da seguinte forma:
+
+                    1 Valor - Vai valer para os 4 cantos das bordas;
+
+                    2 Valores - 1º para (top-left e bottom-right) / 2º para (top-right e bottom-left);
+
+                    3 Valores - 1º para (top-left) / 2º para (top-right e bottom-left) / 3º para (bottom-right);
+
+                    4 Valores - 1º(top-left) / 2º(top-right) / 3º(bottom-right) / 4º (bottom-left);
+
+                    # Á partir de 5 valores temos uma ângulação especial dividia por "/", onde os valores antes da "/"
+                        criam uma angulação primária, e os valores depois da "/" geram uma ângulação encima dos cantos
+                        já arredondados pela ângulação criada antes da "/", por exemplo:
+
+                    5 Valores - 1º 2º / 1º 2º 3º (vão imitar a ordem de ângulação padrão) *
+
+                    6 Valores - 1º 2º / 1º 2º 3º 4º (vão imitar a ordem de ângulação padrão) *
+
+                    7 Valores - 1º 2º 3º / 1º 2º 3º 4º (vão imitar a ordem de ângulação padrão) *
+
+                    8 Valores - 1º 2º 3º 4º / 1º 2º 3º 4º (vão imitar a ordem de ângulação padrão) *
+
+                    *criamos valores nessa ordem, mas podemos mesclar de várias formas desde que cada ângulação em cada
+                        separação não passe de 4 posições cada;
+
+    - Valores Aceitáveis:
+
+        - length: Qualquer valor absoluto ou relativo;
+        - initial: Volta ao valor inicial;
+        - inherit: Para herdar o valor do elemento pai;
+
+    - Valor Padrão: 0;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: Não podemos criar ângulações para os 2 eixos das linhas das bordas como fazemos nos border-radius com 
+            posições específicas;
+
+-->
+
+    <div id="card">
+    <div id="card1">COM<br>50%</div>
+    <div id="card2">COM<br>20% 50%</div>
+    <div id="card3">COM<br>50% 20% 50%</div>
+    <div id="card4">COM<br>50% 20% 50% 20%</div>
+    </div>
+    
+    <div id="cartoes">
+    <div id="cartoes1">COM<br>50% / 10% 40%</div>
+    <div id="cartoes2">COM<br>50% 10% / 30% 15% 70%</div>
+    <div id="cartoes3">COM<br>15% / 30% 45% 50% 15%</div>
+    <div id="cartoes4">COM<br>10% 20% 30% 40% / 48% 30% 25% 15%</div>
+    </div>
+
+
+</body>
+</html>

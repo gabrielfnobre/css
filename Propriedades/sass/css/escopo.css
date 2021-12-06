@@ -1,0 +1,91 @@
+@charset "UTF-8";
+/*Variável Global*/
+/*Variável Global*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  color: #7f808c;
+  /*Se a $color local for ativado ele vai dar prioridade e ele*/
+}
+
+#chat {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 0;
+  list-style: none;
+}
+#chat li {
+  /*Válida localmente para todos os blocos dentro de li*/
+  display: flex;
+  margin-bottom: 32px;
+}
+#chat li .avatar {
+  padding: 0 16px;
+  display: flex;
+  align-items: flex-end;
+}
+#chat li .avatar img {
+  border-radius: 50%;
+  width: 48px;
+}
+#chat li .message {
+  flex: 1;
+  background-color: #f5f6fa;
+  padding: 16px;
+  border-radius: 8px;
+  border-bottom-left-radius: 0;
+}
+#chat li .message strong {
+  color: #242939;
+}
+#chat li .message p {
+  font-size: 14px;
+}
+#chat li .message time {
+  font-size: 12px;
+  letter-spacing: 1px;
+  opacity: 0.65;
+}
+#chat li .menu {
+  display: flex;
+  align-items: center;
+}
+#chat li .menu button {
+  border: none;
+  background: none;
+  outline: none;
+}
+#chat li .menu button img {
+  width: 16px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+#chat .me {
+  /*Mudamos o escopo da background de novo localmente*/
+  flex-direction: row-reverse;
+  /*Inversão da mensagem para ficar do nosso lado*/
+  color: #fff;
+}
+#chat .me .message {
+  background-color: #0176ff;
+  /*Perceba que a cor que o message pega é azul agora*/
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 0;
+}
+#chat .me .message ::selection {
+  /*Toda vez que usar o pseudoseletor "::selection" temos definir background e cor do texto
+    caso contrário ele não é aplicado!!*/
+  background: white;
+  color: #0176ff;
+}
+#chat .me strong {
+  display: none;
+  /*Removido o meu nome do meu lado da mensagem*/
+}
+
+/*# sourceMappingURL=escopo.css.map */

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>margin-right</title>
+<style>
+    
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    /*Resetamos o nosso body para que ele pegue o tamanho completo da tela*/
+
+    .bloco {
+        width: 20vw;
+        height: 50vh;
+        margin-right: 5%;
+        background-color: skyblue;
+        display: inline-block;
+    }
+    /*Passe o mouse encima das nossas divs no dev tools e veja que o nosso elemento ganhou uma margem de 5% da nossa tela
+    somente na parte direita dos elementos.*/
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: margin-right (margem da direita)
+
+
+    Objetivo: é uma propriedade que define um valor para a margem direita do nosso elemento. Lembrando que, quando falamos
+                de margem, estamos nos referindo ao espaçamento que existe fora da borda dos nossos elementos.
+
+
+    - Valores Aceitáveis:
+
+        - length: Qualquer valor absoluto ou relativo;
+        - auto: Deixamos a propriedade com um valor automático, isso significa que a menos que o elemento tenha algum 
+                conteúdo que gere um espaçamento automático sobre ele, ele vai ficar zerado;
+        - initial: Volta ao valor inicial;
+        - inherit: Para herdar o valor do elemento pai;
+
+    - Valor Padrão: 0;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS:  
+
+-->
+
+    <div class="bloco"></div>
+    <div class="bloco"></div>
+
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>outline-offset</title>
+<style>
+
+* {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 4px;
+    }
+
+    div {
+        border-width: 3px;
+        border-style: dashed;
+        border-color: orangered;
+        padding: 2px;
+        outline-color: blue;
+        color: black;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        border-style: unset;
+        outline-color: unset;
+    }
+
+    .bloco {
+        outline-style: hidden;
+        outline-width: 10px;
+        font-size: 2vh;
+        margin: 2vw;
+        outline-offset: 2px;
+    }
+
+    .bloco:hover {
+        outline-style: solid;
+    }
+
+    .bloco1 {
+        outline-style: dotted;
+        outline-width: medium;
+        font-size: 2vh;
+        margin: 2vw;
+        outline-offset: 4px;
+    }
+
+    .bloco2 {
+        outline-style: dashed;
+        outline-width: thin;
+        font-size: 2vh;
+        margin: 2vw;
+        outline-offset: 6px;
+    }
+
+    .bloco3 {
+        outline-style: solid;
+        outline-width: thick;
+        font-size: 2vh;
+        margin: 2vw;
+        outline-offset: 8px;
+    }
+
+    .bloco4 {
+        outline-style: double;
+        outline-width: initial;
+        font-size: 2vh;
+        margin: 2vw;
+        outline-offset: 10px;
+    }
+    
+    .bloco5 {
+        outline-style: groove;
+        outline-width: 5px;
+        font-size: 2vh;
+        margin: 2vw;
+        outline-offset: 12px;
+    }
+
+    .bloco6 {
+        outline-style: ridge;
+        outline-width: 2vw;
+        font-size: 2vh;
+        margin: 2vw;
+        outline-offset: 14px;
+    }
+
+    .bloco7 {
+        outline-style: inset;
+        outline-width: 10%;
+        font-size: 2vh;
+        margin: 2vw;
+        outline-offset: 16px;
+    }
+
+    .bloco8 {
+        outline-style: outset;
+        outline-width: 5px;
+        font-size: 2vh;
+        margin: 2vw;
+        outline-offset: 18px;
+    }
+    
+    .bloco9 {
+        outline-style: auto;
+        outline-width: 2vh;
+        font-size: 2vh;
+        margin: 2vw;
+        outline-offset: 20px;
+    }
+    
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: outline-offset (Deslocamento do Contorno)
+
+
+    Objetivo: Essa propriedade é usada para definir um espaçamento entre a linha de contorno de um elemento e a linha de borda
+                do mesmo elemento. O que seria a linha de contorno? A linha de contorno não faz parte do box-model de um 
+                elemento, o outline pode muito bem ser confundido com a borda de um elemento, mas ele não faz parte da borda, 
+                na verdade ele é uma linha que está por cima da borda, e por padrão o seu estilo é "none" ou seja, invisível, 
+                por isso poucas pessoas utilizam o outline.
+
+                Por estar por cima da borda, qualquer alteração feita sobre sobre o "box-sizing" de um elemento não vai afetar
+                o nosso "outline".
+
+                DETALHE IMPORTANTE!!! A margem fica por cima do outline;
+
+    
+    - Valores Aceitáveis:
+
+        - length:   Qualquer valor absoluto ou relativo;
+        - initial:  Volta ao valor inicial;
+        - inherit:  Para herdar o valor do elemento pai;
+
+    - Valor Padrão: 0;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: ;
+
+
+-->
+    <p>Colocamos uma borda tracejada de cor laranja dentro de todas as divs para ver que o
+        outline fica mesmo por fora das bordas do elemento. Enquanto todos os outlines estão na cor azul</p>
+
+    <p>Perceba que fomos aumentando o offset entre uma div e outra...</p>
+    
+    <div class="container">
+        <div class="bloco">outline-offset de 2px</div>
+        <div class="bloco1">outline-offset de 4px</div>
+        <div class="bloco2">outline-offset de 6px</div>
+        <div class="bloco3">outline-offset de 8px</div>
+        <div class="bloco4">outline-offset de 10px</div>
+        <div class="bloco5">outline-offset de 12px</div>
+        <div class="bloco6">outline-offset de 14px </div>
+        <div class="bloco7">outline-offset de 16px</div>
+        <div class="bloco8">outline-offset de 18px</div>
+        <div class="bloco9">outline-offset de 20px</div>
+    </div>
+
+</body>
+</html>

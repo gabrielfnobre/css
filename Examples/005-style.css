@@ -1,0 +1,49 @@
+/*Usando Flexbox*/
+/**/
+
+body {
+    background-color: #17181c;
+    color: #fff;
+    font-family: sans-serif;
+    margin: 0; /*Tiramos as margens para que todos os elementos fiquem encostados*/
+    height: 200vh; /*Dobramos o tamanho do body para que ele ocupe o dobro do tamanho da janela do navegador*/
+    background: url(004-boku.png); /*Imagem para perceber que a página está andando*/
+}
+
+#posicao {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 400px;
+    background-color: #000;
+    display: flex;
+    /* Ex:1 - Ative somente o display flex e veja que o todos os flex-items são ser flexionados para obedecer a ele, se os flex-items não tiverem valores pré-definidos, eles vão obedecer altura e largura que o flex determinar para eles. Perceba que os elementos por padrão estão alinhados em linha, e cada um ganhou uma largura compatível com o que foi escrito*/
+    flex-direction: column;
+    /* Ex: 2 - Perceba que quando usamos o "flex-direction: columm" a ordem de apresentação dos botões muda*/
+    flex-direction: column-reverse;
+    /* Ex:3 - Perceba que no column-reverse a ordem deslocação dos botões muda de baixo para cima. */
+    flex-direction: row-reverse;
+    /* Ex: 4 - Perceba que os botões começam da direita para a esquerda agora. */
+}
+
+.pulse {
+    background: none;
+    color: #ff760c;
+    border: 2px solid;
+    margin: 0;
+    padding: 15px 40px;
+    transition: 0.25s;
+}
+
+.pulse:hover, .pulse:focus {
+    color: #fff;
+    border-color: #ef8f6e;
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+    animation: pulsar 1s;
+}
+
+@keyframes pulsar {
+    0% {
+        box-shadow: 0 0 0 0 #ef8e6e;
+    }
+}

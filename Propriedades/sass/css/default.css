@@ -1,0 +1,96 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: #111;
+  text-decoration: none;
+}
+a:hover {
+  /*Esse é um método dentro do nesting onde nós adicionamos um comportamento a um elemento, o "&" faz com que
+    quando o hover passar para o scss ele vá colado ao elmento "a"...*/
+  color: #f00;
+}
+
+.button {
+  background-color: #f00;
+  color: #fff;
+  padding: 8px 32px;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 10px;
+}
+.button:hover {
+  /*Esse é um método dentro do nesting onde nós adicionamos um comportamento a um elemento, o "&" faz com que
+  quando o hover passar para o scss ele vá colado ao elmento "button"...*/
+  background-color: rgba(255, 0, 0, 0.8);
+}
+
+.logo {
+  color: #f00;
+  font-weight: bold;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  padding: 0 16px;
+}
+header nav {
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+main {
+  margin: 15vh;
+  padding-right: 320px;
+  background-image: url("https://picsum.photos/id/1060/300/400");
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 300px;
+  min-height: 400px;
+}
+main h1 {
+  font-weight: bold;
+  font-size: 48px;
+}
+main h1 span {
+  color: #f00;
+}
+main h1 small {
+  display: block;
+  font-weight: 100;
+  font-size: 24px;
+}
+main h1 p {
+  margin-bottom: 60px;
+}
+main h1 .button {
+  padding: 16px 64px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+  font-size: 12px;
+  color: #999;
+}
+
+/*OBSERVAÇÃO, DENTRO DO ARQUIVO SCSS QUE VAI COMPORTAR A BIBLIOTECA, NA REGRA @use TEMOS QUE USAR A VÍRGULA COMO 
+SEPARADOR ENTRE UMA PROPRIEDADE E OUTRA*/
+
+/*# sourceMappingURL=default.css.map */

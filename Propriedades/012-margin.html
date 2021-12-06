@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>margin</title>
+<style>
+    
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+    }
+    /*Perceba no exemplo acima que usamos a propriedade margin para zerar as margens da body todas de uma única vez;*/
+
+    .bloco {
+        width: 20vw;
+        height: 20vw;
+        background-color: skyblue;
+        margin: 10vh auto;
+    }
+    /*Perceba que usamos a margin com 2 valores para especificar as margens de auto e baixo e da direita e esquerda de uma
+    única vez */
+
+    .bloco + .bloco {
+        margin: 5vh auto 3vh auto;
+        background-color: lawngreen;
+    }
+    /*E aqui especificamos que todas as divs da classe "bloco" que tiverem irmãs adjacentes com o nome de "bloco" também
+    vão receber os tamanhos de suas margens diversificadas.*/
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: margin (margem)
+
+
+    Objetivo: essa propriedade é uma forma resumida das propriedades margin-top, right, bottom e left. Ela pode ser usada para
+                quando desejamos resumir a formatação dessas propriedades em uma única tag, aplicando as formatações em sentido
+                horário, para: top, right, bottom e left. Lembrando que, quando falando de margem, estamos nos referindo ao 
+                espaçamento que existe fora da borda dos nossos elementos.
+
+
+    - Valores Aceitáveis:
+
+        - length: Qualquer valor absoluto ou relativo;
+        - auto: Deixamos a propriedade com um valor automático, isso significa que a menos que o elemento tenha algum 
+                conteúdo que gere um espaçamento automático sobre ele, ele vai ficar zerado;
+        - initial: Volta ao valor inicial;
+        - inherit: Para herdar o valor do elemento pai;
+
+    - Valor Padrão: 0;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: Podemos usar a nossa propriedade margin de 3 formas:
+            
+            - margin: 1únicovalor  - quando usamos um único valor ele equivale para as 4 posições;
+
+            - margin: 1º 2ºvalores - também conhecido como "margin colapse", é quando usamos 2 valores que equivalem a: 
+                                        1º valor para altura e baixo, 2º valor para esquerda e direita;
+
+            - margin: 1º 2º 3º 4ºvalores - quando especificamos cada valor: cima, direita, baixo e esquerda;
+
+-->
+
+    <div class="bloco"></div>
+    <div class="bloco"></div>
+    <div class="bloco"></div>
+
+</body>
+</html>

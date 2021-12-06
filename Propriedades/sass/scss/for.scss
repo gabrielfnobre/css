@@ -1,0 +1,20 @@
+@use "sass:color"; //Importamos o módulo nativo color para fazer ajustes na cor dos nossos ul...
+
+$base-color: #036; //Perceba que os ajustes serão feitos sobre essa cor base...
+
+@for $i from 1 through 3 { /*Perceba que o laço vai operar 3 vezes sobre o seletor, pois estamos usando os valores de
+                            1 a 3 por causa do "through", se fosse "to", o laço operaria só 2 vezes.*/
+    ul:nth-child(3n + #{$i}){ /*Perceba que o seletor aqui está sendo aplicado de 3 em 3 seletores filhos da tag "ul"
+                                a cada laço que a variável contadora $i estiver passando. Note que mais uma vez temos
+                                o template string para atribuir a variável $i dentro do código*/
+        background-color: color.adjust($base-color, $lightness: $i * 15%); /*Por fim, estamos usando a função adjust
+                                                                            da biblioteca nativa "color", essa função
+                                                                            recebe o argumento - que no caso é a nossa
+                                                                            cor base - uma palavra chave para o ajuste
+                                                                            que desejamos fazer, que nos caso é a 
+                                                                            luminosidade, e no ajuste colocamos a 
+                                                                            variável contadora e o ajuste que deve ser 
+                                                                            feito, estamos dizendo que a cada laço a 
+                                                                            luminosidade deverá ser 15% mais forte.*/
+    }
+}

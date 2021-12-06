@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>background-image</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 1vw;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .container {
+        width: 100%;
+        height: 100%;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .bloco {
+        width: 100%;
+        height: 100%;
+        padding: 2px;
+        margin: 4px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, .2);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .bloco > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-image: url("https://picsum.photos/1400/1000");
+        /*Essa é uma imagem, que toda vez que é atualizada traz uma imgame diferente*/
+    }
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: background-image (Imagem de Fundo)
+
+
+    Objetivo: Essa propriedade define uma imagem como fundo de um elemento.
+
+                DETALHE IMPORTANTE!!! O comportamento dessa propriedade é diferente do comportamento da tag image, na 
+                tag image nós definimos uma imagem dentro de um elemento HTML, mas com a propriedade background, nós
+                definimos uma imagem "como fundo" de um  elemento inteiro.
+
+                BÔNUS: https://picsum.photos/ 
+                        Esse endereço acima leva para um site que é "por assim dizer" o Lorem ipsum das fotos, é o picsum,
+                        nele nós podemos encontrar diversas imagens sobre os mais variados temas para que possamos usar
+                        como URL nas nossas imagens.
+
+
+    - Valores Aceitáveis:
+
+        
+        - url:      Define uma URL para o elemento buscar a sua imagem de fundo;
+
+        - none:     Nenhuma imagem;
+
+        - unset:    Para desligar a propriedade;
+        
+        - initial:  Volta ao valor inicial;
+        
+        - inherit:  Para herdar o valor do elemento pai;
+
+    - Valor Padrão: none;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: Jamais use a propriedade background-image para definir outras características de uma imagem, como por exemplo
+            repetição ou tamanho da imagem. A propriedade background-image é usada SOMENTE COMO FONTE para a URL de uma 
+            imagem e só, jamais a ultilize para outros propósitos;
+
+-->
+
+    <div class="container">
+
+        <div class="bloco">
+            
+            <div>
+            </div>
+        
+        </div>
+
+    </div>
+
+</body>
+</html>

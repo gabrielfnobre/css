@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>background-position</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 8pt;
+    }
+
+    body {
+        margin: 0;
+        padding: 1vw;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .container {
+        width: 100%;
+        height: 20%;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .bloco {
+        width: 10%;
+        height: 100%;
+        padding: 2px;
+        margin: 4px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, .2);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .bloco > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 80%;
+        background-repeat: no-repeat;
+        background-image: url("google_sprite.png");
+        /*Estamos usando aqui uma técnica chamada de Sprite */
+    }
+
+    #top {
+        background-position: top; /*Perceba que só o primeiro ícone da imagem é exibido*/
+    }
+
+    #right {
+        background-position: right;  /*Perceba que o centro da imagem é pego e ela fixa a imagem á direita*/
+    }
+
+    #bottom {
+        background-position: bottom;  /*Perceba que só o último ícone é exibido*/
+    }
+
+    #left {
+        background-position: left;  /*Perceba que o centro da imagem é pego e ela fixa a imagem á esquerda*/
+    }
+    
+    #center {
+        background-position: center;  /*Perceba que a imagem é alinhada tanto ao centro vertical quanto horizontal*/
+    }
+    
+    #length-50 {
+        background-position: 50px;  /*Perceba que a imagem andou 50px em relação á esquerda, 50px á partir do eixo "x" */
+    }
+    
+    #length-x50y10 {
+        background-position: 50px 10px;  /*Perceba que com 2 formatações ela anda tanto em relação ao eixo "x" quanto ao
+                                            eixo "y", mostrando agora o topo da imagem por andar só 10px á partir do 
+                                            topo*/
+    }
+    
+    #percent {
+        background-position: 30% 10%;  /*Perceba que quando usamos porcentagem o 1º valor se aplica ao eixo "x" enquanto o
+                                            segundo se aplica sobre o eixo "y", e os valores sempre são em relação ao 
+                                            viewport do dispositivo*/
+    }
+
+
+    /*ABAIXO VEJA TODOS OS ITENS SENDO MOSTRADOS...*/
+
+    #icon1 {
+        background-position: 50% 6px;  /*Perceba que para mostrar o 1 ícone tivemos que deixar a imagem no eixo "y" de 
+                                            valor "0" */
+    }
+    
+    #icon2 {
+        background-position: 50% -63px;  /*Perceba que para mostrar o 2 ícone tivemos que deixar a imagem no eixo "y" de 
+                                            valor "-69px" */
+    }
+
+    #icon3 {
+        background-position: 50% calc(-69px * 2);  /*Perceba que para mostrar o 3 ícone tivemos que deixar a imagem no 
+                                                        eixo "y" de valor "-63px" e para facilitar usamos uma função 
+                                                        função built-in para calcular o valor por 2 e esse padrão se 
+                                                        segue nos ícones abaixo até terminar...*/
+    }
+
+    #icon4 {
+        background-position: 50% calc(-69px * 3);
+    }
+    
+    #icon5 {
+        background-position: 50% calc(-69px * 4);
+    }
+    
+    #icon6 {
+        background-position: 50% calc(-69px * 5);
+    }
+    
+    #icon7 {
+        background-position: 50% calc(-69px * 6);
+    }
+    
+    #icon8 {
+        background-position: 50% calc(-69px * 7);
+    }
+    
+    #icon9 {
+        background-position: 50% calc(-69px * 8);
+    }
+    
+    #icon10 {
+        background-position: 50% calc(-69px * 9);
+    }
+    
+    #icon11 {
+        background-position: 50% calc(-69px * 10);
+    }
+    
+    #icon12 {
+        background-position: 50% calc(-69px * 11);
+    }
+    
+    #icon13 {
+        background-position: 50% calc(-69px * 12);
+    }
+    
+    #icon14 {
+        background-position: 50% calc(-69px * 13);
+    }
+    
+    #icon15 {
+        background-position: 50% calc(-69px * 14);
+    }
+    
+    #icon16 {
+        background-position: 50% calc(-69px * 15);
+    }
+    
+    #icon17 {
+        background-position: 50% calc(-69px * 16);
+    }
+    
+    #icon18 {
+        background-position: 50% calc(-69px * 17);
+    }
+    
+    #icon19 {
+        background-position: 50% calc(-69px * 18);
+    }
+    
+    #icon20 {
+        background-position: 50% calc(-69px * 19);
+    }
+    
+    #icon21 {
+        background-position: 50% calc(-69px * 20);
+    }
+    
+    #icon22 {
+        background-position: 50% calc(-69px * 21);
+    }
+    
+    #icon23 {
+        background-position: 50% calc(-69px * 22);
+    }
+    
+    #icon24 {
+        background-position: 50% calc(-69px * 23);
+    }
+    
+    #icon25 {
+        background-position: 50% calc(-69px * 24);
+    }
+    
+    #icon26 {
+        background-position: 50% calc(-69px * 25);
+    }
+    
+    #icon27 {
+        background-position: 50% calc(-69px * 26);
+    }
+    
+    #icon28 {
+        background-position: 50% calc(-69px * 27);
+    }
+    
+    #icon29 {
+        background-position: 50% calc(-69px * 28);
+    }
+    
+    #icon30 {
+        background-position: 50% calc(-69px * 29);
+    }
+    
+    #icon31 {
+        background-position: 50% calc(-69px * 30);
+    }
+    
+    #icon32 {
+        background-position: 50% calc(-69px * 31);
+    }
+    
+    #icon33 {
+        background-position: 50% calc(-69px * 32);
+    }
+    
+    #icon34 {
+        background-position: 50% calc(-69px * 33);
+    }
+    
+    #icon35 {
+        background-position: 50% calc(-69px * 34);
+    }
+    
+    #icon36 {
+        background-position: 50% calc(-69px * 35);
+    }
+    
+    #icon37 {
+        background-position: 50% calc(-69px * 36);
+    }
+    
+    #icon38 {
+        background-position: 50% calc(-69px * 37);
+    }
+    
+    #icon39 {
+        background-position: 50% calc(-69px * 38);
+    }
+    
+    #icon40 {
+        background-position: 50% calc(-69px * 39);
+    }
+    
+    #icon41 {
+        background-position: 50% calc(-69px * 40);
+    }
+    
+    #roleta {
+        background-position: 50% 6px;
+    }
+    #roleta:hover {
+        transition-duration: 1s;
+        transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        background-position: 50% calc(-69px * 40);
+    }
+    
+
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: background-position (Posição do Fundo)
+
+
+    Objetivo: Essa propriedade define uma posição inicial para a imagem de fundo de um elemento. Ela é quem vai dizer 
+                qual deve ser o deslocamento da imagem em relação ao tamanho do elemento que a comporta. Para isso
+                podemos usar valores absolutos, relativos ou pré-estabelecidos para essa propriedade. 
+
+
+    - Valores Aceitáveis:
+
+        (ATENÇÃO!!! LEMBRE-SE QUE O EIXO "X" COMEÇA NO CANTO BAIXO Á ESQUERDA E O EIXO "Y" COMEÇA DO CANTO ALTO Á ESQUERDA)
+
+        - top:      Define que a imagem vai se posicionar em 0% do eixo "y" da imagem (não do container), ou seja, vai 
+                        pegar o topo da imagem e centralizar o meio da sua largura;
+
+        - right:    Define que a imagem vai se posicionar em 100% do eixo "x" da imagem (não do container), ou seja, vai 
+                        jogar a imagem á direita, e vai centralizar a imagem quanto a sua altura;
+
+        - bottom:   Define que a imagem vai se posicionar em 100% do eixo "y" da imagem (não do container), ou seja, vai 
+                        pegar a parte de baixo da imagem e centralizar o meio da sua largura;
+
+        - left:     Define que a imagem vai se posicionar em 0% do eixo "x" da imagem (não do container), ou seja, vai 
+                        jogar a imagem á esquerda, e vai centralizar a imagem quanto a sua altura;
+
+        - center:   Define que a imagem vai se posicionar em 50% do eixo "x" da imagem (não do container) e 50% do eixo 
+                        "y" da imagem, ou seja, vai se posicionar ao centro e o centro;
+
+        - length:   Podemos pegar qualquer valor relativo ou absoluto para posicionar a imagem, quando usamos valores
+                        length temos a escolha de usar 1 ou 2 valores, onde o 1º valor se refere somente ao eixo "x" e
+                        e o 2º valor se refere somente ao eixo "y", se usarmos apenas um valor, estamos formatando
+                        somente em relação ao eixo "x";
+
+        - x% y%:    Da mesma forma como utilizamos o length para valores relativos e absolutos, podemos somente usar a
+                    porcentagem aplicando sobre os eixos "x" e "y", porém quando usamos porcentagem, aplicamos sobre 
+                    todo o viewport do nosso dispositivo    ;
+        
+        - unset:    Para desligar a propriedade;
+        
+        - initial:  Volta ao valor inicial;
+        
+        - inherit:  Para herdar o valor do elemento pai;
+
+    - Valor Padrão: 0% 0%;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: Quando queremos que uma imagem mostre valores que estão fora dos valores positivos dos eixos "x" e "y" podemos 
+            usar a valores negativos, para mostrar partes da imagem que antes estavam escondidas;
+
+-->
+
+    <div class="container">
+
+        <div class="bloco">
+            background-position: top
+            <div id="top">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: right
+            <div id="right">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: bottom
+            <div id="bottom">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: left
+            <div id="left">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: center
+            <div id="center">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: length(50px)
+            <div id="length-50">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: length(50px 10px)
+            <div id="length-x50y10">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: percent(30% 10%)
+            <div id="percent">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon1(50% 6px)
+            <div id="icon1">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon2(50% -69px)
+            <div id="icon2">
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="container">
+
+        <div class="bloco">
+            background-position: icon3(50% calc(-63px * 2))
+            <div id="icon3">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon4(50% calc(-63px * 3))
+            <div id="icon4">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon5(50% calc(-63px * 4))
+            <div id="icon5">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon6(50% calc(-63px * 5))
+            <div id="icon6">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon7(50% calc(-63px * 6))
+            <div id="icon7">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon8(50% calc(-63px * 7))
+            <div id="icon8">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon9(50% calc(-63px * 8))
+            <div id="icon9">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon10(50% calc(-63px * 9))
+            <div id="icon10">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon11(50% calc(-63px * 10))
+            <div id="icon11">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon12(50% calc(-63px * 11))
+            <div id="icon12">
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="container">
+
+        <div class="bloco">
+            background-position: icon13(50% calc(-63px * 12))
+            <div id="icon13">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon14(50% calc(-63px * 13))
+            <div id="icon14">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon15(50% calc(-63px * 14))
+            <div id="icon15">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon16(50% calc(-63px * 15))
+            <div id="icon16">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon17(50% calc(-63px * 16))
+            <div id="icon17">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon18(50% calc(-63px * 17))
+            <div id="icon18">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon19(50% calc(-63px * 18))
+            <div id="icon19">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon20(50% calc(-63px * 19))
+            <div id="icon20">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon21(50% calc(-63px * 20))
+            <div id="icon21">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon22(50% calc(-63px * 21))
+            <div id="icon22">
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="container">
+
+        <div class="bloco">
+            background-position: icon23(50% calc(-63px * 22))
+            <div id="icon23">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon24(50% calc(-63px * 23))
+            <div id="icon24">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon25(50% calc(-63px * 24))
+            <div id="icon25">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon26(50% calc(-63px * 25))
+            <div id="icon26">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon27(50% calc(-63px * 26))
+            <div id="icon27">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon28(50% calc(-63px * 27))
+            <div id="icon28">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon29(50% calc(-63px * 28))
+            <div id="icon29">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon30(50% calc(-63px * 29))
+            <div id="icon30">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon31(50% calc(-63px * 30))
+            <div id="icon31">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon32(50% calc(-63px * 31))
+            <div id="icon32">
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="container">
+
+        <div class="bloco">
+            background-position: icon33(50% calc(-63px * 32))
+            <div id="icon33">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon34(50% calc(-63px * 33))
+            <div id="icon34">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon35(50% calc(-63px * 34))
+            <div id="icon35">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon36(50% calc(-63px * 35))
+            <div id="icon36">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon37(50% calc(-63px * 36))
+            <div id="icon37">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon38(50% calc(-63px * 37))
+            <div id="icon38">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon39(50% calc(-63px * 38))
+            <div id="icon39">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon40(50% calc(-63px * 39))
+            <div id="icon40">
+            </div>
+        </div>
+
+        <div class="bloco">
+            background-position: icon41(50% calc(-63px * 40))
+            <div id="icon41">
+            </div>
+        </div>
+
+        <div class="bloco">
+            Roleta Passe o mouse por cima
+            <div id="roleta">
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

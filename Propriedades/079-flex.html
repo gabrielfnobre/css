@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>flex</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 1vw;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .container {
+        width: 100%;
+        height: 100%;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .bloco {
+        width: 33%;
+        height: 100%;
+        padding: 2px;
+        margin: 4px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, .2);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .bloco > div {
+        background-color: lightpink;
+    }
+
+    .div1 {
+        background-color: aqua;
+        font-size: x-large;
+        text-align: center;
+    }
+    
+    .div2 {
+        background-color: violet;
+        font-size: x-large;
+        text-align: center;
+    }
+
+    .div3 {
+        background-color: rgb(248, 203, 121);
+        font-size: x-large;
+        text-align: center;
+    }
+    
+    .div4 {
+        background-color: turquoise;
+        font-size: x-large;
+        text-align: center;
+    }
+
+    #n0 {
+        display: flex;
+        height: 80%;
+        justify-content: center;
+        align-items: center;
+    }
+    #n0 > div {
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 0 3 100px;
+        transition: all .2s ease-in-out;
+    }
+    #n0 > .div3:hover {
+        flex: 1 0 100px;
+        transition: all .2s ease-in-out;
+    }
+    
+
+    #n1 {
+        display: flex;
+        height: 80%;
+        justify-content: center;
+        align-items: center;
+    }
+    #n1 > div {
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1 3 100px;
+        transition: all .2s ease-in-out;
+    }
+    #n1 > .div3:hover {
+        flex: 0 5 100px;
+        transition: all .2s ease-in-out;
+    }
+
+    #n2 {
+        display: flex;
+        flex-wrap: wrap;
+        height: 80%;
+        justify-content: center;
+        align-items: center;
+    }
+    #n2 > div {
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 0 0 150px;
+        transition: all .2s ease-in-out;
+    }
+    #n2 > div:hover {
+        flex: 0 0 200px;
+        transition: all .2s ease-in-out;
+    }
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: flex-shrink (Encolhimento do Flex)
+
+
+    Objetivo: Essa propriedade é uma abreviação das propriedades: 
+                - flex-grow; (Para definir um tamanho mínimo que um flex-item pode ter)
+                - flex-shrink; (Para definir um tamanho máximo que um flex-item pode ter)
+                - flex-basis; (Para definir um tamanho base que um flex-item pode ter)
+                
+                Ou seja, ela pode ser usada para definir um tamanho base para os nossos flex-items, um tamanho mínimo e um 
+                tamanho máximo. Lembrando que para visualizar esses efeitos, eles não podem ser provocados pelo usuário 
+                eles só serão afetados pelo responsivo de uma página quando a visualização da página é afetada.
+
+                A ordem de atribuição dos valores é a seguinte: 
+
+                        flex: flex-grow flex-shrink flex-basis;
+
+                DETALHE IMPORTANTE!!! Sempre deve ser usada em flex-items, nunca em display grids, e muito menos nos 
+                containers. Além disso, os flex-items que tiverem largura - ou altura - pré-definidos no seu eixo
+                principal serão afetados de acordo com a altura e largura pré-definidos. 
+                
+
+
+    - Valores Aceitáveis:
+
+        
+        - flex-grow:    Podemos colocar um valor number, para definir um tamanho proporcional maior que os demais 
+                        elementos;
+        
+        - flex-shrink:  Podemos colocar um valor number, para definir um tamanho proporcional menor que os demais 
+                        elementos, caso o flex-item seja comprimido pelos demais;
+        
+        - flex-basis:   Podemos colocar qualquer qualquer valor absoluto ou relativos - além dos valores pré-definidos - 
+                        para atribuir um tamanho padrão para o flex-item;
+
+        - auto:         Uma medida automática de acordo com o conteúdo;
+        
+        - unset:        Para desligar a propriedade;
+        
+        - initial:      Volta ao valor inicial;
+        
+        - inherit:      Para herdar o valor do elemento pai;
+
+    - Valor Padrão: 0 1 auto;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: ;
+
+-->
+
+    <div class="container">
+
+        <div class="bloco">
+            flex: 0 3 100px (Responsivo)<br>
+            flex: 1 0 100px (hover)
+            <span style="font-weight: normal;font-size: 10pt;">Mude a visualização da página para um formato menor e veja
+                o responsivo funcionando. Perceba também que somente a div "1" responde ao "hover"...
+            </span>
+            <div id="n0">
+                <div class="div1">0</div>
+                <div class="div2">0</div>
+                <div class="div3">1</div>
+                <div class="div4">0</div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: Essa propriedade só pode ser aplicada em flex-items;
+            </span>
+        </div>
+
+        <div class="bloco">
+            flex: 1 3 100px (Responsivo)<br>
+            flex: 0 5 100px (hover)
+            <span style="font-weight: normal;font-size: 10pt;">Mude a visualização da página para um formato menor e veja
+                o responsivo funcionando. Perceba também que somente a div "1" responde ao "hover"...
+            </span>
+            <div id="n1">
+                <div class="div1">0</div>
+                <div class="div2">0</div>
+                <div class="div3">1</div>
+                <div class="div4">0</div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: Essa propriedade só pode ser aplicada em flex-items;
+            </span>
+        </div>
+
+        <div class="bloco">
+            flex: 0 0 150px (Responsivo)<br>
+            flex: 0 0 200px (hover)
+            <span style="font-weight: normal;font-size: 10pt;">Mude a visualização da página para um formato menor e veja
+                o responsivo funcionando. Veja também o efeito do "hover" passando o mouse por cima das divs...
+            </span>
+            <div id="n2">
+                <div class="div1">Passe o mouse aqui</div>
+                <div class="div2">Passe o mouse aqui</div>
+                <div class="div3">Passe o mouse aqui</div>
+                <div class="div4">Passe o mouse aqui</div>
+            </div>
+            <span style="font-weight: bold;font-size: 8pt;">Atenção: Essa propriedade só pode ser aplicada em flex-items;
+            </span>
+        </div>
+    
+    </div>
+
+</body>
+</html>

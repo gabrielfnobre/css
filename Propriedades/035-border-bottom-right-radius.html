@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>border-bottom-right-radius</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: bold;
+        text-align: center;
+        font-size: 24pt;
+    }
+
+    body {
+        margin: 0;
+        padding: 2vw;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /*Criamos uma body de altura baixa para abraçar as nossas divs e posicioná-las justificadas no espaçamento entre
+        elas*/
+    }
+
+    #card1 {
+        width: 20vw;
+        height: 20vw;
+        padding-top: 7%;
+        background-color: goldenrod;
+        border-color: rgb(153, 87, 24);
+        border-width: 20px;
+        border-style: dashed;
+        border-bottom-right-radius: 50%; /*Perceba que ambas as bordas tem a mesma angulação mediana*/
+    }
+
+    #card2 {
+        width: 20vw;
+        height: 20vw;
+        padding-top: 7%;
+        background-color: rgb(238, 138, 233);
+        border-color: rgb(106, 32, 155);
+        border-width: 20px;
+        border-style: dashed;
+        border-bottom-right-radius: 10% 50%; /*Perceba que a 1ª borda se refere a borda inferior, onde a angulação é 
+                                            menor, e a 2ª borda se refere á direita, onde a ângulação é mediana*/
+    }
+
+    #card3 {
+        width: 20vw;
+        height: 20vw;
+        padding-top: 7%;
+        background-color: rgb(137, 218, 32);
+        border-color: rgb(41, 173, 63);
+        border-width: 20px;
+        border-style: dashed;
+        border-bottom-right-radius: 50% 10%; /*Perceba que a 1ª borda se refere a borda inferior, onde a angulação é 
+                                            mediana, e a 2ª borda se refere á direita, onde a ângulação é menor*/
+    }
+
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: border-bottom-right-radius (raio da borda direita inferior)
+
+
+    Objetivo: é uma propriedade que permite arredondar o canto inferior direito de uma borda que estiver no nosso 
+                elemento.
+
+                O border-bottom-right-radius trabalha com 2 medidas como seu valor:
+
+                    - 1ª medida é referente a angulação da borda do bottom, podemos atribuir uma ângulação - geralmente em
+                            porcentagem - para criar um desvio em curva para dentro do conteúdo do nosso elemento.
+                            Quanto maior for a numeração, maior será o desvio da curva para o centro do elemento;
+
+                    - 2ª medida é referente a angulação da borda da direita, podemos atribuir uma ângulação - geralmente 
+                            em porcentagem - para criar um desvio em curva para dentro do conteúdo do nosso elemento.
+                            Quanto maior for a numeração, maior será o desvio da curva para o centro do elemento;
+
+
+    - Valores Aceitáveis:
+
+        - length: Qualquer valor absoluto ou relativo;
+        - initial: Volta ao valor inicial;
+        - inherit: Para herdar o valor do elemento pai;
+
+    - Valor Padrão: 0;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: Podemos escolher entre atribuir os 2 valores ou não, lembrando que, se colocarmos um valor só a propriedade
+            border-bottom-right-radius vai atribuir uma ângulação idêntica tanto para a borda inferior quanto para a 
+            borda da direita;
+
+-->
+
+    <div id="card1">COM<br>50% X 50%</div>
+    <div id="card2">COM<br>10% X 50%</div>
+    <div id="card3">COM<br>50% X 10%</div>
+
+
+</body>
+</html>

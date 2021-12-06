@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="sass/css/ifElse.css" />
+<title>Regra @if e @else</title>
+</head>
+<body>
+
+<!--            
+    
+           Regras de Estilo @if e @else
+
+        O que faz a Regra de Estilo @if e @else?
+
+A regra de estilo @if e @else gera um desvio condicional para os nossos mixins e funções criadas no Sass, por através 
+dela conseguimos implementar lógica onde um determinado mixin ou função vai obedecer a um determinado comportamento se 
+o valor passado para ele for “true” ou “false”.
+
+Sempre usamos a regra @if para estipular uma única condição, onde, se a condição for verdadeira ou falsa o trecho do 
+@if pode ser executado ou não, dependendo da regra que estipulamos.
+
+Já a regra @else cria uma segunda condição caso a regra do @if não seja satisfeita. 
+
+Colocamos a regra do @else fora do bloco do @if, mas se quisermos criar um desvio condicional encadeado podemos usar 
+um @if dentro de um @else até que a última condição @else seja declarada.
+
+
+    OBS: Para mais detalhes veja "Fundamentos do Sass nº20";
+
+-->
+
+    <img class="photo-message" src="https://i.pravatar.cc/300" alt="avatar"> <!--Foto circular-->
+    <img class="photo-normal" src="https://i.pravatar.cc/300" alt="avatar"> <!--Foto quadrada com bordas amarelas-->
+    <img class="photo-noFormat" src="https://i.pravatar.cc/300" alt="avatar"> <!--Foto sem formatação do mixin-->
+
+</body>
+</html>

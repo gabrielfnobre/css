@@ -1,0 +1,25 @@
+
+@use "sass:selector"; /*Sempre devemos usar a biblioteca nativa "selector", ela que vai nos ajudar unificar os 
+                        seletores passados no mixin com o seletor raiz*/
+
+@mixin field($child) {
+    @at-root #{selector.unify(&, $child)} { /*Perceba o uso da template entre a regra @at-root e os brackets dela, 
+                                                além disso, temos a função unify da biblioteca "seletor" que unicará
+                                                o seletor de contexto global com o elemento passando na variável 
+                                                $child*/
+        padding: 10px;
+        border: 2px solid #999;
+        margin: 10px;
+        @content; //O content vai criar outro seletor raiz com a formatação que estiver dentro do seletor filho.
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    .field {
+        @include field("input"); //Inclusão do elemento "input"
+        @include field("select"); //Inclusão do elemento "select"
+        color: red;
+    }
+}

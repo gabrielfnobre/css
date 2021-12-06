@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="sass/css/each.css" />
+<title>Regra @each</title>
+</head>
+<body>
+
+<!--            
+    
+           O que faz a Regra de Estilo @each?
+
+A regra de estilo @each gera um laço de repetição para “cada” valor de uma list ou map. Para isso temos que gerar 
+dentro da regra @each uma variável comparadora que vai executar um determinado comando a cada valor índice dentro da 
+lista ou map. E dentro do bloco de execução da regra nós colocamos o que cada valor da list ou map deve fazer a cada 
+laço de repetição.
+
+Essa regra é muito útil para a criação de formatações que sigam o mesmo estilo, porém com valores diferentes, como 
+por exemplo tamanhos de imagem, efeitos gradiente e coisas desse tipo.
+
+OBS: O que são lists e maps? List é quando possuímos uma variável no Sass que possuí uma porção de valores divididos 
+por vírgula, é como um array, por exemplo: $var: 10px, 30px, 50px; E maps é quando temos uma lista, porém 
+referenciada pelo conjunto chave e valor, onde um valor deverá ser chamado por através da sua chave, dessa forma: 
+$var: (“xs”:10px, “sm”:30px, “xl”:50px); Perceba que no map temos um nome para cada valor, esse nome corresponde a 
+sua “chave” para referenciá-lo, e em seguida temos o valor dele. Detalhe importante!!! Nos maps os conjuntos 
+chave-valor devem ficar dentro dos parênteses.
+
+
+    OBS: Para mais detalhes veja "Fundamentos do Sass nº21";
+
+-->
+
+    <img class="xs" src="https://i.pravatar.cc/300" alt="avatar">
+    <img class="sm" src="https://i.pravatar.cc/300" alt="avatar">
+    <img class="md" src="https://i.pravatar.cc/300" alt="avatar">
+
+</body>
+</html>

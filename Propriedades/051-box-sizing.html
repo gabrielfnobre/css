@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>box-sizing</title>
+<style>
+
+    * {
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    body {
+        margin: 0;
+        padding: 20vh;
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+    }
+
+    #div1 {
+        width: 300px;
+        height: 300px;
+        padding: 50px;
+        color: white;
+        display: flex;
+        align-items: center;
+        background-color: magenta;
+        box-sizing: content-box; /*A primeira div têm a sua largura e altura referenciados pelo conteúdo, fazendo com 
+                                    que o padding estoure a largura de 300px, ganhando uma altura e largura de 320px*/
+    }
+
+    #div2 {
+        width: 300px;
+        height: 300px;
+        padding: 50px;
+        display: flex;
+        align-items: center;
+        background-color: gold;
+        box-sizing: border-box; /*Enquando a segunda div, que tem os mesmos valores, não estoura a largura de 300px
+                                    definidos, em e ainda assim mantém o padding de 10px dentro do elemento*/
+    }
+
+    
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: box-sizing (Caixa de Dimensionamento)
+
+
+    Objetivo: Essa propriedade define como a largura e altura de um elemento vão ser calculados pelo navegador. Ela 
+                define se o padding e as bordas vão entrar dentro da medida da altura e largura ou não.
+
+
+    - Valores Aceitáveis:
+
+        - content-box:  vai calcular largura e altura em relação ao conteúdo do elemento, paddin e border geram uma 
+                            medida adicional sobre o elemento;
+        - border-box:   vai calcular a largura e altura em relação a borda, mesmo que o conteúdo ultrapasse os valores 
+                            estipulados pelas bordas, o elemento em si não ultrapassará o valor de sua caixa;
+        - initial:      Volta ao valor inicial;
+        - inherit:      Para herdar o valor do elemento pai;
+
+    - Valor Padrão: content-box;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: O box-sizing NÃO TRABALHA com base na margem, se nós atribuirmos uma margem para um elemento, embora ela não
+            seja contada como parte do tamanho do elemento, ela ainda faz parte do elemento e não será afetada pelo 
+            box-sizing. Para causar qualquer mudança sobre ela temos que usar as propriedades de margem;
+
+-->
+    
+    <div id="div1">Essa div ficou maior por que usa content-box, inspecione o elemento e veja que o conteúdo tem 300
+                    x300px, mas o padding de 10px de cada lado aumenta o elemento como um todo.</div>
+    <div id="div2">Essa div manteve o seu tamanho de 300x300px por que usa border-box, inspecione o elemento e veja que 
+        a div não ultrapassou o tamanho de 300x300px, e o padding de 10px ainda assim foi aplicado sem alterar o tamanho
+        da div.</div>
+
+</body>
+</html>

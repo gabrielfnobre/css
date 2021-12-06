@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>border-top-color</title>
+<style>
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 100vw;
+        height: 100vh;
+        color: red;
+        border-top-style: solid; /*Para a borda ser visualizada é necessário que ele tenha algum estilo*/
+        border-top-width: 10px; /*Além do estilo, é necessário que a borda tenha um tamanho*/
+        margin: 0px;
+        border-top-color: goldenrod;
+        /*Caso a borda de cima não tivesse sido definida com um cor, ele teria a mesma cor que o texto do elemento, para 
+        visualizar isso melhor, retire a cor que colocamos aqui, e veja que ele ficará vermelha igual ao texto.*/
+    }
+
+    .bloco {
+        border-top-style: solid;
+        border-top-width: 10px;
+        border-top-color: transparent; /*Podemos usar o transparent em momentos especiais quando não desejamos que a borda
+                                            desapareça á menos que façamos algo, como por exemplo passar o mouse por cima.*/
+        color: red;
+        font-size: 5vh;
+        margin-top: 30px;
+    }
+
+    .bloco:hover {
+        border-top-style: solid;
+        border-top-width: 10px;
+        border-top-color: blue; /*Perceba que a borda aparece quando passamos o mouse por cima. A borda já estava já, mas
+                                        estava transparente.*/
+    }
+
+</style>
+</head>
+<body>
+
+<!--            
+
+        Propriedade: border-top-color (cor da borda superior)
+
+
+    Objetivo: é uma propriedade que define uma cor somente para a borda superior de um elemento.
+
+
+    - Valores Aceitáveis:
+
+        - color: Define uma cor para elemento;
+        - transparent: Deixa o elemento sem cor;
+        - initial: Volta ao valor inicial;
+        - inherit: Para herdar o valor do elemento pai;
+
+    - Valor Padrão: É a cor atual do texto do elemento;
+
+    - Possuí valor herdado? - NÃO;
+
+    OBS: Podemos usar o transparente quando queremos que um elemento esteja presente num determinado local, mas que ele só 
+            apareça quando tivermos algum tipo de comportamento;
+
+-->
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus soluta hic illum itaque ex deserunt 
+        voluptate fuga repellat magnam qui odio, omnis est vero quibusdam ipsum? Laboriosam ducimus facilis 
+        similique.</p>
+
+    <div class="bloco">Passe o Mouse Aqui!!!</div>
+
+</body>
+</html>

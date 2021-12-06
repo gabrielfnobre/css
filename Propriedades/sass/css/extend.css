@@ -1,0 +1,11 @@
+@charset "UTF-8";
+.error, .error--serious { /*Perceba no código css original que as propriedades foram copiadas em ambas as classes*/
+  background-color: #ee5f5f;
+  border: 1px solid red;
+  margin: 10px;
+  padding: 10px;
+}
+.error--serious { /*E somente a formatação adicional para a classe "error--serious" foi copiada para ela*/
+  border-width: 3px;
+}
+
