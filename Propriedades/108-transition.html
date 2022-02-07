@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    .fora {
+        display: inline-block;
+        margin: 0 40px;
+    }
+
+    #quadro {
+        background-color: orange;
+        width: 400px;
+        height: 400px;
+    }
+    #quadro:hover {
+        transform: scale(2); /*Usamos o transform para duplicar o tamanho do elemento.*/
+        transition: 3s; /*Note que quando a transição é colocado na formatação gerada por algum comportamento, o tempo de transição funcionará enquanto o comportamento estiver acontecendo. Mas assim que o comportamento terminar, o elemento irá voltar ao seu estado natural instantanemante.*/
+        background-color: red;
+    }
+
+    #retangulo_giratorio {
+        background-color: darkorchid;
+        width: 50px;
+        height: 200px;
+        transition: 3s all; /*Mas quando a transição é colocada na formatação comum do elemento, a transição acontece devagar quando um comportamento acontece e devagar quando o comportamento encerra e o elemento volta ao seu estado natural.*/
+        /*Note que usamos também o atributo "all" para dizer que a transformação deve acontecer em todos os transforms que existirem para aquele elemento*/
+    }
+    #retangulo_giratorio:hover {
+        background-color: deepskyblue;
+        transform: rotate(180deg) scale(2); /*Quando queremos que transformações aconteçam em conjunto colocamos as 2 transformações - ou mais se for o caso - para acontecerem - elas vão acontecer ao mesmo tempo*/
+    }
+
+    p {
+        font-weight: bold;
+    }
+</style>
+<title>TRANSITION</title>
+</head>
+<body>
+
+<!--            
+    
+           transition
+
+    A propriedade "transition", como o próprio nome diz, é usada para causar uma transição na formatação de um elemento quando algum evento ocorre. Geralmente utilizamos a transition em conjunto com eventos de mouse, como o "hover".
+    
+    Com essa propriedade, podemos escolher quanto tempo pode levar a transição de mudança de estilo de um elemento, desde o seu estilo inicial até o seu estilo final.
+    
+    Podemos colocar esse tempo em medidas de segundos na nossa propriedade "transition".
+
+    Além disso, podemos escolher que propriedade dentro do nosso elemento irá mudar, colocando o nome dessa propriedade logo após do tempo de transição em segundos, ou então poderemos colocar o valor "all" para que todos os itens sejam mudados, ou transformações por através da propriedade transform.
+
+    Veja um exemplo no CSS implementado na tag head logo acima...
+
+-->
+
+    <div class="fora">
+        <div id="quadro">
+        </div>
+        <p>Passe o mouse por cima do quadro e veja ele mudar de cor <br>vagarosamente</p>
+    </div>
+    
+    <div class="fora">
+        <div id="retangulo_giratorio">
+        </div>
+        <p>Passe o mouse por cima do retângulo e veja ele girar. <br>vagarosamente</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    #imagem {
+        width: 240px;
+        float: left;
+        margin: 0 10px 10px 0;
+    }
+
+    #p3 {
+        clear: left /*Note que todos os parágrafos abaixo do 3º parágrafo irão desrespeitar o clear...*/
+    }
+</style>
+<title>CLEAR</title>
+</head>
+<body>
+
+<!--            
+    
+        clear
+
+    A propriedade "clear" é uma propriedade usada para desrespeitar um elemento float. Quando temos um elemento float, automaticamente todos os elementos abaixo dele são obrigados a respeitar o float dele ficando ao redor dele e respeitando o seu espaço.
+    
+    O "clear" elimina isso, ele faz com que um elemento, mesmo que esteja ao lado do elemento float desrespeite a sua caracteristica float e se comporte como já está acostumada. E não apenas isso, mas todos os elementos abaixo do elemento que possuír clear, vão ter o mesmo comportamento.
+
+    Para isso podemos escolher onde usar o clear, temos os valores: "left", "right", "both" e "none".
+
+    Veja um exemplo no CSS implementado na tag head logo acima...
+
+-->
+
+    <img src="../Examples/004-boku.png" id="imagem">
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate natus delectus perspiciatis. Perspiciatis, quae ex illo nemo officiis facilis nesciunt sit pariatur omnis. Recusandae molestiae eius non saepe vel cupiditate.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate natus delectus perspiciatis. Perspiciatis, quae ex illo nemo officiis facilis nesciunt sit pariatur omnis. Recusandae molestiae eius non saepe vel cupiditate.
+    </p>
+    <p id="p3">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate natus delectus perspiciatis. Perspiciatis, quae ex illo nemo officiis facilis nesciunt sit pariatur omnis. Recusandae molestiae eius non saepe vel cupiditate.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate natus delectus perspiciatis. Perspiciatis, quae ex illo nemo officiis facilis nesciunt sit pariatur omnis. Recusandae molestiae eius non saepe vel cupiditate.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate natus delectus perspiciatis. Perspiciatis, quae ex illo nemo officiis facilis nesciunt sit pariatur omnis. Recusandae molestiae eius non saepe vel cupiditate.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate natus delectus perspiciatis. Perspiciatis, quae ex illo nemo officiis facilis nesciunt sit pariatur omnis. Recusandae molestiae eius non saepe vel cupiditate.
+    </p>
+
+</body>
+</html>

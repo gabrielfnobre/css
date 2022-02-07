@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    .fora {
+        display: inline-block;
+        margin: 0 40px;
+    }
+
+    #quadro {
+        background-color: orange;
+        width: 400px;
+        height: 400px;
+    }
+    #quadro:hover {
+        transform: scale(2); /*Usamos o transform para duplicar o tamanho do elemento.*/
+        transition: 3s; /*Note que quando a transição é colocado na formatação gerada por algum comportamento, o tempo de transição funcionará enquanto o comportamento estiver acontecendo. Mas assim que o comportamento terminar, o elemento irá voltar ao seu estado natural instantanemante.*/
+        background-color: red;
+    }
+
+    #retangulo_giratorio {
+        background-color: darkorchid;
+        width: 50px;
+        height: 200px;
+        transition: 3s all; /*Mas quando a transição é colocada na formatação comum do elemento, a transição acontece devagar quando um comportamento acontece e devagar quando o comportamento encerra e o elemento volta ao seu estado natural.*/
+        /*Note que usamos também o atributo "all" para dizer que a transformação deve acontecer em todos os transforms que existirem para aquele elemento*/
+    }
+    #retangulo_giratorio:hover {
+        background-color: deepskyblue;
+        transform: skewX(180deg); /*Quando queremos que transformações aconteçam em conjunto colocamos as 2 transformações - ou mais se for o caso - para acontecerem - elas vão acontecer ao mesmo tempo*/
+    }
+
+    p {
+        font-weight: bold;
+    }
+</style>
+<title>TRANSFORM</title>
+</head>
+<body>
+
+<!--            
+    
+           transform
+
+    A propriedade "transform", como o próprio nome diz, é usada para causar uma transformação no elemento quando algum evento ocorre. Geralmente utilizamos o transform em conjunto com eventos de mouse, como o "hover".
+    
+    Com essa propriedade, podemos alterar aspectos dimensionais do elemento, como aumentar o seu tamanho, girá-lo em 2D e até em 3D.
+    
+    Veja quantos atributos podemos usar com transform:
+
+        transform: matrix(1.0, 2.0, 3.0, 4.0, 5.0, 6.0) //Usando os eixos x, y, z
+        transform: translate(12px, 50%) //Para fazer um elemento girar verticalmente e horizontalmente
+        transform: translateX(2em) //Girar horizontalmente
+        transform: translateY(3in) //Girar verticalmente
+        transform: scale(2, 0.5) //Aumentar em tamanho
+        transform: scaleX(2) //Aumentar em largura
+        transform: scaleY(0.5) //Aumentar em Altura
+        transform: rotate(0.5turn) //Girar em Graus
+        transform: skewX(30deg) //Girar e Esticar no eixo X
+        transform: skewY(1.07rad)//Girar e Esticar no eixo Y
+        transform: matrix3d(1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0) 
+        transform: translate3d(12px, 50%, 3em) //Girar Verticalmente e em 3D
+        transform: translateZ(2px) //Girar somente no eixo Z
+        transform: scale3d(2.5, 1.2, 0.3)
+        transform: scaleZ(0.3)
+        transform: rotate3d(1, 2.0, 3.0, 10deg)
+        transform: rotateX(10deg)
+        transform: rotateY(10deg)
+        transform: rotateZ(10deg)
+        transform: perspective(17px)
+
+    Veja um exemplo no CSS implementado na tag head logo acima...
+
+-->
+
+    <div class="fora">
+        <div id="quadro">
+        </div>
+        <p>Passe o mouse por cima do quadro e veja ele mudar de cor <br>vagarosamente</p>
+    </div>
+    
+    <div class="fora">
+        <div id="retangulo_giratorio">
+        </div>
+        <p>Passe o mouse por cima do retângulo e veja ele girar e mudar de cor.</p>
+    </div>
+
+</body>
+</html>
