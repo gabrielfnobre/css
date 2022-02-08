@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    div:nth-child(1) {
+        background: radial-gradient(orange, blue);
+        color: white;
+    }
+    
+    div:nth-child(2) {
+        background: radial-gradient(blue 70%, orange);
+        color: white;
+    }
+
+    div {
+        width: 400px;
+        height: 400px;
+        text-align: center;
+        display: inline-block;
+        margin-right: 10px;
+    }
+</style>
+<title>RADIAL-GRADIENT</title>
+</head>
+<body>
+
+<!--            
+    
+        radial-gradient
+
+    O valor linear-gradient não é uma propriedade do CSS, ele é sempre um valor que podemos usar na propriedade "background" de qualquer elemento elemento. Ele é usado específicamente para gerar um gradiente circular sobre os elementos.
+
+    Existem várias formas de usar o radial-gradient:
+
+        - Para conseguir um gradiente com separação de cores automaticamente para cada lado: radial-gradient(cor1, cor2)
+        - Podemos escolher a porcentagem em que uma cor abraçará o elemento no gradiente: radial-gradient(cor1 70%, cor2)
+
+    OBS: Por motivos óbvios, não é possível usar graus no gradiente do radial-gradient;
+
+    Veja um exemplo no CSS implementado na tag head logo acima...
+
+-->
+
+    <div>
+        radial-gradient(cor1, cor2)
+    </div>
+    
+    <div>
+        radial-gradient(cor1 70%, cor2)
+    </div>
+
+</body>
+</html>

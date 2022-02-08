@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    div:nth-child(1) {
+        background: linear-gradient(orange, blue);
+    }
+    
+    div:nth-child(2) {
+        background: linear-gradient(45deg, orange, blue, red);
+        color: white;
+    }
+    
+    div:nth-child(3) {
+        background: linear-gradient(90deg, blue 70%, orange);
+        color: white;
+    }
+
+    div {
+        width: 400px;
+        height: 400px;
+        text-align: center;
+        display: inline-block;
+        margin-right: 10px;
+    }
+</style>
+<title>LINEAR-GRADIENT</title>
+</head>
+<body>
+
+<!--            
+    
+        linear-gradient
+
+    O valor linear-gradient não é uma propriedade do CSS, ele é sempre um valor que podemos usar na propriedade "background" de qualquer elemento elemento.
+
+    Existem várias formas de usar o linear-gradient:
+
+        - Para conseguir um gradiente com separação de cores automaticamente para cada lado: linear-gradient(cor1, cor2)
+        - Podemos mudar a inclinação do gradiente: linear-gradient(45deg cor1, cor2, cor3)
+        - Podemos escolher a porcentagem em que uma cor abraçará o elemento no gradiente: linear-gradient(90deg, cor1 70%,  
+                                                                                                            cor2)
+
+    Veja um exemplo no CSS implementado na tag head logo acima...
+
+-->
+
+    <div>
+        linear-gradient(cor1, cor2)
+    </div>
+    
+    <div>
+        linear-gradient(45deg cor1, cor2, cor3)
+    </div>
+    
+    <div>
+        linear-gradient(90deg cor1 70%, cor2)
+    </div>
+
+</body>
+</html>
