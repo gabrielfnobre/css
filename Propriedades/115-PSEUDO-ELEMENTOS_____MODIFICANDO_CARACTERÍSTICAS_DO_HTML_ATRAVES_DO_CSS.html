@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    p:nth-child(1)::after{
+        content: ' ★★★★';
+    }
+
+    p:nth-child(2)::before{
+        content: '★★★★ ';
+    }
+    
+    p:nth-child(3)::first-letter{
+        font-size: 24pt;
+    }
+
+    div p::first-line {
+        font-style: italic;
+    }
+
+    p:nth-child(4)::selection{
+        background-color: red;
+        color: white;
+    }
+
+    input::placeholder {
+        color: red;
+    }
+
+    ul li::marker {
+        color: green;
+    }
+
+    p {
+        font-weight: bold;
+    }
+</style>
+<title>PSEUDO-ELEMENTOS</title>
+</head>
+<body>
+
+<!--            
+    
+        pseudo-elemento
+
+    Um pseudo-elemento CSS é uma palavra-chave adicionada a um seletor que permite que você estilize uma parte específica do elemento selecionado. 
+    
+    Por exemplo, o pseudo-elemento :first-line aplica o estilo apenas na primeira linha de um parágrafo. Se fosse o pseudo-elemento :first-letter, a estilização seria somente para a primeira letra da palavra.
+
+    Existe uma porção de pseudo-elementos, alguns ainda não estão disponíveis para todos os navegadores. Eles são:
+
+        ::after - cria uma estilização para o último filho de um elemento selecionado. Muitas vezes é usado para 
+                    adicionar e melhorar o conteúdo de um elemento como a propriedade content que irá receber algum valor que será adicionado ao HTML. É inline por padrão;
+        ::before - cria uma estilização para o primeiro filho de um elemento selecionado. Muitas vezes é usado para 
+                    adicionar e melhorar o conteúdo de um elemento como a propriedade content que irá receber algum valor que será adicionado ao HTML. É inline por padrão;
+        ::cue - Usado para estilizar legendas e outras dicas na mídia com faixas VTT;
+        ::first-letter - Seleciona a primeira letra da primeira linha de um bloco;
+        ::first-line -Seleciona a primeira linha de um bloco de texto e formata ele a nossa maneira;
+        ::selection - Aplica estilos para partes do documento que foram selecionadas pelo usuário (tal como clicar e arrastar 
+                    o ponteiro do mouse através de um texto.
+        ::slotted - Representa qualquer elemento que tenha sido colocado em um slot dentro de um template HTML.
+        ::backdrop -  pode ser utilizado para criar um plano de fundo que esconde o conteúdo por trás de um elemento 
+                    posicionado no topo de uma pilha de elementos. Por exemplo, para o elemento que é mostrado em tela cheia conforme descrito nessa especificação. Ele não herda de nenhum elemento e também não é herdado. Não há restrição de propriedades que podem ser aplicadas a esse pseudo-elemento. 
+        ::placeholder - Representa o texto do espaço reservado em um elemento com o atributo "place-holder"; 
+        ::marker - Usado para estilizar tags que possuam marcadores, como os tags li por exemplo;
+        ::spelling-error - Representa um segmento de texto que o agente do usuário sinalizou como incorreto;
+        ::grammar-error - Representa um segmento de texto que o agente do usuário sinalizou como gramaticalmente incorreto.
+
+    Veja um exemplo no CSS implementado na tag head logo acima...
+
+-->
+
+    <P>Veja que uma formatação foi adicionada depois do parágrafo</P>
+    <P>Veja que uma formatação foi adicionada depois do parágrafo</P>
+    <P>Somente a Primeira letra foi seleciona.</P><br>
+
+    <div>
+        <P>Veja que somente as primeiras linhas foram formatadas com ::first-letter!!!! Molestias libero mollitia nostrum a porro cumque officiis obcaecati eos numquam dolore voluptates neque, perferendis deleniti possimus!</P>
+        <P>Veja que somente as primeiras linhas foram formatadas com ::first-letter!!!! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus, voluptates blanditiis. Ullam quidem aut est facere explicabo pariatur perferendis similique, nesciunt ex accusantium reiciendis laudantium, doloremque esse aliquid natus neque.</P>
+    </div>
+
+    <input type="text" placeholder="Eu sou o placeholder">
+
+    <ul>
+        <li>Uno</li>
+        <li>Dos</li>
+        <li>Tres</li>
+        <li>Cuatro</li>
+    </ul>
+
+</body>
+</html>
