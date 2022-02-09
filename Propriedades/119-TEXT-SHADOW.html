@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    p {
+        font-weight: bold;
+        font-size: 32pt;
+    }
+
+    p:nth-child(1) {
+        text-shadow: 3px 2px deepskyblue;
+    }
+    
+    p:nth-child(2) {
+        text-shadow: 3px 2px 5px deepskyblue;
+    }
+    
+    p:nth-child(3) {
+        text-shadow: 3px 2px 5px yellow, -3px -2px 5px darkorchid;
+    }
+
+    
+</style>
+<title>TEXT-SHADOW</title>
+</head>
+<body>
+
+<!--            
+    
+        text-shadow
+
+    A propriedade "text-shadow" é responsável por gerar um sombreamento sobre os nossos textos copiando o formato do texto.
+
+    O text-shadow pode trabalha com vários parâmetros:
+
+        - Eixo X: gerencia em medida relativa ou pixel o quanto um sombreamento irá se deslocar sobre o eixo "x";
+        - Eixo Y: gerencia em medida relativa ou pixel o quanto um sombreamento irá se deslocar sobre o eixo "y";
+        - Blur: gerencia em medida relativa ou pixel o quanto a sombra estará borrada;
+        - Cor: Podemos definir a cor da sombra;
+
+        Usamos esses parâmetros do seguinte modo:
+
+        text-shadow: x y blur cor;
+
+    OBS: Podemos gerar mais de uma sombra sobre o mesmo texto. Para isso basta colocarmos os parâmetros para cada sombra separados por vírgula dentro da propriedade "text-shadow";
+
+    Veja um exemplo no CSS implementado na tag head logo acima...
+
+-->
+    <p>Texto com Sombreamento sem blur</p>
+
+    <p>Texto com Sombreamento com blur</p>
+
+    <p>Texto com Sombreamento com blur e mais de uma sombra</p>
+
+</body>
+</html>

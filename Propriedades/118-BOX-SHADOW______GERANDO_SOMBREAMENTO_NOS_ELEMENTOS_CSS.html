@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    #principal {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #principal div {
+        width: 300px;
+        height: 300px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 24pt;
+        text-justify: center;
+    }
+
+    #principal div:nth-child(1){
+        background-color: cadetblue;
+        box-shadow: 5px 5px black;
+    }
+    #principal div:nth-child(2){
+        background-color: coral;
+        margin-left: 10px;
+        box-shadow: 10px 10px 10px rgb(0, 0, 0);
+    }
+    #principal div:nth-child(3){
+        background-color: palegoldenrod;
+        margin-left: 10px;
+        box-shadow: 20px 20px 10px rgb(255, 255, 0), -20px -20px 10px rgb(0, 255, 255), -40px 40px 10px rgb(255, 0, 0) ;
+    }
+</style>
+<title>BOX-SHADOW</title>
+</head>
+<body>
+
+<!--            
+    
+        box-shadow
+
+    A propriedade "box-shadow" é responsável por gerar um sombreamento sobre os nossos elementos css.
+
+    O box-shadow pode trabalha com vários parâmetros:
+
+        - Eixo X: gerencia em medida relativa ou pixel o quanto um sombreamento irá se deslocar sobre o eixo "x";
+        - Eixo Y: gerencia em medida relativa ou pixel o quanto um sombreamento irá se deslocar sobre o eixo "y";
+        - Blur: gerencia em medida relativa ou pixel o quanto a sombra estará borrada;
+        - Cor e Opacidade: Podemos definir a cor da sombra o quanto ela terá opacidade;
+
+        Usamos esses parâmetros do seguinte modo:
+
+        box-shadow: x y blur cor_e/ou_opacidade;
+
+    OBS: Podemos gerar mais de uma sombra sobre o mesmo elemento. Para isso basta colocarmos os parâmetros para cada sombra separados por vírgula dentro da propriedade "box-shadow";
+
+    Veja um exemplo no CSS implementado na tag head logo acima...
+
+-->
+    <div id="principal">
+        <div>
+            Nesse exemplo não estamos usando blur
+        </div>
+        
+        <div>
+            Nesse exemplo estamos usando blur
+        </div>
+        
+        <div>
+            Nesse exemplo usamos 3 sombras diferentes
+        </div>
+    </div>
+
+</body>
+</html>
