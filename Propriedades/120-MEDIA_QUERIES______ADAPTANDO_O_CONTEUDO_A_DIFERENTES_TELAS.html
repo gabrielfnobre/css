@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: palevioletred;
+        margin: auto;
+        font-weight: bold;
+        text-align: center;
+    }
+    @media (max-width: 1000px) {
+        div {
+            width: 400px;
+            height: 400px;
+            transition: 2s;
+        }
+    }
+</style>
+<title>MEDIA QUERY</title>
+</head>
+<body>
+
+<!--            
+    
+        @media
+
+    A propriedade "@media" ou media query como também é conhecida, é responsável por trazer uma formatação específica a um elemento somente se uma determinada ocorrência for verdadeira.
+
+    Para isso, a media query pode trabalhar sobre tamanhos diferentes de tela, entradas de dados, determinadas cores, entre outras coisas.
+    
+    Para fazer as comparações o media query usa operadores lógicos "and", "not" e "only". Além de usar o que chamamos de media features, que fará comparações de acordo com determinadas características pré-determinadas.
+    
+    Como utilizar os operadores lógicos:
+
+        - and: Usada para quando desejamos fazer comparações entre 2 media features, por exemplo:
+                
+                @media (min-width: 700px) and (orientation: landscape) { ...formatação }
+            
+            A media query acima vai apenas retornar verdadeira se o viewport for 700px, wide ou wider e a tela estiver em landscape;
+
+        - not: É usada para negar toda uma media feature, se a media estiver separada por vírgula, a parte da media feature 
+            que tiver o not será a única negada, se a outra parte não tiver not ela vai ser executada;
+
+        - only: Previne que navegadores antigos que não suportam media queries com determinadas media features não apliquem 
+            os estilos não suportados;
+
+        
+    Media Types, são palavras reservadas que nós usamos para aplicar a media somente sobre um determinado tipo de dispositivo ou resolução de tela. 
+    Alguns exemplos de media types são:
+        - all: aplica a media sobre todos os elementos;
+        - speech: aplica a media para sintetizadores de voz;
+        - braille: aplica a media para dispositivos táteis;
+        - handheld: aplica a media para dispositivos de mão. Normalmente com telas pequenas e banda limitada 
+        - print: aplica a media para impressão em papel; 
+        - projection: aplica a media para apresentações, como PowerPoint;
+        - screen: aplica a media para monitores ou outros dispositivos com telas coloridas e com resolução adequada;
+        - tty: aplica a media para dispositivos que utilizam uma grade fixa para exibição de caracteres, como por exemplo, 
+                teletypes, terminais, dispositivos portáteis com display limitado;
+        - tv: aplica a media para dispositivos como televisores, ou seja, com baixa resolução, quantidade de cores e scroll 
+                limitado;
+        - embossed: aplica a media para dispositivos que “imprimem” em braille;
+
+    Media Features, são as características que deverão ser obedecidas para que uma media seja encarada como true ou false e seja executada ou não:
+        - width: Define uma largura padrão de tela;
+        - min-width: Define uma largura mínima de tela;
+        - max-width: Define uma largura máxima de tela;
+        - height: Define uma altura de tela;
+        - min-height: Define uma altura mínima de tela;
+        - max-height: Define uma altura máxima de tela;
+        - device-width: Define tamanho de largura de dispositivo específico;
+        - min-device-width: Define um tamanho mínimo de largura de dispositivo específico;
+        - max-device-width: Define um tamanho máximo de largura de dispositivo específico;
+        - device-height: Define uma altura de dispositivo específico;
+        - min-device-height: Define uma altura mínima de dispositivo específico;
+        - max-device-height: Define uma altura máxima de dispositivo específico;
+        - aspect-ratio: Define um aspecto da relação da área do display do dispositivo de saída. Este valor consiste de dois 
+                inteiros positivos separados por um caractere barra (“/”). Isto representa a relação entre pixels horizontais (primeiro termo) para pixels verticais (segundo termo);
+        - min-aspect-ratio: Faz o mesmo do "aspect-ratio" mas define um valor de relação mínimo entre eles;
+        - max-aspect-ratio: Faz o mesmo do "aspect-ratio" mas define um valor de relação máximo entre eles;
+        - device-aspect-ratio: Define um aspecto da relação da área física do dispositivo de saída. Este valor consiste de 
+                dois inteiros positivos separados por um caractere barra (“/”). Isto representa a relação entre pixels horizontais (primeiro termo) para pixels verticais (segundo termo);
+        - min-device-aspect-ratio: Faz o mesmo do "device-aspect-ratio" mas define um valor de relação mínimo entre eles;
+        - max-device-aspect-ratio: Faz o mesmo do "device-aspect-ratio" mas define um valor de relação máximo entre eles;
+        - color: Define um número de bits para utilizados pelo dispositivo para fazer as cores;
+        - min-color: Define um número mínimo de bits utilizados pelo dispositivo para fazer as cores na tela;
+        - max-color: Define um número máximo de bits utilizados pelo dispositivo para fazer as cores na tela;
+        - color-index: Define um número de entrada na tabela de consulta de cores para o dispositivo;
+        - min-color-index: Define um número mínimo de entrada na tabela de consulta de cores para o dispositivo;
+        - max-color-index: Define um número máximo de entrada na tabela de consulta de cores para o dispositivo;
+        - monochrome: Define um número de bits por pixel em um dispositivo monocromático (greyscale). Se o dispositivo não for 
+                monocromático, o valor é 0.
+        - min-monochrome: Define um número mínimo de bits por pixel em um dispositivo monocromático (greyscale). Se o 
+                dispositivo não for monocromático, o valor é 0.
+        - max-monochrome: Define um número máximo de bits por pixel em um dispositivo monocromático (greyscale). Se o 
+                dispositivo não for monocromático, o valor é 0.
+        - resolution: Indica a resolução (densidade de pixel) da saída do dispositivo. A resolução pode ser especificada em 
+                pontos por inch(dpi) ou pontos por centímetro(dpcm);
+        - min-resolution: Indica a resolução mínima (densidade de pixel) da saída do dispositivo. A resolução pode ser 
+                especificada em pontos por inch(dpi) ou pontos por centímetro(dpcm);
+        - max-resolution: Indica a resolução máxima (densidade de pixel) da saída do dispositivo. A resolução pode ser 
+                especificada em pontos por inch(dpi) ou pontos por centímetro(dpcm);
+        - orientation: Indica se o viewport é modo landscape (o visor é mais largo do que mais alto) ou portrait (o visor é 
+                mais alto do que mais largo;
+        - scan: Descreve o processo de digitalização de dispositivos saída de televisão;
+        - grid: Define se o dispositivo de saída é um dispositivo grade ou um dispositivo bitmap. Se o dispositivo é baseado 
+                em grade(tal como um terminal TTY ou uma tela de telefone com apenas um tipo de letra), o valor é 1. De outro modo é zero.;
+
+
+    Veja um exemplo no CSS implementado na tag head logo acima...
+
+-->
+    <div>
+        Mude o tamanho da tela e veja o quadrado crescer
+    </div>
+</body>
+</html>
