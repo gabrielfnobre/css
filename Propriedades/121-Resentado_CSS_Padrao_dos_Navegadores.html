@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../Examples/normalize.css">
+<link rel="stylesheet" href="../Examples/reset.css">
+<title>RESETANDO CSS</title>
+</head>
+<body>
+
+    <!--
+        RESETANDO CSS:
+
+        Existe uma técnica muito eficiente no CSS que é o reset e o normalize CSS, basicamente, eles servem para resetar toda a formatação padrão existente para os elementos CSS dos navegadores. Mas cada um deles serve para uma coisa:
+
+            reset.css = seu objetivo é permitir que possamos alterar as configurações padrão de um arquivo css 
+                        manualmente, á nossa maneira. O reset.css pode ser criado por nós mesmos, para estabelecer um 
+                        padrão de estilo sobre os nossos projetos;
+
+            normalize.css = o normalize é um arquivo externo padrão que podemos baixar á partir do projeto normalize no
+                            no próprio github. O que esse arquivo traz? Como cada navegador traz um comportamento padrão para os elementos isso pode acabar atrapalhando a nossa estilização dos elementos. Para desligar esses estilos usamos o "normalize.css", um css padrão que é atualizado a cada mudança dos navegadores, que reseta esses estilos padrão;
+
+        Uma grande vantagem desses arquivos é que os navegadores os reconhecem assim que eles são carregados e os carrega antes de qualquer outra folha de estilo, fazendo com que o css padrão do navegador seja resetado antes de ser estilizado.
+
+        Note que nesse arquivo nós estamos usando o "reset.css" e o "normalize.css" como arquivos externos, perceba que as tags abaixo teriam uma formatação padrão nos navegadores, como margins e paddings padrões, mas graças ao "reset" e "normalize" essas formatações são anuladas...
+    -->
+
+    <h1>Oi</h1>
+    <h2>Oi</h2>
+    <h3>Oi</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia temporibus ratione in vero nihil consequuntur molestias voluptates autem error animi perferendis dolorem delectus maiores maxime asperiores, enim cupiditate. Tempore, quo.</p>
+    <div style="width: 100px; height: 100px; background-color: red">Oi</div>
+    <input type="text">
+    <button>Enviar</button>
+</body>
+</html>
