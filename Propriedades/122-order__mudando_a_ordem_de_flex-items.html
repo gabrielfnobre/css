@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../Examples/normalize.css">
+<link rel="stylesheet" href="../Examples/reset.css">
+<title>ORDER - MUDANDO A ORDEM DE FLEX-ITEMS</title>
+<style>
+
+    /*     ORDER:
+
+        O "order" é uma propriedade CSS que só deve ser utilizada em Flex-Items, ele é usado para mudar o posicionamento de um Flex-Item para que ele ocupe o posicionamento que desejarmos dentro de um Flex-Container.
+
+        Por exemplo, digamos que Flex-Item ocupa a posição 5, mas queremos que quando a página seja visualizada no mobile ele vá para a 1ª posição, isso é possível usando o "order".
+
+        OBSERVAÇÃO: Por padrão todos os elementos de um Flex-Container ocupam a posição "0" (zero), se colocarmos o valor "1" em um Flex-Item esse Flex-Item vai direto para a última posição depois de todos os Flex-Items de número "0", se colocarmos o valor "2" em outro Flex-Item ele vai para depois do Flex-Item "1" e assim por diante. Agora se desejamos que um Flex-Item fique em primeiro antes de todos os Flex-Item de posição "0" colocamos o "-1" e assim por diante.
+
+    */
+
+    .container {
+        width: 80vw;
+        height: 20vh;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .flex-item {
+        width: 16vh;
+        height: 16vh;
+        background-color: blueviolet;
+        color: white;
+        text-align: center;
+        align-self: center;
+    }
+
+    /*MODIFICAÇÕES SOBRE O 2º CONTAINER*/
+    .container:nth-child(2) .flex-item:nth-child(3){ /*O 2º container o 3º elemento recebe a ordem -1...*/
+        order: -1;
+        background-color: blue;
+    }
+
+    /*MODIFICAÇÕES SOBRE O 3º CONTAINER*/
+    .container:nth-child(3) .flex-item:nth-child(3){ /*O 3º elemento recebe a ordem -1 ...*/
+        order: -1;
+        background-color: blue;
+    }
+    
+    .container:nth-child(3) .flex-item:nth-child(4){ /*Mas o 4º elemento recebe a ordem -2 ficando na frente dele...*/
+        order: -2;
+        background-color: orange;
+    }
+</style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="flex-item">01</div>
+        <div class="flex-item">02</div>
+        <div class="flex-item">03</div>
+        <div class="flex-item">04</div>
+    </div>
+    
+    <div class="container">
+        <div class="flex-item">01</div>
+        <div class="flex-item">02</div>
+        <div class="flex-item">03</div>
+        <div class="flex-item">04</div>
+    </div>
+    
+    <div class="container">
+        <div class="flex-item">01</div>
+        <div class="flex-item">02</div>
+        <div class="flex-item">03</div>
+        <div class="flex-item">04</div>
+    </div>
+    
+</body>
+</html>
