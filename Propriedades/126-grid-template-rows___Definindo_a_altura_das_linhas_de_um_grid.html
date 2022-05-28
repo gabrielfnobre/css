@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../Examples/normalize.css">
+<link rel="stylesheet" href="../Examples/reset.css">
+<title>GRID-TEMPLATE-ROWS - A ALTURA DAS LINHAS DE UM GRID</title>
+<style>
+
+    /*     GRID-TEMPLATE-ROWS:
+
+        A propriedade "grid-template-rows" é sempre usada em uma tag que seja grid container, essa propriedade é que define qual será a altura de cada linha do grid, e essas linhas são identificadas pelos nomes atribuídos as "grid-areas".
+
+        Essa propriedade só aceita valores de medida para atribuir a altura das linhas, como pixels, vw, vh e outras, temos que atribuir valores diferentes para cada "grid-area" que tivermos, não adianta colocar um valor único achando que ele será atribuído a todas as linhas, se fizermos isso o valor será atribuído só a primeria "grid-area" que foi declarada. Temos que atribuir um valor para cada linha sem excessão... 
+
+    */
+
+    #template {
+        color: white;
+        display: grid;
+        grid-template-areas: /*Veja que o "grid-template-areas" recebe como valores os nomes das "grid-area" em formato*/ 
+        "cabecalho"             /*de string (sem separação por vírgula)*/
+        "conteudo"
+        "rodape";
+        grid-template-columns: 60vw;
+        grid-template-rows: 10vh 20vh; /*Note que só atribuímos 2 valores, por isso ele só será atribuído a 1ª e 2ª */
+    }                                   /*linhas do grid*/
+
+    .cabecalho {
+        grid-area: cabecalho; /*Veja que o nome atribuído a essa "grid-area" é o mesmo que encontramos no */
+        background-color: red; /*"grid-template-areas"*/
+    }
+    
+    .conteudo {
+        grid-area: conteudo; /*Veja que o nome atribuído a essa "grid-area" é o mesmo que encontramos no */
+        background-color: green; /*"grid-template-areas"*/
+    }
+    
+    .rodape {
+        grid-area: rodape; /*Veja que o nome atribuído a essa "grid-area" é o mesmo que encontramos no */
+        background-color: blue; /*"grid-template-areas"*/
+    }
+    
+</style>
+</head>
+<body id="template">
+
+    <header class="cabecalho">
+        Aqui é o cabeçalho
+    </header>
+    <main class="conteudo">
+        Aqui é o conteúdo
+    </main>
+    <footer class="rodape">
+        Aqui é o rodapé
+    </footer>
+    
+</body>
+</html>
