@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../Examples/normalize.css">
+<link rel="stylesheet" href="../Examples/reset.css">
+<title>GRID-GAP - GERANDO ESPAÇAMENTO ENTRE OS GRID ITEMS</title>
+<style>
+
+    /*     GRID-GAP:
+
+        A propriedade "grid-gap" é uma propriedade abreviada da propriedade "grid-column-gap" - responsável por gerar espaçamento entre as colunas dos grid items de um grid container - e da propriedade "grid-row-gap" - responsável por gerar espaçamento entre as linhas de um grid container.
+
+        O grid-gap é um atalho para declarar as duas propriedades em um só lugar. Se você passar um único valor, os dois serão aplicados para o espaço para linhas e colunas. Se passar dois valores, o primeiro será para linhas e o segundo para colunas.
+
+        É importante avisar que o prefixo "grid-" destas propriedades está sendo removido e já é suportado nos navegadores modernos. Portanto, também pode-se utilizar as propriedades "column-gap", "row-gap" e "gap"
+
+    */
+
+    #template {
+        color: white;
+        display: grid;
+        grid-template-areas: 
+        "cabecalho"
+        "conteudo"
+        "rodape";
+        grid-template-columns: 60vw;
+        grid-template-rows: 10vh 20vh;
+        row-gap: 50px; /*Veja como o row-gap está sendo usar para separar as sessões cabeçalho, conteúdo e rodapé...*/
+    }
+
+    .cabecalho {
+        grid-area: cabecalho;
+        background-color: red;
+    }
+    
+    .conteudo {
+        grid-area: conteudo; 
+        background-color: green;
+        display: grid;
+        grid-template-areas: "coluna1 coluna2 coluna3";
+        grid-template-columns: auto;
+        grid-template-rows: 50%;
+        gap: 20% 5%; /*Veja que estamos usando a propriedade "gap" para afastar as divs dentro do conteúdo 20%*/
+    }                 /*em relação as linhas e 5% em relação as colunas...*/
+    
+    .rodape {
+        grid-area: rodape;
+        background-color: blue;
+    }
+
+    .coluna1 {
+        grid-area: coluna1;
+        background-color: pink;
+        color: black;
+    }
+    
+    .coluna2 {
+        grid-area: coluna2;
+        background-color: pink;
+        color: black;
+    }
+    
+    .coluna3 {
+        grid-area: coluna3;
+        background-color: pink;
+        color: black;
+    }
+    
+</style>
+</head>
+<body id="template">
+
+    <header class="cabecalho">
+        Aqui é o cabeçalho
+    </header>
+    <main class="conteudo">
+        Aqui é o conteúdo
+        <div class="coluna1">Aqui temos a coluna 01</div>
+        <div class="coluna2">Aqui temos a coluna 02</div>
+        <div class="coluna3">Aqui temos a coluna 03</div>
+    </main>
+    <footer class="rodape">
+        Aqui é o rodapé
+    </footer>
+    
+</body>
+</html>
