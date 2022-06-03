@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../Examples/normalize.css">
+<link rel="stylesheet" href="../Examples/reset.css">
+<title>GRIDS ROW-START, ROW-END, COLUMN-START E COLUMNN-END</title>
+<style>
+
+    /*     GRIDS ROW-START, ROW-END, COLUMN-START E COLUMN-END:
+
+            As propriedades "grid-row-start", "grid-row-end", "grid-column-start" e "grid-column-end" são propriedades utilizadas para delimitar se um determinado grid item deverá ir até uma determinada linha ou coluna de grid.
+            O que cada uma delas faz?
+
+            # grid-row-start: determina em que linha um grid 
+    */
+
+    #template {
+        color: white;
+        display: grid;
+        grid-template-areas: 
+        "cabecalho"
+        "conteudo"
+        "rodape";
+        grid-template-columns: 60vw;
+        grid-template-rows: 10vh 20vh;
+        row-gap: 50px; /*Veja como o row-gap está sendo usar para separar as sessões cabeçalho, conteúdo e rodapé...*/
+    }
+
+    .cabecalho {
+        grid-area: cabecalho;
+        background-color: darkorchid;
+    }
+    
+    .conteudo {
+        grid-area: conteudo; 
+        background-color: darkorchid;
+        display: grid;
+        grid-template-areas: "coluna1 coluna2 coluna3";
+        grid-template-columns: auto;
+        grid-template-rows: 50%;
+        gap: 20% 5%; /*Veja que estamos usando a propriedade "gap" para afastar as divs dentro do conteúdo 20%*/
+    }                 /*em relação as linhas e 5% em relação as colunas...*/
+    
+    .rodape {
+        grid-area: rodape;
+        background-color: darkorchid;
+    }
+
+    .coluna1 {
+        grid-area: coluna1;
+        background-color: red;
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    
+    .coluna2 {
+        grid-area: coluna2;
+        background-color: seagreen;
+    }
+    
+    .coluna3 {
+        grid-area: coluna3;
+        background-color: seagreen;
+    }
+    
+</style>
+</head>
+<body id="template">
+
+    <header class="cabecalho">
+        Aqui é o cabeçalho
+    </header>
+    <main class="conteudo">
+        Aqui é o conteúdo
+        <div class="coluna1">Aqui temos a coluna 01</div>
+        <div class="coluna2">Aqui temos a coluna 02</div>
+        <div class="coluna3">Aqui temos a coluna 03</div>
+    </main>
+    <footer class="rodape">
+        Aqui é o rodapé
+    </footer>
+    
+</body>
+</html>
