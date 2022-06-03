@@ -25,6 +25,9 @@
                             ou seja, se queremos que termine na coluna 3, temos que usar o valor 4)
 
             A partir do momento que nós delimitamos onde um grid item deverá ir e onde deverá terminar o restando do conteúdo do grid container irá preencher os espaços restantes.
+
+            OBS: EXISTEM TAMBÉM AS PROPRIEDADES ABREVIADAS: "grid-row" e "grid-column" para utilizá-las elas usamos o "/" 
+            entre os valores de star e end ficando assim: grid-row: start / end;
     */
 
     #template {
@@ -79,11 +82,9 @@
     
     .grid3 {
         grid-area: grid3;
-        background-color: darkblue; /*E vamos deixar o grid 3 lado a lado com o grid 1...*/
-        grid-column-start: 3; /*Para isso ele vai começar na coluna 3*/
-        grid-column-end: 3; /*Podemos colocar que ele vai finalizar na 3 também, já que ele começa á partir dela...*/
-        grid-row-start: 1; /*Ele vai começar na linha 1 também e...*/
-        grid-row-end: 4; /*Finalizar na linha 3.*/
+        background-color: darkblue; /*E vamos deixar o grid 3 lado a lado com o grid 1. Para isso vamos usar as */
+        grid-column: 3 / 3;           /*propriedades abreviadas. Ele vai começar na coluna 3 e terminar na 3*/
+        grid-row: 1 / 4;              /*Ele vai começar na linha 1 e terminar na linha 3 (lembre-se que é exclusivo)*/
     }
     
 </style>
