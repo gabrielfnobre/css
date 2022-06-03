@@ -48,10 +48,10 @@
         grid-area: conteudo; 
         background-color: darkorchid;
         display: grid;
-        grid-template-areas: "coluna1 coluna2 coluna3"; /*Delimitamos aqui eu os grid-items vão agir em 3 colunas...*/
+        grid-template-areas: "grid1 grid2 grid3"; /*Delimitamos aqui eu os grid-items vão agir em 3 colunas...*/
         grid-template-columns: auto; /*E que as colunas vão crescer de forma automática de acordo com o espaço*/
-        grid-template-rows: 10% 10% 10%; /*E aqui delimitamos o tamanho de até 3 linhas...*/
-        gap: 1%;
+        grid-template-rows: 10% 10% 10%; /*E aqui delimitamos o tamanho de até 3 linhas com sendo 10% da altura do*/
+        gap: 1%;                            /*container...*/
     }
     
     .rodape {
@@ -59,31 +59,31 @@
         background-color: darkorchid;
     }
 
-    .coluna1 {
-        grid-area: coluna1;
-        background-color: red;
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 1;
-        grid-row-end: 2;
+    .grid1 {
+        grid-area: grid1;
+        background-color: red; /*E aqui colocamos os columns e rows start e end em ação...*/
+        grid-column-start: 1; /*Note que o grid 1 começa na coluna 1*/
+        grid-column-end: 3; /*E vai até a coluna 2, lembre-se que o valor do end é sempre exclusivo*/
+        grid-row-start: 1; /*Além disso ele vai começar na linha 1*/
+        grid-row-end: 2; /*E vai terminar na linha 1 também, */
     }
     
-    .coluna2 {
-        grid-area: coluna2;
-        background-color: seagreen;
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 2;
-        grid-row-end: 4;
+    .grid2 {
+        grid-area: grid2;
+        background-color: seagreen; /*Já o grid 2, em vez de posicionar ele lado a lado com o grid 1, vamos colocar*/
+        grid-column-start: 1;           /*eles embaixo. Ele também vai começar na coluna 1*/
+        grid-column-end: 2;             /*finalizando também na coluna 1...*/
+        grid-row-start: 2;              /*e vai iniciar na linha 2*/
+        grid-row-end: 4;                /*finalizando na 3 linha do grid*/
     }
     
-    .coluna3 {
-        grid-area: coluna3;
-        background-color: darkblue;
-        grid-column-start: 3;
-        grid-column-end: 3;
-        grid-row-start: 1;
-        grid-row-end: 4;
+    .grid3 {
+        grid-area: grid3;
+        background-color: darkblue; /*E vamos deixar o grid 3 lado a lado com o grid 1...*/
+        grid-column-start: 3; /*Para isso ele vai começar na coluna 3*/
+        grid-column-end: 3; /*Podemos colocar que ele vai finalizar na 3 também, já que ele começa á partir dela...*/
+        grid-row-start: 1; /*Ele vai começar na linha 1 também e...*/
+        grid-row-end: 4; /*Finalizar na linha 3.*/
     }
     
 </style>
@@ -94,10 +94,10 @@
         Aqui é o cabeçalho
     </header>
     <main class="conteudo">
-        Aqui é o conteúdo
-        <div class="coluna1">Aqui temos a coluna 01</div>
-        <div class="coluna2">Aqui temos a coluna 02</div>
-        <div class="coluna3">Aqui temos a coluna 03</div>
+        No que qualquer coisa que esteja no meio vai preencher o conteúdo restante <!--Note que por causa do layout do grid essas palavras vão preencher o conteúdo restante-->
+        <div class="grid1">Aqui temos o grid 01</div>
+        <div class="grid2">Aqui temos o grid 02</div>
+        <div class="grid3">Aqui temos o grid 03</div>
     </main>
     <footer class="rodape">
         Aqui é o rodapé
