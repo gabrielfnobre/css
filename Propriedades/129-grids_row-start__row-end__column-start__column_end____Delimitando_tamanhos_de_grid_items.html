@@ -14,7 +14,17 @@
             As propriedades "grid-row-start", "grid-row-end", "grid-column-start" e "grid-column-end" são propriedades utilizadas para delimitar se um determinado grid item deverá ir até uma determinada linha ou coluna de grid.
             O que cada uma delas faz?
 
-            # grid-row-start: determina em que linha um grid 
+            # grid-row-start: determina em que linha um grid deve começar
+
+            # grid-row-end: determina em que linha um grid deve terminar (lembrando que esse valor é exclusivo, ou seja
+                            se queremos que termine na linha 3, temos que usar o valor 4)
+
+            # grid-column-start: determina em que coluna um grid deve começar
+
+            # grid-column-end: determina em que coluna um grid item deve terminar (lembrando que esse valor é exclusivo, 
+                            ou seja, se queremos que termine na coluna 3, temos que usar o valor 4)
+
+            A partir do momento que nós delimitamos onde um grid item deverá ir e onde deverá terminar o restando do conteúdo do grid container irá preencher os espaços restantes.
     */
 
     #template {
@@ -25,8 +35,8 @@
         "conteudo"
         "rodape";
         grid-template-columns: 60vw;
-        grid-template-rows: 10vh 20vh;
-        row-gap: 50px; /*Veja como o row-gap está sendo usar para separar as sessões cabeçalho, conteúdo e rodapé...*/
+        grid-template-rows: 5vh 50vh 5vh;
+        row-gap: 1%;
     }
 
     .cabecalho {
@@ -38,11 +48,11 @@
         grid-area: conteudo; 
         background-color: darkorchid;
         display: grid;
-        grid-template-areas: "coluna1 coluna2 coluna3";
-        grid-template-columns: auto;
-        grid-template-rows: 50%;
-        gap: 20% 5%; /*Veja que estamos usando a propriedade "gap" para afastar as divs dentro do conteúdo 20%*/
-    }                 /*em relação as linhas e 5% em relação as colunas...*/
+        grid-template-areas: "coluna1 coluna2 coluna3"; /*Delimitamos aqui eu os grid-items vão agir em 3 colunas...*/
+        grid-template-columns: auto; /*E que as colunas vão crescer de forma automática de acordo com o espaço*/
+        grid-template-rows: 10% 10% 10%; /*E aqui delimitamos o tamanho de até 3 linhas...*/
+        gap: 1%;
+    }
     
     .rodape {
         grid-area: rodape;
@@ -53,19 +63,27 @@
         grid-area: coluna1;
         background-color: red;
         grid-column-start: 1;
-        grid-column-end: 4;
+        grid-column-end: 3;
         grid-row-start: 1;
-        grid-row-end: 3;
+        grid-row-end: 2;
     }
     
     .coluna2 {
         grid-area: coluna2;
         background-color: seagreen;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 4;
     }
     
     .coluna3 {
         grid-area: coluna3;
-        background-color: seagreen;
+        background-color: darkblue;
+        grid-column-start: 3;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 4;
     }
     
 </style>
